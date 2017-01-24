@@ -1,25 +1,17 @@
+[![Latest Stable Version](https://poser.pugx.org/whatwedo/core-bundle/v/stable)](https://packagist.org/packages/whatwedo/core-bundle)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/f4e32125-7f5b-4071-9a6e-9296c1f6acf7/mini.png)](https://insight.sensiolabs.com/projects/f4e32125-7f5b-4071-9a6e-9296c1f6acf7)
+
 # whatwedoCoreBundle
 
 Reusable components used by other bundles of whatwedo.
 
 **Note:** this bundle is currently under heavy development
 
+
 ## Documentation
 
 The source of the documentation is stored in the `Resources/doc` folder. [Jump to the master documentation](Resources/doc/index.md)
 
-## Dependencies
-
-This bundle depends heavily on the [whatwedoTableBundle](https://github.com/whatwedo/TableBundle) for displaying list views. 
-
-## Known bugs
-
-- Preselection of Entites in RelationContent does not work
-
-## Missing Features
-
-- Create an Ajax-Adapter
-- Simplify Relations
 
 ## License
 
