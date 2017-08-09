@@ -35,7 +35,6 @@ use whatwedo\CoreBundle\Enum\AbstractSimpleEnum;
  */
 abstract class AbstractSimpleEnumFormatter extends AbstractFormatter
 {
-
     /**
      * Returns fully qualified enum class name
      *

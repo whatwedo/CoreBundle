@@ -41,7 +41,7 @@ class ChfFormatter extends AbstractFormatter
     public static function getString($value)
     {
         $number = floatval($value);
-        $number = round($number / 500, 2) * 5;
+        $number = round(($number + 0.000001) * 20) / 20;
 
         return sprintf('CHF %s',
             number_format($number, 2, '.', '\'')
@@ -57,7 +57,7 @@ class ChfFormatter extends AbstractFormatter
     public static function getStringWithoutChf($value)
     {
         $number = floatval($value);
-        $number = round($number / 500, 2) * 5;
+        $number = round(($number + 0.000001) * 20) / 20;
 
         return sprintf('%s',
             number_format($number, 2, '.', '\'')
