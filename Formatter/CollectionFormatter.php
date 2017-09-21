@@ -29,7 +29,8 @@ namespace whatwedo\CoreBundle\Formatter;
 use Doctrine\Common\Collections\Collection;
 
 /**
- * @author Ueli Banholzer <ueli@whatwedo.ch>
+ * Class CollectionFormatter
+ * @package whatwedo\CoreBundle\Formattero
  */
 class CollectionFormatter extends AbstractFormatter
 {
@@ -45,10 +46,16 @@ class CollectionFormatter extends AbstractFormatter
             || $value instanceof \Iterator) {
             return '';
         }
-
+        if ($value instanceof Collection) {
+            $value = $value->toArray();
+        }
         return implode(',', $value);
     }
 
+    /**
+     * @param $value
+     * @return string
+     */
     public static function getHtml($value)
     {
         if (is_array($value)
