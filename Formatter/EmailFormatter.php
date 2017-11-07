@@ -35,7 +35,7 @@ class EmailFormatter extends AbstractFormatter
     /**
      * {@inheritdoc}
      */
-    public static function getString($value)
+    public function getString($value)
     {
         if (!filter_var($value, FILTER_VALIDATE_EMAIL)) {
             return '';
@@ -47,7 +47,7 @@ class EmailFormatter extends AbstractFormatter
     /**
      * {@inheritdoc}
      */
-    public static function getHtml($value)
+    public function getHtml($value)
     {
         if (!filter_var($value, FILTER_VALIDATE_EMAIL)) {
             return '';

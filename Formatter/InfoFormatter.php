@@ -35,7 +35,7 @@ class InfoFormatter extends AbstractFormatter
     /**
      * {@inheritdoc}
      */
-    public static function getString($value)
+    public function getString($value)
     {
         return $value;
     }
@@ -43,7 +43,7 @@ class InfoFormatter extends AbstractFormatter
     /**
      * {@inheritdoc}
      */
-    public static function getHtml($value)
+    public function getHtml($value)
     {
         if (!$value) {
             return '';

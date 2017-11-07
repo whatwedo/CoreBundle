@@ -40,7 +40,7 @@ class CollectionFormatter extends AbstractFormatter
      * @param $value
      * @return string
      */
-    public static function getString($value)
+    public function getString($value)
     {
         if (is_array($value)
             || $value instanceof \Iterator) {
@@ -56,7 +56,7 @@ class CollectionFormatter extends AbstractFormatter
      * @param $value
      * @return string
      */
-    public static function getHtml($value)
+    public function getHtml($value)
     {
         if (is_array($value)
             || $value instanceof \Iterator

@@ -37,7 +37,7 @@ class DefaultFormatter extends AbstractFormatter
     /**
      * {@inheritdoc}
      */
-    public static function getString($value)
+    public function getString($value)
     {
         return $value;
     }

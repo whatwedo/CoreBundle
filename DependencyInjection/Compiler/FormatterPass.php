@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright (c) 2016, whatwedo GmbH
+ * Copyright (c) 2017, whatwedo GmbH
  * All rights reserved
  *
  * Redistribution and use in source and binary forms, with or without
@@ -25,27 +25,34 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace whatwedo\CoreBundle\Formatter;
+namespace whatwedo\CoreBundle\DependencyInjection\Compiler;
+
+use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Reference;
 
 /**
- * @author Ueli Banholzer <ueli@whatwedo.ch>
+ * Class FormatterPass
+ * @package whatwedo\CoreBundle\DependencyInjection\Compiler
  */
-abstract class AbstractFormatter implements FormatterInterface
+class FormatterPass implements CompilerPassInterface
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function getHtml($value)
-    {
-        return $this->getString($value);
-    }
 
     /**
-     * {@inheritdoc}
+     * @param ContainerBuilder $container
      */
-    public function getOrderValue($value)
+    public function process(ContainerBuilder $container)
     {
-        return $this->getString($value);
+        if (!$container->has('whatwedo_core.manager.formatter')) {
+            return;
+        }
+
+        $formatterManagerDefinition = $container->findDefinition('whatwedo_core.manager.formatter');
+        $taggedFormatter = $container->findTaggedServiceIds('core.formatter');
+
+        foreach ($taggedFormatter as $id => $tags) {
+            $formatterManagerDefinition->addMethodCall('addFormatter', [new Reference($id)]);
+        }
     }
 
 }
