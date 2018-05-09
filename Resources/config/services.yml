@@ -1,4 +1,7 @@
 services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
 
     # Event Listeners
     whatwedo_core.event_listener.json_request_transformer:
@@ -9,6 +12,7 @@ services:
     # Manager
     whatwedo_core.manager.formatter:
         class: whatwedo\CoreBundle\Manager\FormatterManager
+        public: true
 
     # Formatter
     whatwedo\CoreBundle\Formatter\:
@@ -16,6 +20,3 @@ services:
         exclude: '../../Formatter/{AbstractFormatter.php,AbstractSimpleEnumFormatter.php}'
         tags:
           - core.formatter
-        autowire: true
-        autoconfigure: true
-        public: false
