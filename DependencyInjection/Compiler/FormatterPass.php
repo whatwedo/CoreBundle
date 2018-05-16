@@ -43,11 +43,11 @@ class FormatterPass implements CompilerPassInterface
      */
     public function process(ContainerBuilder $container)
     {
-        if (!$container->has('whatwedo_core.manager.formatter')) {
+        if (!$container->has('whatwedo\CoreBundle\Manager\FormatterManager')) {
             return;
         }
 
-        $formatterManagerDefinition = $container->findDefinition('whatwedo_core.manager.formatter');
+        $formatterManagerDefinition = $container->findDefinition('whatwedo\CoreBundle\Manager\FormatterManager');
         $taggedFormatter = $container->findTaggedServiceIds('core.formatter');
 
         foreach ($taggedFormatter as $id => $tags) {
