@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright (c) 2016, whatwedo GmbH
+ * Copyright (c) 2017, whatwedo GmbH
  * All rights reserved
  *
  * Redistribution and use in source and binary forms, with or without
@@ -25,36 +25,35 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
+namespace whatwedo\CoreBundle\Formatter;
 
-namespace whatwedo\CoreBundle\Command\Traits;
+use whatwedo\CoreBundle\Enum\AbstractSimpleEnum;
 
 /**
- * Class DryRun
- * @package whatwedo\School\CoreBundle\Task\Traits
+ * Class SimpleEnumFormatter
+ * @package whatwedo\CoreBundle\Formatter
  */
-trait DryRun
+abstract class AbstractSimpleEnumFormatter extends AbstractFormatter
 {
-    /**
-     * @var bool
-     */
-    protected $dryRun = false;
 
     /**
-     * @return boolean
+     * Returns fully qualified enum class name
+     *
+     * @return string
      */
-    public function isDryRun()
+    public static function getEnum()
     {
-        return $this->dryRun;
+        return AbstractSimpleEnum::class;
     }
 
     /**
-     * @param boolean $dryRun
-     * @return DryRun
+     * returns a string which represents the value
+     *
+     * @param $value
+     * @return string
      */
-    public function setDryRun($dryRun = true)
+    public static function getString($value)
     {
-        $this->dryRun = $dryRun;
-
-        return $this;
+        return forward_static_call([static::getEnum(), 'getRepresentation'], $value);
     }
 }

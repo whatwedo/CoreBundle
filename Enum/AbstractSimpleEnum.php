@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright (c) 2016, whatwedo GmbH
+ * Copyright (c) 2017, whatwedo GmbH
  * All rights reserved
  *
  * Redistribution and use in source and binary forms, with or without
@@ -25,36 +25,58 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-
-namespace whatwedo\CoreBundle\Command\Traits;
+namespace whatwedo\CoreBundle\Enum;
 
 /**
- * Class DryRun
- * @package whatwedo\School\CoreBundle\Task\Traits
+ * Class AbstractSimpleEnum
+ * @package whatwedo\CoreBundle\Enum;
  */
-trait DryRun
+abstract class AbstractSimpleEnum
 {
-    /**
-     * @var bool
-     */
-    protected $dryRun = false;
+    protected static $values = [];
 
     /**
-     * @return boolean
+     * @return array
      */
-    public function isDryRun()
+    public static function getArray()
     {
-        return $this->dryRun;
+        return static::$values;
     }
 
     /**
-     * @param boolean $dryRun
-     * @return DryRun
+     * @return array
      */
-    public function setDryRun($dryRun = true)
+    public static function getValues()
     {
-        $this->dryRun = $dryRun;
+        return array_keys(static::$values);
+    }
 
-        return $this;
+    /**
+     * @param $value
+     * @return bool
+     */
+    public static function has($value)
+    {
+        return isset(static::$values[$value]);
+    }
+
+    /**
+     * @param $value
+     * @return mixed|null
+     */
+    public static function getRepresentation($value)
+    {
+        if (isset(static::$values[$value])) {
+            return static::$values[$value];
+        }
+        return null;
+    }
+
+    /**
+     * @return array
+     */
+    public static function getFormValues()
+    {
+        return array_flip(static::$values);
     }
 }
