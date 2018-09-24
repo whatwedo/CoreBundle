@@ -52,7 +52,8 @@ class DateFormatter extends AbstractFormatter
         if ($value instanceof \DateTimeInterface) {
             return $value->getTimestamp();
         }
-        return $this->getOrderValue($value);
+
+        return parent::getOrderValue($value);
     }
 
 
