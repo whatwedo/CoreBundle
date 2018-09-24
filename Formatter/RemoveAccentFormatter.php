@@ -13,7 +13,7 @@ class RemoveAccentFormatter extends AbstractFormatter
     /**
      * Remove acceents from string
      */
-    public static function getString($value)
+    public function getString($value)
     {
         if (!preg_match('/[\x80-\xff]/', $value))
             return $value;

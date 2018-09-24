@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright (c) 2016, whatwedo GmbH
+ * Copyright (c) 2017, whatwedo GmbH
  * All rights reserved
  *
  * Redistribution and use in source and binary forms, with or without
@@ -25,27 +25,37 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace whatwedo\CoreBundle\Formatter;
+namespace whatwedo\CoreBundle\Manager;
+
+use whatwedo\CoreBundle\Formatter\FormatterInterface;
 
 /**
- * @author Ueli Banholzer <ueli@whatwedo.ch>
+ * Class FormatterManager
+ * @package whatwedo\CoreBundle\Manager
  */
-abstract class AbstractFormatter implements FormatterInterface
+class FormatterManager
 {
+
     /**
-     * {@inheritdoc}
+     * @var FormatterInterface[]
      */
-    public function getHtml($value)
+    protected $formatters = [];
+
+    /**
+     * @param FormatterInterface $formatter
+     */
+    public function addFormatter(FormatterInterface $formatter)
     {
-        return $this->getString($value);
+        $this->formatters[get_class($formatter)] = $formatter;
     }
 
     /**
-     * {@inheritdoc}
+     * @param $class
+     * @return FormatterInterface
      */
-    public function getOrderValue($value)
+    public function getFormatter($class)
     {
-        return $this->getString($value);
+        return $this->formatters[$class];
     }
 
 }

@@ -38,7 +38,7 @@ class ArrayFormatter extends AbstractFormatter
      * @param $value
      * @return string
      */
-    public static function getString($value)
+    public function getString($value)
     {
         $output = '[';
         for ($i = 0; $i < count($value); $i++) {
