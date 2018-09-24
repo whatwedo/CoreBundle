@@ -38,7 +38,7 @@ class DateFormatter extends AbstractFormatter
      * @param $value
      * @return string
      */
-    public static function getString($value)
+    public function getString($value)
     {
         if ($value instanceof \DateTimeInterface) {
             return $value->format('d.m.Y');
@@ -47,12 +47,12 @@ class DateFormatter extends AbstractFormatter
         return '';
     }
 
-    public static function getOrderValue($value)
+    public function getOrderValue($value)
     {
         if ($value instanceof \DateTimeInterface) {
             return $value->getTimestamp();
         }
-        return parent::getOrderValue($value);
+        return $this->getOrderValue($value);
     }
 
 

@@ -38,10 +38,10 @@ class ChfFormatter extends AbstractFormatter
      * @param $value
      * @return string
      */
-    public static function getString($value)
+    public function getString($value)
     {
         $number = floatval($value);
-        $number = round($number / 500, 2) * 5;
+        $number = round(($number + 0.000001) * 20) / 20;
 
         return sprintf('CHF %s',
             number_format($number, 2, '.', '\'')
@@ -54,22 +54,22 @@ class ChfFormatter extends AbstractFormatter
      * @param $value
      * @return string
      */
-    public static function getStringWithoutChf($value)
+    public function getStringWithoutChf($value)
     {
         $number = floatval($value);
-        $number = round($number / 500, 2) * 5;
+        $number = round(($number + 0.000001) * 20) / 20;
 
         return sprintf('%s',
             number_format($number, 2, '.', '\'')
         );
     }
 
-    public static function getHtml($value)
+    public function getHtml($value)
     {
         if ($value < 0) {
-            return '<nobr><span class="text-danger">' . static::getString($value) . '</span></nobr>';
+            return '<nobr><span class="text-danger">' . $this->getString($value) . '</span></nobr>';
         }
 
-        return '<nobr>' . static::getString($value) . '</nobr>';
+        return '<nobr>' . $this->getString($value) . '</nobr>';
     }
 }

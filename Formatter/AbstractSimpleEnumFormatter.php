@@ -35,7 +35,6 @@ use whatwedo\CoreBundle\Enum\AbstractSimpleEnum;
  */
 abstract class AbstractSimpleEnumFormatter extends AbstractFormatter
 {
-
     /**
      * Returns fully qualified enum class name
      *
@@ -52,7 +51,7 @@ abstract class AbstractSimpleEnumFormatter extends AbstractFormatter
      * @param $value
      * @return string
      */
-    public static function getString($value)
+    public function getString($value)
     {
         return forward_static_call([static::getEnum(), 'getRepresentation'], $value);
     }

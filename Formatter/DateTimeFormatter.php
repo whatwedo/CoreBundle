@@ -38,7 +38,7 @@ class DateTimeFormatter extends AbstractFormatter
      * @param $value
      * @return string
      */
-    public static function getString($value)
+    public function getString($value)
     {
         if ($value instanceof \DateTimeInterface) {
             return $value->format('d.m.Y H:i');

@@ -32,21 +32,4 @@ use Doctrine\ORM\EntityRepository as BaseEntityRepository;
 /**
  * @author Ueli Banholzer <ueli@whatwedo.ch>
  */
-class EntityRepository extends BaseEntityRepository
-{
-    /**
-     * saves an entity
-     *
-     * @param $entity
-     *
-     * @throws \Doctrine\ORM\OptimisticLockException
-     */
-    public function save($entity)
-    {
-        if ($entity->getId() === null) {
-            $this->getEntityManager()->persist($entity);
-        }
-
-        $this->getEntityManager()->flush($entity);
-    }
-}
+class EntityRepository extends BaseEntityRepository { }

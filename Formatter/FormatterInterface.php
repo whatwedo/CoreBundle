@@ -38,7 +38,7 @@ interface FormatterInterface
      * @param $value
      * @return string
      */
-    public static function getString($value);
+    public function getString($value);
 
     /**
      * returns an html formatted string which represents the value
@@ -46,7 +46,7 @@ interface FormatterInterface
      * @param $value
      * @return string
      */
-    public static function getHtml($value);
+    public function getHtml($value);
 
     /**
      * returns an string which represents the sortable value
@@ -54,5 +54,5 @@ interface FormatterInterface
      * @param $value
      * @return string
      */
-    public static function getOrderValue($value);
+    public function getOrderValue($value);
 }

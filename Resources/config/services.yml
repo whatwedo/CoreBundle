@@ -1,5 +1,21 @@
 services:
+
+    # Event Listeners
     whatwedo_core.event_listener.json_request_transformer:
         class: whatwedo\CoreBundle\EventListener\JsonRequestTransformerListener
         tags:
           - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest, priority: 100 }
+
+    # Manager
+    whatwedo_core.manager.formatter:
+        class: whatwedo\CoreBundle\Manager\FormatterManager
+
+    # Formatter
+    whatwedo\CoreBundle\Formatter\:
+        resource: '../../Formatter/*'
+        exclude: '../../Formatter/{AbstractFormatter.php,AbstractSimpleEnumFormatter.php}'
+        tags:
+          - core.formatter
+        autowire: true
+        autoconfigure: true
+        public: false
