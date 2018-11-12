@@ -27,6 +27,8 @@
 
 namespace whatwedo\CoreBundle\Formatter;
 
+use Symfony\Component\OptionsResolver\OptionsResolver;
+
 /**
  * @author Ueli Banholzer <ueli@whatwedo.ch>
  */
@@ -41,9 +43,15 @@ class DateTimeFormatter extends AbstractFormatter
     public function getString($value)
     {
         if ($value instanceof \DateTimeInterface) {
-            return $value->format('d.m.Y H:i');
+            return $value->format($this->options['format']);
         }
 
         return '';
+    }
+
+    protected function configureOptions(OptionsResolver $resolver)
+    {
+        $resolver
+            ->setDefault('format', 'd.m.Y H:i');
     }
 }
