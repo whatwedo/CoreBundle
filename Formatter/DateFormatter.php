@@ -27,23 +27,16 @@
 
 namespace whatwedo\CoreBundle\Formatter;
 
+use Symfony\Component\OptionsResolver\OptionsResolver;
+
 /**
  * @author Ueli Banholzer <ueli@whatwedo.ch>
  */
-class DateFormatter extends AbstractFormatter
+class DateFormatter extends DateTimeFormatter
 {
-    /**
-     * returns a string which represents the value
-     *
-     * @param $value
-     * @return string
-     */
-    public function getString($value)
+    protected function configureOptions(OptionsResolver $resolver)
     {
-        if ($value instanceof \DateTimeInterface) {
-            return $value->format('d.m.Y');
-        }
-
-        return '';
+        $resolver
+            ->setDefault('format', 'd.m.Y');
     }
 }

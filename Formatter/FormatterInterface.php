@@ -47,4 +47,6 @@ interface FormatterInterface
      * @return string
      */
     public function getHtml($value);
+
+    public function processOptions(?array $options);
 }

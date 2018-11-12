@@ -27,16 +27,36 @@
 
 namespace whatwedo\CoreBundle\Formatter;
 
+use Symfony\Component\OptionsResolver\OptionsResolver;
+
 /**
  * @author Ueli Banholzer <ueli@whatwedo.ch>
  */
 abstract class AbstractFormatter implements FormatterInterface
 {
     /**
+     * @var array|null $options
+     */
+    protected $options;
+
+    /**
      * {@inheritdoc}
      */
     public function getHtml($value)
     {
         return $this->getString($value);
+    }
+
+    public function processOptions(?array $options)
+    {
+        $resolver = new OptionsResolver();
+        $this->configureOptions($resolver);
+
+        $this->options = $resolver->resolve($options);
+    }
+
+    protected function configureOptions(OptionsResolver $resolver)
+    {
+
     }
 }
