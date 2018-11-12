@@ -39,13 +39,4 @@ abstract class AbstractFormatter implements FormatterInterface
     {
         return $this->getString($value);
     }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getOrderValue($value)
-    {
-        return $this->getString($value);
-    }
-
 }

@@ -47,12 +47,4 @@ interface FormatterInterface
      * @return string
      */
     public function getHtml($value);
-
-    /**
-     * returns an string which represents the sortable value
-     *
-     * @param $value
-     * @return string
-     */
-    public function getOrderValue($value);
 }
