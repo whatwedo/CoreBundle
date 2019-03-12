@@ -40,14 +40,9 @@ class ArrayFormatter extends AbstractFormatter
      */
     public function getString($value)
     {
-        $output = '[';
-        for ($i = 0; $i < count($value); $i++) {
-            $output .= $value[$i];
-            if ($i < (count($value) - 1)) {
-                $output .= ', ';
-            }
+        if (!is_array($value)) {
+            return '';
         }
-        $output .= ']';
-        return $output;
+        return sprintf('[%s]', implode(', ', $value));
     }
 }
