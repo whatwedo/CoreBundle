@@ -33,6 +33,8 @@ use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\DependencyInjection\ContainerAwareTrait;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Stopwatch\Stopwatch;
 use whatwedo\CoreBundle\Command\Traits\ConsoleOutput;
 
@@ -40,9 +42,10 @@ use whatwedo\CoreBundle\Command\Traits\ConsoleOutput;
  * Class BaseCommand
  * @package whatwedo\School\CoreBundle\Command
  */
-abstract class BaseCommand extends ContainerAwareCommand
+abstract class BaseCommand extends Command
 {
     use ConsoleOutput;
+    use ContainerAwareTrait;
 
     /**
      * @var InputInterface
@@ -113,6 +116,11 @@ abstract class BaseCommand extends ContainerAwareCommand
         }
 
         return $this->registry;
+    }
+
+    public function getContainer(): ContainerInterface
+    {
+        return $this->container;
     }
 
     /**
