@@ -29,7 +29,7 @@
 namespace whatwedo\CoreBundle\Command;
 
 use Doctrine\Bundle\DoctrineBundle\Registry;
-use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
+use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -40,7 +40,6 @@ use whatwedo\CoreBundle\Command\Traits\ConsoleOutput;
 
 /**
  * Class BaseCommand
- * @package whatwedo\School\CoreBundle\Command
  */
 abstract class BaseCommand extends Command
 {
