@@ -33,15 +33,16 @@ namespace whatwedo\CoreBundle\Formatter;
 class CountryAlpha2Formatter extends AbstractFormatter
 {
     /**
-     * returns a string which represents the value
+     * returns a string which represents the value.
      *
      * @param string $value
+     *
      * @return string
      */
     public function getString($value)
     {
-        if (\Symfony\Component\Intl\Countries::exists(strtoupper($value)))  {
-            return \Symfony\Component\Intl\Countries::getName(strtoupper($value));
+        if (\Symfony\Component\Intl\Countries::exists(mb_strtoupper($value))) {
+            return \Symfony\Component\Intl\Countries::getName(mb_strtoupper($value));
         }
 
         return $value;

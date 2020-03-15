@@ -28,8 +28,7 @@
 namespace whatwedo\CoreBundle\Enum;
 
 /**
- * Class AbstractSimpleEnum
- * @package whatwedo\CoreBundle\Enum;
+ * Class AbstractSimpleEnum.
  */
 abstract class AbstractSimpleEnum
 {
@@ -53,6 +52,7 @@ abstract class AbstractSimpleEnum
 
     /**
      * @param $value
+     *
      * @return bool
      */
     public static function has($value)
@@ -62,6 +62,7 @@ abstract class AbstractSimpleEnum
 
     /**
      * @param $value
+     *
      * @return mixed|null
      */
     public static function getRepresentation($value)
@@ -69,6 +70,7 @@ abstract class AbstractSimpleEnum
         if (isset(static::$values[$value])) {
             return static::$values[$value];
         }
+
         return null;
     }
 

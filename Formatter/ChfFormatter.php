@@ -33,14 +33,15 @@ namespace whatwedo\CoreBundle\Formatter;
 class ChfFormatter extends AbstractFormatter
 {
     /**
-     * returns a string which represents the value
+     * returns a string which represents the value.
      *
      * @param $value
+     *
      * @return string
      */
     public function getString($value)
     {
-        $number = floatval($value);
+        $number = (float) $value;
         $number = round(($number + 0.000001) * 20) / 20;
 
         return sprintf('CHF %s',
@@ -49,14 +50,15 @@ class ChfFormatter extends AbstractFormatter
     }
 
     /**
-     * returns a string which represents the value
+     * returns a string which represents the value.
      *
      * @param $value
+     *
      * @return string
      */
     public function getStringWithoutChf($value)
     {
-        $number = floatval($value);
+        $number = (float) $value;
         $number = round(($number + 0.000001) * 20) / 20;
 
         return sprintf('%s',
@@ -67,9 +69,9 @@ class ChfFormatter extends AbstractFormatter
     public function getHtml($value)
     {
         if ($value < 0) {
-            return '<nobr><span class="text-danger">' . $this->getString($value) . '</span></nobr>';
+            return '<nobr><span class="text-danger">'.$this->getString($value).'</span></nobr>';
         }
 
-        return '<nobr>' . $this->getString($value) . '</nobr>';
+        return '<nobr>'.$this->getString($value).'</nobr>';
     }
 }

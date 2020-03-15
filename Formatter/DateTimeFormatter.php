@@ -35,9 +35,10 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 class DateTimeFormatter extends AbstractFormatter
 {
     /**
-     * returns a string which represents the value
+     * returns a string which represents the value.
      *
      * @param $value
+     *
      * @return string
      */
     public function getString($value)

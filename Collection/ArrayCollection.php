@@ -37,8 +37,7 @@ class ArrayCollection extends \Doctrine\Common\Collections\ArrayCollection
      */
     public function addAll($elements)
     {
-        foreach ($elements as $element)
-        {
+        foreach ($elements as $element) {
             $this->add($element);
         }
     }

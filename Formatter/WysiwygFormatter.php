@@ -32,7 +32,6 @@ namespace whatwedo\CoreBundle\Formatter;
  */
 class WysiwygFormatter extends AbstractFormatter
 {
-
     public function getString($value)
     {
         return self::format($value);

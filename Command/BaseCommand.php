@@ -25,13 +25,11 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-
 namespace whatwedo\CoreBundle\Command;
 
 use Doctrine\Bundle\DoctrineBundle\Registry;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\DependencyInjection\ContainerAwareTrait;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -39,7 +37,7 @@ use Symfony\Component\Stopwatch\Stopwatch;
 use whatwedo\CoreBundle\Command\Traits\ConsoleOutput;
 
 /**
- * Class BaseCommand
+ * Class BaseCommand.
  */
 abstract class BaseCommand extends Command
 {
@@ -62,9 +60,7 @@ abstract class BaseCommand extends Command
     protected $stopwatch;
 
     /**
-     * @param InputInterface $input
-     * @param OutputInterface $output
-     * @return int|null|void
+     * @return int|void|null
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
@@ -82,8 +78,8 @@ abstract class BaseCommand extends Command
         }
 
         // Dump settings
-        $this->debug('Arguments: ' . var_export($input->getArguments(), true));
-        $this->debug('Options: ' . var_export($input->getOptions(), true));
+        $this->debug('Arguments: '.var_export($input->getArguments(), true));
+        $this->debug('Options: '.var_export($input->getOptions(), true));
     }
 
     /**
@@ -95,9 +91,10 @@ abstract class BaseCommand extends Command
     }
 
     /**
-     * Get service by name
+     * Get service by name.
      *
      * @param $name
+     *
      * @return object
      */
     protected function get($name)
@@ -110,7 +107,7 @@ abstract class BaseCommand extends Command
      */
     public function getDoctrine()
     {
-        if ($this->registry === null) {
+        if (null === $this->registry) {
             $this->registry = $this->get('doctrine');
         }
 
@@ -123,7 +120,7 @@ abstract class BaseCommand extends Command
     }
 
     /**
-     * Initialize and start stopwatch
+     * Initialize and start stopwatch.
      */
     private function startStopwatch()
     {
@@ -132,17 +129,14 @@ abstract class BaseCommand extends Command
     }
 
     /**
-     * Initialize and start stopwatch
+     * Initialize and start stopwatch.
      */
     private function stopStopwatch()
     {
         $event = $this->stopwatch->stop('command');
-        $this->debug('Finished in ' . $event->getDuration() . 'ms');
+        $this->debug('Finished in '.$event->getDuration().'ms');
     }
 
-    /**
-     *
-     */
     protected function tearDown()
     {
         $this->stopStopwatch();

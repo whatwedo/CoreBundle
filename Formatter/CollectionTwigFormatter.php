@@ -26,13 +26,13 @@
  */
 
 namespace whatwedo\CoreBundle\Formatter;
+
 use Doctrine\Common\Collections\Collection;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Twig\Environment;
 
 /**
- * Class CollectionFormatter
- * @package whatwedo\CoreBundle\Formattero
+ * Class CollectionFormatter.
  */
 class CollectionTwigFormatter extends AbstractFormatter
 {
@@ -45,48 +45,48 @@ class CollectionTwigFormatter extends AbstractFormatter
     }
 
     /**
-     * returns a string which represents the value
+     * returns a string which represents the value.
      *
      * @param $value
+     *
      * @return string
      */
     public function getString($value)
     {
-        if (is_array($value)
+        if (\is_array($value)
             || $value instanceof \Iterator) {
             return '';
         }
         if ($value instanceof Collection) {
             $value = $value->toArray();
         }
+
         return implode(',', $value);
     }
 
     /**
      * @param $value
+     *
      * @return string
      */
     public function getHtml($value)
     {
-
-        if (is_array($value)
+        if (\is_array($value)
             || $value instanceof \Iterator
             || $value instanceof Collection) {
             return $this->twig->render(
                 $this->options['template'],
                 [
-                    'list' => $value
+                    'list' => $value,
                 ]
             );
-        } else {
-            return '-';
         }
+
+        return '-';
     }
 
     protected function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setRequired('template');
-
     }
-
 }

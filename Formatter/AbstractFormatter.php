@@ -35,7 +35,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 abstract class AbstractFormatter implements FormatterInterface
 {
     /**
-     * @var array|null $options
+     * @var array|null
      */
     protected $options;
 
@@ -57,6 +57,5 @@ abstract class AbstractFormatter implements FormatterInterface
 
     protected function configureOptions(OptionsResolver $resolver)
     {
-
     }
 }

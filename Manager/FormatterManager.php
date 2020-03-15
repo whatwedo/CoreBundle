@@ -30,32 +30,27 @@ namespace whatwedo\CoreBundle\Manager;
 use whatwedo\CoreBundle\Formatter\FormatterInterface;
 
 /**
- * Class FormatterManager
- * @package whatwedo\CoreBundle\Manager
+ * Class FormatterManager.
  */
 class FormatterManager
 {
-
     /**
      * @var FormatterInterface[]
      */
     protected $formatters = [];
 
-    /**
-     * @param FormatterInterface $formatter
-     */
     public function addFormatter(FormatterInterface $formatter)
     {
-        $this->formatters[get_class($formatter)] = $formatter;
+        $this->formatters[\get_class($formatter)] = $formatter;
     }
 
     /**
      * @param $class
+     *
      * @return FormatterInterface
      */
     public function getFormatter($class)
     {
         return $this->formatters[$class];
     }
-
 }
