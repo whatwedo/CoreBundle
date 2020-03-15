@@ -33,9 +33,10 @@ namespace whatwedo\CoreBundle\Formatter;
 class BooleanFormatter extends AbstractFormatter
 {
     /**
-     * returns a string which represents the value
+     * returns a string which represents the value.
      *
      * @param $value
+     *
      * @return string
      */
     public function getString($value)

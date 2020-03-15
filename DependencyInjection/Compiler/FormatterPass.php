@@ -32,15 +32,10 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Reference;
 
 /**
- * Class FormatterPass
- * @package whatwedo\CoreBundle\DependencyInjection\Compiler
+ * Class FormatterPass.
  */
 class FormatterPass implements CompilerPassInterface
 {
-
-    /**
-     * @param ContainerBuilder $container
-     */
     public function process(ContainerBuilder $container)
     {
         if (!$container->has('whatwedo\CoreBundle\Manager\FormatterManager')) {
@@ -54,5 +49,4 @@ class FormatterPass implements CompilerPassInterface
             $formatterManagerDefinition->addMethodCall('addFormatter', [new Reference($id)]);
         }
     }
-
 }

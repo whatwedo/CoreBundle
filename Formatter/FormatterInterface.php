@@ -33,17 +33,19 @@ namespace whatwedo\CoreBundle\Formatter;
 interface FormatterInterface
 {
     /**
-     * returns a string which represents the value
+     * returns a string which represents the value.
      *
      * @param $value
+     *
      * @return string
      */
     public function getString($value);
 
     /**
-     * returns an html formatted string which represents the value
+     * returns an html formatted string which represents the value.
      *
      * @param $value
+     *
      * @return string
      */
     public function getHtml($value);

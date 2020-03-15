@@ -7,15 +7,10 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 use whatwedo\CoreBundle\DependencyInjection\Compiler\FormatterPass;
 
 /**
- * Class whatwedoCoreBundle
- * @package whatwedo\CoreBundle
+ * Class whatwedoCoreBundle.
  */
 class whatwedoCoreBundle extends Bundle
 {
-
-    /**
-     * @param ContainerBuilder $container
-     */
     public function build(ContainerBuilder $container)
     {
         $container->addCompilerPass(new FormatterPass());

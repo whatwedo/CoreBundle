@@ -27,26 +27,24 @@
 
 namespace whatwedo\CoreBundle\Formatter;
 
-use spec\Rector\PhpSpecToPHPUnit\Tests\Rector\Class_\PhpSpecToPHPUnitRector\Fixture\ItIsMeSpec;
-
 /**
  * @author Ueli Banholzer <ueli@whatwedo.ch>
  */
 class CountryAlpha3Formatter extends AbstractFormatter
 {
     /**
-     * returns a string which represents the value
+     * returns a string which represents the value.
      *
      * @param string $value
+     *
      * @return string
      */
     public function getString($value)
     {
-        if (\Symfony\Component\Intl\Countries::alpha3CodeExists(strtoupper($value))) {
-            return \Symfony\Component\Intl\Countries::getAlpha3Name(strtoupper($value));    
+        if (\Symfony\Component\Intl\Countries::alpha3CodeExists(mb_strtoupper($value))) {
+            return \Symfony\Component\Intl\Countries::getAlpha3Name(mb_strtoupper($value));
         }
-        
+
         return $value;
-        
     }
 }

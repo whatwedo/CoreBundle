@@ -28,7 +28,7 @@
 namespace whatwedo\CoreBundle\Formatter;
 
 /**
- * Default formatter
+ * Default formatter.
  *
  * @author Ueli Banholzer <ueli@whatwedo.ch>
  */

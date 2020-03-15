@@ -25,12 +25,10 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-
 namespace whatwedo\CoreBundle\Command\Traits;
 
 /**
- * Class DryRun
- * @package whatwedo\School\CoreBundle\Task\Traits
+ * Class DryRun.
  */
 trait DryRun
 {
@@ -40,7 +38,7 @@ trait DryRun
     protected $dryRun = false;
 
     /**
-     * @return boolean
+     * @return bool
      */
     public function isDryRun()
     {
@@ -48,7 +46,8 @@ trait DryRun
     }
 
     /**
-     * @param boolean $dryRun
+     * @param bool $dryRun
+     *
      * @return DryRun
      */
     public function setDryRun($dryRun = true)
