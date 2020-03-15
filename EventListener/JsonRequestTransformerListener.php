@@ -29,7 +29,6 @@ namespace whatwedo\CoreBundle\EventListener;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 
 /**
  * @author Ueli Banholzer <ueli@whatwedo.ch>
