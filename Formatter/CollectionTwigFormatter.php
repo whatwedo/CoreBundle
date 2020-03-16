@@ -37,7 +37,7 @@ use Twig\Environment;
 class CollectionTwigFormatter extends AbstractFormatter
 {
     /** @var Environment */
-    private $twig;
+    protected $twig;
 
     public function __construct(Environment $twig)
     {
