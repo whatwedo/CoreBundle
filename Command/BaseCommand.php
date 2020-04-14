@@ -60,6 +60,31 @@ abstract class BaseCommand extends Command
     protected $stopwatch;
 
     /**
+     * @return InputInterface
+     */
+    public function getInput()
+    {
+        return $this->input;
+    }
+
+    /**
+     * @return Registry
+     */
+    public function getDoctrine()
+    {
+        if (null === $this->registry) {
+            $this->registry = $this->get('doctrine');
+        }
+
+        return $this->registry;
+    }
+
+    public function getContainer(): ContainerInterface
+    {
+        return $this->container;
+    }
+
+    /**
      * @return int|void|null
      */
     protected function execute(InputInterface $input, OutputInterface $output)
@@ -83,14 +108,6 @@ abstract class BaseCommand extends Command
     }
 
     /**
-     * @return InputInterface
-     */
-    public function getInput()
-    {
-        return $this->input;
-    }
-
-    /**
      * Get service by name.
      *
      * @param $name
@@ -100,23 +117,6 @@ abstract class BaseCommand extends Command
     protected function get($name)
     {
         return $this->getContainer()->get($name);
-    }
-
-    /**
-     * @return Registry
-     */
-    public function getDoctrine()
-    {
-        if (null === $this->registry) {
-            $this->registry = $this->get('doctrine');
-        }
-
-        return $this->registry;
-    }
-
-    public function getContainer(): ContainerInterface
-    {
-        return $this->container;
     }
 
     /**

@@ -27,9 +27,6 @@
 
 namespace whatwedo\CoreBundle\Formatter;
 
-/**
- * @author Ueli Banholzer <ueli@whatwedo.ch>
- */
 class ChfFormatter extends AbstractFormatter
 {
     /**
@@ -44,7 +41,8 @@ class ChfFormatter extends AbstractFormatter
         $number = (float) $value;
         $number = round(($number + 0.000001) * 20) / 20;
 
-        return sprintf('CHF %s',
+        return sprintf(
+            'CHF %s',
             number_format($number, 2, '.', '\'')
         );
     }
@@ -61,7 +59,8 @@ class ChfFormatter extends AbstractFormatter
         $number = (float) $value;
         $number = round(($number + 0.000001) * 20) / 20;
 
-        return sprintf('%s',
+        return sprintf(
+            '%s',
             number_format($number, 2, '.', '\'')
         );
     }

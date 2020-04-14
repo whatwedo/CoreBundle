@@ -27,14 +27,8 @@
 
 namespace whatwedo\CoreBundle\Formatter;
 
-/**
- * @author Ueli Banholzer <ueli@whatwedo.ch>
- */
 class EmailFormatter extends AbstractFormatter
 {
-    /**
-     * {@inheritdoc}
-     */
     public function getString($value)
     {
         if (!filter_var($value, FILTER_VALIDATE_EMAIL)) {
@@ -44,9 +38,6 @@ class EmailFormatter extends AbstractFormatter
         return $value;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getHtml($value)
     {
         if (!filter_var($value, FILTER_VALIDATE_EMAIL)) {
