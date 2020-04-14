@@ -9,13 +9,6 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
  */
 class SimpleEnumFormatter extends AbstractFormatter
 {
-    protected function configureOptions(OptionsResolver $resolver)
-    {
-        $resolver
-            ->setRequired('enum')
-            ->setAllowedTypes('enum', 'string');
-    }
-
     /**
      * returns a string which represents the value.
      *
@@ -26,5 +19,12 @@ class SimpleEnumFormatter extends AbstractFormatter
     public function getString($value)
     {
         return forward_static_call([$this->options['enum'], 'getRepresentation'], $value);
+    }
+
+    protected function configureOptions(OptionsResolver $resolver)
+    {
+        $resolver
+            ->setRequired('enum')
+            ->setAllowedTypes('enum', 'string');
     }
 }

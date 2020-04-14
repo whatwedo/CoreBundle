@@ -29,9 +29,6 @@ namespace whatwedo\CoreBundle\Formatter;
 
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-/**
- * @author Ueli Banholzer <ueli@whatwedo.ch>
- */
 class DateFormatter extends DateTimeFormatter
 {
     protected function configureOptions(OptionsResolver $resolver)

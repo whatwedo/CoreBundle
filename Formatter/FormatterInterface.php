@@ -27,9 +27,6 @@
 
 namespace whatwedo\CoreBundle\Formatter;
 
-/**
- * @author Ueli Banholzer <ueli@whatwedo.ch>
- */
 interface FormatterInterface
 {
     /**

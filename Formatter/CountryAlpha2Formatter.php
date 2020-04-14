@@ -27,9 +27,6 @@
 
 namespace whatwedo\CoreBundle\Formatter;
 
-/**
- * @author Ueli Banholzer <ueli@whatwedo.ch>
- */
 class CountryAlpha2Formatter extends AbstractFormatter
 {
     /**

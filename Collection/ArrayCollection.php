@@ -27,9 +27,6 @@
 
 namespace whatwedo\CoreBundle\Collection;
 
-/**
- * @author Ueli Banholzer <ueli@whatwedo.ch>
- */
 class ArrayCollection extends \Doctrine\Common\Collections\ArrayCollection
 {
     /**

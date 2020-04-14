@@ -29,9 +29,6 @@ namespace whatwedo\CoreBundle\Formatter;
 
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-/**
- * @author Ueli Banholzer <ueli@whatwedo.ch>
- */
 abstract class AbstractFormatter implements FormatterInterface
 {
     /**
@@ -39,9 +36,6 @@ abstract class AbstractFormatter implements FormatterInterface
      */
     protected $options;
 
-    /**
-     * {@inheritdoc}
-     */
     public function getHtml($value)
     {
         return $this->getString($value);

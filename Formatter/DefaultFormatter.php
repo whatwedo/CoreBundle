@@ -29,14 +29,9 @@ namespace whatwedo\CoreBundle\Formatter;
 
 /**
  * Default formatter.
- *
- * @author Ueli Banholzer <ueli@whatwedo.ch>
  */
 class DefaultFormatter extends AbstractFormatter
 {
-    /**
-     * {@inheritdoc}
-     */
     public function getString($value)
     {
         return $value;
