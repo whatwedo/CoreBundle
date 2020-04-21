@@ -36,13 +36,12 @@ class JsonRequestTransformerListener
     public function onKernelRequest(RequestEvent $event)
     {
         $request = $event->getRequest();
-        $content = $request->getContent();
-
-        if (empty($content)) {
+        if (!$this->isJsonRequest($request)) {
             return;
         }
 
-        if (!$this->isJsonRequest($request)) {
+        $content = $request->getContent();
+        if (empty($content)) {
             return;
         }
 
