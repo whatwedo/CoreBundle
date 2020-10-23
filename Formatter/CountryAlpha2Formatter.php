@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright (c) 2017, whatwedo GmbH
+ * Copyright (c) 2016, whatwedo GmbH
  * All rights reserved
  *
  * Redistribution and use in source and binary forms, with or without
@@ -25,32 +25,23 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace whatwedo\CoreBundle\Manager;
+namespace whatwedo\CoreBundle\Formatter;
 
-use whatwedo\CoreBundle\Formatter\FormatterInterface;
-
-/**
- * Class FormatterManager.
- */
-class FormatterManager
+class CountryAlpha2Formatter extends AbstractFormatter
 {
     /**
-     * @var FormatterInterface[]
-     */
-    protected $formatters = [];
-
-    public function addFormatter(FormatterInterface $formatter)
-    {
-        $this->formatters[\get_class($formatter)] = $formatter;
-    }
-
-    /**
-     * @param $class
+     * returns a string which represents the value.
      *
-     * @return FormatterInterface
+     * @param string $value
+     *
+     * @return string
      */
-    public function getFormatter($class)
+    public function getString($value)
     {
-        return $this->formatters[$class];
+        if (\Symfony\Component\Intl\Countries::exists(mb_strtoupper($value))) {
+            return \Symfony\Component\Intl\Countries::getName(mb_strtoupper($value));
+        }
+
+        return $value;
     }
 }

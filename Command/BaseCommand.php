@@ -25,24 +25,24 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-
 namespace whatwedo\CoreBundle\Command;
 
 use Doctrine\Bundle\DoctrineBundle\Registry;
-use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
+use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\DependencyInjection\ContainerAwareTrait;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Stopwatch\Stopwatch;
 use whatwedo\CoreBundle\Command\Traits\ConsoleOutput;
 
 /**
- * Class BaseCommand
- * @package whatwedo\School\CoreBundle\Command
+ * Class BaseCommand.
  */
-abstract class BaseCommand extends ContainerAwareCommand
+abstract class BaseCommand extends Command
 {
     use ConsoleOutput;
+    use ContainerAwareTrait;
 
     /**
      * @var InputInterface
@@ -60,9 +60,32 @@ abstract class BaseCommand extends ContainerAwareCommand
     protected $stopwatch;
 
     /**
-     * @param InputInterface $input
-     * @param OutputInterface $output
-     * @return int|null|void
+     * @return InputInterface
+     */
+    public function getInput()
+    {
+        return $this->input;
+    }
+
+    /**
+     * @return Registry
+     */
+    public function getDoctrine()
+    {
+        if (null === $this->registry) {
+            $this->registry = $this->get('doctrine');
+        }
+
+        return $this->registry;
+    }
+
+    public function getContainer(): ContainerInterface
+    {
+        return $this->container;
+    }
+
+    /**
+     * @return int|void|null
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
@@ -80,22 +103,15 @@ abstract class BaseCommand extends ContainerAwareCommand
         }
 
         // Dump settings
-        $this->debug('Arguments: ' . var_export($input->getArguments(), true));
-        $this->debug('Options: ' . var_export($input->getOptions(), true));
+        $this->debug('Arguments: '.var_export($input->getArguments(), true));
+        $this->debug('Options: '.var_export($input->getOptions(), true));
     }
 
     /**
-     * @return InputInterface
-     */
-    public function getInput()
-    {
-        return $this->input;
-    }
-
-    /**
-     * Get service by name
+     * Get service by name.
      *
      * @param $name
+     *
      * @return object
      */
     protected function get($name)
@@ -104,19 +120,7 @@ abstract class BaseCommand extends ContainerAwareCommand
     }
 
     /**
-     * @return Registry
-     */
-    public function getDoctrine()
-    {
-        if ($this->registry === null) {
-            $this->registry = $this->get('doctrine');
-        }
-
-        return $this->registry;
-    }
-
-    /**
-     * Initialize and start stopwatch
+     * Initialize and start stopwatch.
      */
     private function startStopwatch()
     {
@@ -125,17 +129,14 @@ abstract class BaseCommand extends ContainerAwareCommand
     }
 
     /**
-     * Initialize and start stopwatch
+     * Initialize and start stopwatch.
      */
     private function stopStopwatch()
     {
         $event = $this->stopwatch->stop('command');
-        $this->debug('Finished in ' . $event->getDuration() . 'ms');
+        $this->debug('Finished in '.$event->getDuration().'ms');
     }
 
-    /**
-     *
-     */
     protected function tearDown()
     {
         $this->stopStopwatch();

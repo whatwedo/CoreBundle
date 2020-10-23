@@ -27,12 +27,8 @@
 
 namespace whatwedo\CoreBundle\Formatter;
 
-/**
- * @author Ueli Banholzer <ueli@whatwedo.ch>
- */
 class WysiwygFormatter extends AbstractFormatter
 {
-
     public function getString($value)
     {
         return self::format($value);

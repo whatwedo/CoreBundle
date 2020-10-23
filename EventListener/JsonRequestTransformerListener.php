@@ -29,26 +29,19 @@ namespace whatwedo\CoreBundle\EventListener;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpKernel\Event\GetResponseEvent;
+use Symfony\Component\HttpKernel\Event\RequestEvent;
 
-/**
- * @author Ueli Banholzer <ueli@whatwedo.ch>
- */
 class JsonRequestTransformerListener
 {
-    /**
-     * @param GetResponseEvent $event
-     */
-    public function onKernelRequest(GetResponseEvent $event)
+    public function onKernelRequest(RequestEvent $event)
     {
         $request = $event->getRequest();
-        $content = $request->getContent();
-
-        if (empty($content)) {
+        if (!$this->isJsonRequest($request)) {
             return;
         }
 
-        if (!$this->isJsonRequest($request)) {
+        $content = $request->getContent();
+        if (empty($content)) {
             return;
         }
 
@@ -57,6 +50,7 @@ class JsonRequestTransformerListener
             $event->setResponse($response);
         }
     }
+
     private function isJsonRequest(Request $request)
     {
         return 'json' === $request->getContentType();
@@ -66,11 +60,11 @@ class JsonRequestTransformerListener
     {
         $data = json_decode($request->getContent(), true);
 
-        if (json_last_error() !== JSON_ERROR_NONE) {
+        if (JSON_ERROR_NONE !== json_last_error()) {
             return false;
         }
 
-        if ($data === null) {
+        if (null === $data) {
             return true;
         }
 

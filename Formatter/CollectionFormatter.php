@@ -26,49 +26,53 @@
  */
 
 namespace whatwedo\CoreBundle\Formatter;
+
 use Doctrine\Common\Collections\Collection;
 
 /**
- * Class CollectionFormatter
- * @package whatwedo\CoreBundle\Formattero
+ * Class CollectionFormatter.
  */
 class CollectionFormatter extends AbstractFormatter
 {
     /**
-     * returns a string which represents the value
+     * returns a string which represents the value.
      *
      * @param $value
+     *
      * @return string
      */
     public function getString($value)
     {
-        if (is_array($value)
+        if (\is_array($value)
             || $value instanceof \Iterator) {
             return '';
         }
         if ($value instanceof Collection) {
             $value = $value->toArray();
         }
+
         return implode(',', $value);
     }
 
     /**
      * @param $value
+     *
      * @return string
      */
     public function getHtml($value)
     {
-        if (is_array($value)
+        if (\is_array($value)
             || $value instanceof \Iterator
             || $value instanceof Collection) {
             $str = '<ul>';
             foreach ($value as $entity) {
-                $str .= '<li>' . $entity . '</li>';
+                $str .= '<li>'.$entity.'</li>';
             }
             $str .= '</ul>';
+
             return $str;
-        } else {
-            return '-';
         }
+
+        return '-';
     }
 }

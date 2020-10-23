@@ -25,24 +25,23 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-
 namespace whatwedo\CoreBundle\Formatter;
-
 
 class ArrayFormatter extends AbstractFormatter
 {
-
     /**
-     * returns a string which represents the value
+     * returns a string which represents the value.
      *
      * @param $value
+     *
      * @return string
      */
     public function getString($value)
     {
-        if (!is_array($value)) {
+        if (!\is_array($value)) {
             return '';
         }
+
         return sprintf('[%s]', implode(', ', $value));
     }
 }
