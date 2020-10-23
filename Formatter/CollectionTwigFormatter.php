@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright (c) 2017, whatwedo GmbH
+ * Copyright (c) 2016, whatwedo GmbH
  * All rights reserved
  *
  * Redistribution and use in source and binary forms, with or without
@@ -25,32 +25,68 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace whatwedo\CoreBundle\Manager;
+namespace whatwedo\CoreBundle\Formatter;
 
-use whatwedo\CoreBundle\Formatter\FormatterInterface;
+use Doctrine\Common\Collections\Collection;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Twig\Environment;
 
 /**
- * Class FormatterManager.
+ * Class CollectionFormatter.
  */
-class FormatterManager
+class CollectionTwigFormatter extends AbstractFormatter
 {
-    /**
-     * @var FormatterInterface[]
-     */
-    protected $formatters = [];
+    /** @var Environment */
+    protected $twig;
 
-    public function addFormatter(FormatterInterface $formatter)
+    public function __construct(Environment $twig)
     {
-        $this->formatters[\get_class($formatter)] = $formatter;
+        $this->twig = $twig;
     }
 
     /**
-     * @param $class
+     * returns a string which represents the value.
      *
-     * @return FormatterInterface
+     * @param $value
+     *
+     * @return string
      */
-    public function getFormatter($class)
+    public function getString($value)
     {
-        return $this->formatters[$class];
+        if (\is_array($value)
+            || $value instanceof \Iterator) {
+            return '';
+        }
+        if ($value instanceof Collection) {
+            $value = $value->toArray();
+        }
+
+        return implode(',', $value);
+    }
+
+    /**
+     * @param $value
+     *
+     * @return string
+     */
+    public function getHtml($value)
+    {
+        if (\is_array($value)
+            || $value instanceof \Iterator
+            || $value instanceof Collection) {
+            return $this->twig->render(
+                $this->options['template'],
+                [
+                    'list' => $value,
+                ]
+            );
+        }
+
+        return '-';
+    }
+
+    protected function configureOptions(OptionsResolver $resolver)
+    {
+        $resolver->setRequired('template');
     }
 }

@@ -30,13 +30,12 @@ namespace whatwedo\CoreBundle\Formatter;
 use whatwedo\CoreBundle\Enum\AbstractSimpleEnum;
 
 /**
- * Class SimpleEnumFormatter
- * @package whatwedo\CoreBundle\Formatter
+ * Class SimpleEnumFormatter.
  */
 abstract class AbstractSimpleEnumFormatter extends AbstractFormatter
 {
     /**
-     * Returns fully qualified enum class name
+     * Returns fully qualified enum class name.
      *
      * @return string
      */
@@ -46,9 +45,10 @@ abstract class AbstractSimpleEnumFormatter extends AbstractFormatter
     }
 
     /**
-     * returns a string which represents the value
+     * returns a string which represents the value.
      *
      * @param $value
+     *
      * @return string
      */
     public function getString($value)

@@ -27,9 +27,6 @@
 
 namespace whatwedo\CoreBundle\Collection;
 
-/**
- * @author Ueli Banholzer <ueli@whatwedo.ch>
- */
 class ArrayCollection extends \Doctrine\Common\Collections\ArrayCollection
 {
     /**
@@ -37,8 +34,7 @@ class ArrayCollection extends \Doctrine\Common\Collections\ArrayCollection
      */
     public function addAll($elements)
     {
-        foreach ($elements as $element)
-        {
+        foreach ($elements as $element) {
             $this->add($element);
         }
     }

@@ -25,19 +25,17 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-
 namespace whatwedo\CoreBundle\Command\Traits;
 
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
- * Class ConsoleOutput
- * @package whatwedo\School\CoreBundle\Command\Traits
+ * Class ConsoleOutput.
  */
 trait ConsoleOutput
 {
     /**
-     * @var boolean
+     * @var bool
      */
     protected $verbose = false;
 
@@ -48,6 +46,7 @@ trait ConsoleOutput
 
     /**
      * @param OutputInterface $output
+     *
      * @return ConsoleOutput
      */
     public function setOutput($output)
@@ -71,7 +70,7 @@ trait ConsoleOutput
     public function log($message)
     {
         if ($this->isVerbose()) {
-            $message = date('[H:i:s] ') . $message;
+            $message = date('[H:i:s] ').$message;
         }
         $this->getOutput()->writeln($message);
     }
@@ -87,7 +86,7 @@ trait ConsoleOutput
     }
 
     /**
-     * @return boolean
+     * @return bool
      */
     public function isVerbose()
     {
@@ -95,7 +94,8 @@ trait ConsoleOutput
     }
 
     /**
-     * @param boolean $verbose
+     * @param bool $verbose
+     *
      * @return ConsoleOutput
      */
     public function setVerbose($verbose)
