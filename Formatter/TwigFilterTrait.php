@@ -18,13 +18,17 @@ trait TwigFilterTrait
     public function getFilters()
     {
         return [
-            new TwigFilter($this->getFilterName(), [ $this, 'applyFilter']),
+            new TwigFilter($this->getFilterName(), fn ($data, array $options = []) => $this->applyFormatter($data, $options))
         ];
     }
 
-    public function applyFilter($value, array $options = []) {
+    private function applyFormatter($data, array $options = []) {
+        if (!$this instanceof FormatterInterface) {
+            throw new \Exception('TwigFilterTrait can only used on FormatterInterface classes');
+        }
+
         $this->processOptions($options);
-        return new Markup($this->getHtml($value), 'UTF-8');
+        return new Markup($this->getHtml($data), 'UTF-8');
     }
 
     private function camel_to_snake($input)
