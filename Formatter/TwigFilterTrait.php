@@ -7,6 +7,9 @@ use Twig\TwigFilter;
 
 trait TwigFilterTrait
 {
+    abstract public function getHtml($data);
+    abstract public function processOptions(?array $options);
+
     protected function getFilterName(): string
     {
         $arr = explode('\\', self::class);
@@ -23,10 +26,6 @@ trait TwigFilterTrait
     }
 
     private function applyFormatter($data, array $options = []) {
-        if (!$this instanceof FormatterInterface) {
-            throw new \Exception('TwigFilterTrait can only used on FormatterInterface classes');
-        }
-
         $this->processOptions($options);
         return new Markup($this->getHtml($data), 'UTF-8');
     }
