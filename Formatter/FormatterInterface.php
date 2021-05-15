@@ -29,23 +29,9 @@ namespace whatwedo\CoreBundle\Formatter;
 
 interface FormatterInterface
 {
-    /**
-     * returns a string which represents the value.
-     *
-     * @param $value
-     *
-     * @return string
-     */
-    public function getString($value);
+    public function getString($value): string;
 
-    /**
-     * returns an html formatted string which represents the value.
-     *
-     * @param $value
-     *
-     * @return string
-     */
-    public function getHtml($value);
+    public function getHtml($value): string;
 
     public function processOptions(?array $options);
 }

@@ -34,7 +34,7 @@ class InfoFormatter extends AbstractFormatter
         return $value;
     }
 
-    public function getHtml($value)
+    public function getHtml($value): string
     {
         if (!$value) {
             return '';

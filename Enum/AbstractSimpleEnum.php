@@ -32,53 +32,25 @@ namespace whatwedo\CoreBundle\Enum;
  */
 abstract class AbstractSimpleEnum
 {
-    protected static $values = [];
+    protected static array $values = [];
 
-    /**
-     * @return array
-     */
-    public static function getArray()
+    public static function toArray(): array
     {
         return static::$values;
     }
 
-    /**
-     * @return array
-     */
-    public static function getValues()
+    public static function getKeys(): array
     {
         return array_keys(static::$values);
     }
 
-    /**
-     * @param $value
-     *
-     * @return bool
-     */
-    public static function has($value)
+    public static function has($value): bool
     {
         return isset(static::$values[$value]);
     }
 
-    /**
-     * @param $value
-     *
-     * @return mixed|null
-     */
-    public static function getRepresentation($value)
+    public static function getRepresentation($value): ?string
     {
-        if (isset(static::$values[$value])) {
-            return static::$values[$value];
-        }
-
-        return null;
-    }
-
-    /**
-     * @return array
-     */
-    public static function getFormValues()
-    {
-        return array_flip(static::$values);
+        return static::$values[$value] ?? null;
     }
 }

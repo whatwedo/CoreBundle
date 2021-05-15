@@ -27,32 +27,21 @@
 
 namespace whatwedo\CoreBundle\Formatter;
 
-use whatwedo\CoreBundle\Enum\AbstractSimpleEnum;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
-/**
- * Class SimpleEnumFormatter.
- */
 abstract class AbstractSimpleEnumFormatter extends AbstractFormatter
 {
-    /**
-     * Returns fully qualified enum class name.
-     *
-     * @return string
-     */
-    public static function getEnum()
+    private TranslatorInterface $translator;
+
+    public function __construct(TranslatorInterface $translator)
     {
-        return AbstractSimpleEnum::class;
+        $this->translator = $translator;
     }
 
-    /**
-     * returns a string which represents the value.
-     *
-     * @param $value
-     *
-     * @return string
-     */
-    public function getString($value)
+    abstract public static function getEnum(): string;
+
+    public function getString($value): string
     {
-        return forward_static_call([static::getEnum(), 'getRepresentation'], $value);
+        return $this->translator->trans(call_user_func([static::getEnum(), 'getRepresentation'], $value));
     }
 }

@@ -34,7 +34,7 @@ class Nl2brFormatter extends AbstractFormatter
         return $value;
     }
 
-    public function getHtml($value)
+    public function getHtml($value): string
     {
         return nl2br($value);
     }

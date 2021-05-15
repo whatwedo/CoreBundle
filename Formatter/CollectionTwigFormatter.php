@@ -69,7 +69,7 @@ class CollectionTwigFormatter extends AbstractFormatter
      *
      * @return string
      */
-    public function getHtml($value)
+    public function getHtml($value): string
     {
         if (\is_array($value)
             || $value instanceof \Iterator

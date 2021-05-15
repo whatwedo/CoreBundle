@@ -38,7 +38,7 @@ class EmailFormatter extends AbstractFormatter
         return $value;
     }
 
-    public function getHtml($value)
+    public function getHtml($value): string
     {
         if (!filter_var($value, FILTER_VALIDATE_EMAIL)) {
             return '';

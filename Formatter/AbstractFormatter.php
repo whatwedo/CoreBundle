@@ -31,17 +31,14 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 abstract class AbstractFormatter implements FormatterInterface
 {
-    /**
-     * @var array|null
-     */
-    protected $options;
+    protected array $options = [];
 
-    public function getHtml($value)
+    public function getHtml($value): string
     {
         return $this->getString($value);
     }
 
-    public function processOptions(?array $options)
+    public function processOptions(?array $options): void
     {
         $resolver = new OptionsResolver();
         $this->configureOptions($resolver);
@@ -49,7 +46,5 @@ abstract class AbstractFormatter implements FormatterInterface
         $this->options = $resolver->resolve($options);
     }
 
-    protected function configureOptions(OptionsResolver $resolver)
-    {
-    }
+    protected function configureOptions(OptionsResolver $resolver): void { }
 }

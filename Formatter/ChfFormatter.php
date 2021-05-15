@@ -65,7 +65,7 @@ class ChfFormatter extends AbstractFormatter
         );
     }
 
-    public function getHtml($value)
+    public function getHtml($value): string
     {
         if ($value < 0) {
             return '<nobr><span class="text-danger">'.$this->getString($value).'</span></nobr>';
