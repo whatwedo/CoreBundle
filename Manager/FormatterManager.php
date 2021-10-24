@@ -1,4 +1,6 @@
 <?php
+
+declare(strict_types=1);
 /*
  * Copyright (c) 2017, whatwedo GmbH
  * All rights reserved
@@ -29,27 +31,21 @@ namespace whatwedo\CoreBundle\Manager;
 
 use whatwedo\CoreBundle\Formatter\FormatterInterface;
 
-/**
- * Class FormatterManager.
- */
 class FormatterManager
 {
     /**
      * @var FormatterInterface[]
      */
-    protected $formatters = [];
+    protected array $formatters = [];
 
-    public function addFormatter(FormatterInterface $formatter)
+    public function __construct(iterable $formatters)
     {
-        $this->formatters[\get_class($formatter)] = $formatter;
+        foreach ($formatters as $formatter) {
+            $this->formatters[$formatter::class] = $formatter;
+        }
     }
 
-    /**
-     * @param $class
-     *
-     * @return FormatterInterface
-     */
-    public function getFormatter($class)
+    public function getFormatter($class): FormatterInterface
     {
         return $this->formatters[$class];
     }

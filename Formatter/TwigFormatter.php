@@ -1,6 +1,8 @@
 <?php
+
+declare(strict_types=1);
 /*
- * Copyright (c) 2016, whatwedo GmbH
+ * Copyright (c) 2021, whatwedo GmbH
  * All rights reserved
  *
  * Redistribution and use in source and binary forms, with or without
@@ -27,50 +29,31 @@
 
 namespace whatwedo\CoreBundle\Formatter;
 
-class ChfFormatter extends AbstractFormatter
-{
-    /**
-     * returns a string which represents the value.
-     *
-     * @param $value
-     *
-     * @return string
-     */
-    public function getString($value)
-    {
-        $number = (float) $value;
-        $number = round(($number + 0.000001) * 20) / 20;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Twig\Environment;
 
-        return sprintf(
-            'CHF %s',
-            number_format($number, 2, '.', '\'')
-        );
+class TwigFormatter extends AbstractFormatter
+{
+    public function __construct(
+        protected Environment $twig
+    ) {
     }
 
-    /**
-     * returns a string which represents the value.
-     *
-     * @param $value
-     *
-     * @return string
-     */
-    public function getStringWithoutChf($value)
+    public function getString($value): string
     {
-        $number = (float) $value;
-        $number = round(($number + 0.000001) * 20) / 20;
-
-        return sprintf(
-            '%s',
-            number_format($number, 2, '.', '\'')
-        );
+        return $value;
     }
 
     public function getHtml($value): string
     {
-        if ($value < 0) {
-            return '<nobr><span class="text-danger">'.$this->getString($value).'</span></nobr>';
-        }
+        return $this->twig->render($this->options['template'], [
+            'value' => $value,
+        ]);
+    }
 
-        return '<nobr>'.$this->getString($value).'</nobr>';
+    protected function configureOptions(OptionsResolver $resolver): void
+    {
+        $resolver->setRequired('template');
+        $resolver->setAllowedValues('template', ['string']);
     }
 }

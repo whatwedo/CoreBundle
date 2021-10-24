@@ -7,6 +7,6 @@ services:
     whatwedo\CoreBundle\:
         resource: '../../*'
 
-    whatwedo\CoreBundle\EventListener\JsonRequestTransformerListener:
-        tags:
-          - { name: kernel.event_listener, event: kernel.request, priority: 100 }
+    whatwedo\CoreBundle\Manager\FormatterManager:
+        arguments:
+            - !tagged_iterator 'whatwedo_core.formatter'

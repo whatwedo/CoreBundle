@@ -1,0 +1,17 @@
+{
+    "name": "@whatwedo/core-bundle",
+    "version": "1.0.0",
+    "symfony": {
+        "controllers": {
+            "dropdown": {
+                "main": "controllers/dropdown_controller.js",
+                "webpackMode": "eager",
+                "fetch": "eager",
+                "enabled": true
+            }
+        }
+    },
+    "peerDependencies": {
+        "stimulus": "^2.0.0"
+    }
+}

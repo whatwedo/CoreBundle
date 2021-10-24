@@ -1,4 +1,6 @@
 <?php
+
+declare(strict_types=1);
 /*
  * Copyright (c) 2015, whatwedo GmbH
  * All rights reserved
@@ -29,27 +31,15 @@ namespace whatwedo\CoreBundle\Formatter;
 
 class WysiwygFormatter extends AbstractFormatter
 {
-    public function getString($value)
+    public function getString($value): string
     {
-        return self::format($value);
+        return trim(strip_tags($value));
     }
 
-    /**
-     * @param string $html
-     *
-     * @return string
-     */
-    public static function format($html)
+    public function getHtml($value): string
     {
-        $html = trim(strip_tags($html, '<p><b><strong><ul><li><i><u><a><br><small>'));
+        $value = trim(strip_tags($value, '<p><b><strong><ul><li><i><u><a><br><small>'));
 
-        if (!$html) {
-            return '';
-        }
-
-        return sprintf(
-            '<blockquote class="text-sm">%s</blockquote>',
-            $html
-        );
+        return $value ? sprintf('<blockquote>%s</blockquote>', $value) : '';
     }
 }

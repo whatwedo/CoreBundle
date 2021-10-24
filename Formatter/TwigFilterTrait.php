@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace whatwedo\CoreBundle\Formatter;
 
 use Twig\Markup;
@@ -8,39 +10,14 @@ use Twig\TwigFilter;
 trait TwigFilterTrait
 {
     abstract public function getHtml($data);
+
     abstract public function processOptions(?array $options);
-
-    protected function getFilterName(): string
-    {
-        $arr = explode('\\', self::class);
-        $filterName = array_pop($arr);
-
-        return $this->camel_to_snake($filterName);
-    }
 
     public function getFilters()
     {
         return [
-            new TwigFilter($this->getFilterName(), fn ($data, array $options = []) => $this->applyFormatter($data, $options))
+            new TwigFilter($this->getFilterName(), fn ($data, array $options = []) => $this->applyFormatter($data, $options)),
         ];
-    }
-
-    private function applyFormatter($data, array $options = []) {
-        $this->processOptions($options);
-        return new Markup($this->getHtml($data), 'UTF-8');
-    }
-
-    private function camel_to_snake($input)
-    {
-        if (0 === preg_match('/[A-Z]/', $input)) {
-            return $input;
-        }
-        $pattern = '/([a-z])([A-Z])/';
-        $r = strtolower(preg_replace_callback($pattern, function ($a) {
-            return $a[1].'_'.strtolower($a[2]);
-        }, $input));
-
-        return $r;
     }
 
     public function getTokenParsers()
@@ -66,5 +43,30 @@ trait TwigFilterTrait
     public function getOperators()
     {
         return [];
+    }
+
+    protected function getFilterName(): string
+    {
+        $arr = explode('\\', self::class);
+        $filterName = array_pop($arr);
+
+        return $this->camel_to_snake($filterName);
+    }
+
+    private function applyFormatter($data, array $options = []): \Twig\Markup
+    {
+        $this->processOptions($options);
+
+        return new Markup($this->getHtml($data), 'UTF-8');
+    }
+
+    private function camel_to_snake($input)
+    {
+        if (0 === preg_match('#[A-Z]#', $input)) {
+            return $input;
+        }
+        $pattern = '/([a-z])([A-Z])/';
+
+        return strtolower(preg_replace_callback($pattern, fn ($a) => $a[1].'_'.strtolower($a[2]), $input));
     }
 }

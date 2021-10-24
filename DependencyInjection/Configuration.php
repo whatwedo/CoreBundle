@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace whatwedo\CoreBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
@@ -12,10 +14,8 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
  */
 class Configuration implements ConfigurationInterface
 {
-    public function getConfigTreeBuilder()
+    public function getConfigTreeBuilder(): \Symfony\Component\Config\Definition\Builder\TreeBuilder
     {
-        $treeBuilder = new TreeBuilder('whatwedo_core');
-
-        return $treeBuilder;
+        return new TreeBuilder('whatwedo_core');
     }
 }
