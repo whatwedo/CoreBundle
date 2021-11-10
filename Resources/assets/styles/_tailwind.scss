@@ -1,0 +1,8 @@
+.whatwedo_core-search {
+    @apply bg-white focus:ring-primary focus:border-primary block w-full rounded-md sm:text-sm border-neutral-300;
+}
+
+.whatwedo_core-search--rounded-left {
+    @extend .whatwedo_core-search;
+    @apply rounded-none rounded-l-md;
+}
