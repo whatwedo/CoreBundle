@@ -36,4 +36,9 @@ class DefaultFormatter extends AbstractFormatter
     {
         return $value;
     }
+
+    public function getHtml($value)
+    {
+        return htmlspecialchars($value);
+    }
 }
