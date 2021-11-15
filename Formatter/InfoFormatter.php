@@ -42,7 +42,7 @@ class InfoFormatter extends AbstractFormatter
 
         return sprintf(
             '<span title="%s" data-toggle="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i></a>',
-            $value
+            addslashes($value)
         );
     }
 }

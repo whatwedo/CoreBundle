@@ -49,7 +49,7 @@ class WysiwygFormatter extends AbstractFormatter
 
         return sprintf(
             '<blockquote class="text-sm">%s</blockquote>',
-            $html
+            htmlspecialchars($html)
         );
     }
 }
