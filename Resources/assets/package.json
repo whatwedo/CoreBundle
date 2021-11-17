@@ -3,8 +3,8 @@
     "version": "1.0.0",
     "symfony": {
         "controllers": {
-            "dropdown": {
-                "main": "controllers/dropdown_controller.js",
+            "select": {
+                "main": "controllers/select_controller.js",
                 "webpackMode": "eager",
                 "fetch": "eager",
                 "enabled": true
