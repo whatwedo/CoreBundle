@@ -1,5 +1,6 @@
 import { Controller } from 'stimulus';
 import flatpickr from "flatpickr";
+import { German } from "flatpickr/dist/l10n/de.js"
 require("flatpickr/dist/flatpickr.css");
 
 export default class extends Controller {
@@ -9,6 +10,7 @@ export default class extends Controller {
         flatpickr(this.element, {
             enableTime: type === 'time' || type === 'datetime-local',
             noCalendar: type === 'time',
+            "locale": German
         });
     }
 }
