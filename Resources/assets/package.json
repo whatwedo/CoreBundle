@@ -8,6 +8,12 @@
                 "webpackMode": "eager",
                 "fetch": "eager",
                 "enabled": true
+            },
+            "datetime": {
+                "main": "controllers/datetime_controller.js",
+                "webpackMode": "eager",
+                "fetch": "eager",
+                "enabled": true
             }
         }
     },
