@@ -1,9 +1,9 @@
-.whatwedo_core-search {
+.whatwedo_core-input {
     @apply bg-white focus:ring-primary focus:border-primary block w-full rounded-md sm:text-sm border-neutral-300;
 }
 
-.whatwedo_core-search--rounded-left {
-    @extend .whatwedo_core-search;
+.whatwedo_core-input--rounded-left {
+    @extend .whatwedo_core-input;
     @apply rounded-none rounded-l-md;
 }
 
