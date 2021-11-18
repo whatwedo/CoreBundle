@@ -8,9 +8,9 @@ export default class extends Controller {
         const type = this.element.getAttribute('type');
 
         flatpickr(this.element, {
-            enableTime: type === 'time' || type === 'datetime-local',
-            noCalendar: type === 'time',
-            "locale": German
+            'enableTime': type === 'time' || type === 'datetime-local',
+            'noCalendar': type === 'time',
+            'locale': German
         });
     }
 }
