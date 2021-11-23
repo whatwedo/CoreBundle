@@ -1,5 +1,6 @@
 .whatwedo_core-input {
     @apply bg-white focus:ring-primary focus:border-primary block w-full rounded-md sm:text-sm border-neutral-300;
+    min-height: 2.2rem;
 }
 
 .whatwedo_core-input--rounded-left {
@@ -9,7 +10,7 @@
 
 /* TomSelect */
 .ts-control {
-    @apply border-neutral-300 focus-within:outline-none outline-none focus-within:ring-primary focus-within:border-primary focus-within:ring-1 rounded-lg gap-2
+    @apply border-neutral-300 focus-within:outline-none outline-none focus-within:ring-primary focus-within:border-primary focus-within:ring-1 rounded-lg gap-2;
 }
 
 .ts-wrapper {
@@ -18,29 +19,29 @@
 }
 
 .ts-wrapper.plugin-remove_button .item {
-    @apply rounded-md
+    @apply rounded-md;
 }
 .ts-wrapper.multi .ts-control > div {
-    @apply inline-flex items-center px-1.5 py-0 m-0 rounded text-xs font-medium bg-primary text-white
+    @apply inline-flex items-center px-1.5 py-0 m-0 rounded text-xs font-medium bg-primary text-white;
 }
 
 .ts-wrapper.plugin-remove_button .item .remove {
-    @apply border-none text-lg leading-none py-1 rounded-r-lg
+    @apply border-none text-lg leading-none py-1 rounded-r-lg;
 }
 
 .ts-dropdown {
-    @apply rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none
+    @apply rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none;
 }
 
 .ts-dropdown [data-selectable].option:first-child {
-    @apply rounded-t-md
+    @apply rounded-t-md;
 }
 
 .ts-dropdown [data-selectable].option:last-child {
-    @apply rounded-b-md
+    @apply rounded-b-md;
 }
 .ts-dropdown .create:hover, .ts-dropdown .option:hover, .ts-dropdown .active {
-    @apply bg-neutral-100 text-neutral-900 rounded-t-md
+    @apply bg-neutral-100 text-neutral-900 rounded-t-md;
 }
 
 input[type="select-one"] {
