@@ -1,4 +1,4 @@
-import { Controller } from 'stimulus';
+import { Controller } from '@hotwired/stimulus';
 import TomSelect from 'tom-select';
 import 'tom-select/dist/css/tom-select.css';
 

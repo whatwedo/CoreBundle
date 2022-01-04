@@ -1,4 +1,4 @@
-import { Controller } from 'stimulus';
+import { Controller } from '@hotwired/stimulus';
 import flatpickr from "flatpickr";
 import { German } from "flatpickr/dist/l10n/de.js"
 require("flatpickr/dist/flatpickr.css");
