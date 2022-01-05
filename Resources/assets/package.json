@@ -20,6 +20,18 @@
                 "webpackMode": "eager",
                 "fetch": "eager",
                 "enabled": true
+            },
+            "modal-form": {
+                "main": "controllers/modal-form_controller.js",
+                "webpackMode": "eager",
+                "fetch": "eager",
+                "enabled": true
+            },
+            "reload-content": {
+                "main": "controllers/reload-content_controller.js",
+                "webpackMode": "eager",
+                "fetch": "eager",
+                "enabled": true
             }
         }
     },
@@ -27,6 +39,7 @@
         "@hotwired/stimulus": "^3.0.0"
     },
     "devDependencies": {
-        "@hotwired/stimulus": "^3.0.0"
+        "@hotwired/stimulus": "^3.0.0",
+        "tailwindcss-stimulus-components": "^3.0.1"
     }
 }
