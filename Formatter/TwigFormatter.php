@@ -54,6 +54,6 @@ class TwigFormatter extends AbstractFormatter
     protected function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setRequired('template');
-        $resolver->setAllowedValues('template', ['string']);
+        $resolver->setAllowedTypes('template', 'string');
     }
 }
