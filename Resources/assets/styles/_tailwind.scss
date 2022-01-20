@@ -12,6 +12,19 @@
     @apply inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-primary hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary sm:ml-3 transition-colors;
 }
 
+.whatwedo-crud-button--action-danger {
+    @apply inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary sm:ml-3 transition-colors;
+}
+
+.whatwedo-crud-button--action-warming {
+    @apply inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-yellow-600 hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary sm:ml-3 transition-colors;
+}
+
+
+.whatwedo-crud-button--action-no-bg {
+    @apply inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary sm:ml-3 transition-colors;
+}
+
 /* TomSelect */
 .ts-control {
     @apply border-neutral-300 focus-within:outline-none outline-none focus-within:ring-primary focus-within:border-primary focus-within:ring-1 rounded-lg gap-2;
