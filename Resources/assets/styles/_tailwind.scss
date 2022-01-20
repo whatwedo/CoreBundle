@@ -16,9 +16,19 @@
     @apply inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary sm:ml-3 transition-colors;
 }
 
-.whatwedo-crud-button--action-warming {
+.whatwedo-crud-button--action-warning {
     @apply inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-yellow-600 hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary sm:ml-3 transition-colors;
 }
+
+.whatwedo-crud-button--action-neutral {
+    @apply inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-black bg-neutral-200 hover:bg-neutral-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary sm:ml-3 transition-colors;
+}
+
+
+.whatwedo-crud-button--action-delete {
+    @apply inline-flex items-center px-3 py-2 border border-transparent shadow-sm text-sm leading-4 font-medium rounded-md text-white bg-error-600 hover:bg-error-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-error-500;
+}
+
 
 
 .whatwedo-crud-button--action-no-bg {
