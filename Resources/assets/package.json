@@ -37,7 +37,7 @@
     },
     "peerDependencies": {
         "@hotwired/stimulus": "^3.0.0",
-        "flatpickr": "flatpickr/flatpickr"
+        "@flatpickr/flatpickr": "^6.4.9"
     },
     "devDependencies": {
         "@hotwired/stimulus": "^3.0.0",
