@@ -36,11 +36,13 @@
         }
     },
     "peerDependencies": {
-        "@hotwired/stimulus": "^3.0.0",
-        "@flatpickr/flatpickr": "^6.4.9"
+        "@hotwired/stimulus": "^3.0.0"
     },
     "devDependencies": {
         "@hotwired/stimulus": "^3.0.0",
         "tailwindcss-stimulus-components": "^3.0.1"
+    },
+    "dependencies": {
+        "flatpickr": "^4.6.9"
     }
 }
