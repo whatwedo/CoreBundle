@@ -22,11 +22,26 @@
         "symfony/framework-bundle":  "~5.3|~6.0",
         "symfony/http-kernel":       "~5.3|~6.0",
         "symfony/intl" :             "~5.3|~6.0",
-        "symfony/options-resolver" : "~5.3|~6.0"
+        "symfony/options-resolver" : "~5.3|~6.0",
+        "whatwedo/twig-bootstrap-icons": "^1.0.0"
     },
     "autoload": {
         "psr-4": {
             "whatwedo\\CoreBundle\\": ""
         }
-    }
+    },
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "twbs/icons",
+                "version": "1.4.1",
+                "source": {
+                    "url": "https://github.com/twbs/icons",
+                    "type": "git",
+                    "reference": "tags/v1.4.1"
+                }
+            }
+        }
+    ]
 }
