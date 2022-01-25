@@ -32,9 +32,9 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 abstract class AbstractFormatter implements FormatterInterface
 {
     /**
-     * @var array|null
+     * @var array
      */
-    protected $options;
+    protected $options = [];
 
     public function getHtml($value)
     {
