@@ -16,11 +16,11 @@ class MoneyFormatter extends AbstractFormatter
     {
         $value /= $this->options['divisor'];
         if ($this->options['round_five_centimes']) {
-            $value = bcdiv(bcmul($value, 20), 20);
+            $value = bcdiv((string)bcmul((string)$value, '20'), '20');
         }
 
         $str = number_format(
-            $value,
+            (float)$value,
             $this->options['decimals'],
             $this->options['decimal_separator'],
             $this->options['thousands_separator']
