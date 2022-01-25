@@ -14,6 +14,7 @@ class MoneyFormatter extends AbstractFormatter
 {
     public function getString($value): string
     {
+        $value /= $this->options['divisor'];
         if ($this->options['round_five_centimes']) {
             $value = bcdiv(bcmul($value, 20), 20);
         }
@@ -39,6 +40,7 @@ class MoneyFormatter extends AbstractFormatter
             'currency_position' => 'start',
             'decimals' => 2,
             'decimal_separator' => '.',
+            'divisor' => 1,
             'thousands_separator' => "'",
         ]);
         $resolver->setAllowedValues('currency_position', ['start', 'end']);
