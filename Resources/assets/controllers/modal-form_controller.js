@@ -8,7 +8,6 @@ export default class extends Dropdown {
     }
 
     connect() {
-        console.log('modal-form');
         super.connect()
         useDispatch(this, {debug: true, eventPrefix: false});
     }
@@ -23,10 +22,6 @@ export default class extends Dropdown {
 
     async submitForm(event) {
         event.preventDefault();
-
-        console.log('submitForm');
-
-
         let form = this.modalBodyTarget.getElementsByTagName("form")[0];
         var formData = new FormData(form);
         try {
@@ -34,23 +29,21 @@ export default class extends Dropdown {
                 method: form.method,
                 body: formData
             })
-                .then(response => {
+                .then(async response => {
                     if (response.status == 200) {
                         this.dispatch('success', {
                             result: response,
                         });
                         super.toggle(event)
-
-                        console.log('close');
                         this.modalBodyTarget.innerHTML = '';
-
                     } else if (response.status == 422) {
                         this.dispatch('submitted:validation', {
                             result: response,
                         });
-                        this.modalBodyTarget.innerHTML = response.text()
+                        this.modalBodyTarget.innerHTML = await response.text()
                     }
-                });
+                })
+            ;
 
         } catch (e) {
             this.modalBodyTarget.innerHTML = 'woops!!';
