@@ -13,5 +13,5 @@ interface FormatterInterface
 
     public function getHtml($value): string;
 
-    public function processOptions(?array $options);
+    public function processOptions(array $options = []);
 }

@@ -10,12 +10,17 @@ abstract class AbstractFormatter implements FormatterInterface
 {
     protected array $options = [];
 
+    public function __construct()
+    {
+        $this->processOptions();
+    }
+
     public function getHtml($value): string
     {
         return $this->getString($value);
     }
 
-    public function processOptions(?array $options): void
+    public function processOptions(array $options = []): void
     {
         $resolver = new OptionsResolver();
         $this->configureOptions($resolver);
