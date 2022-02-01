@@ -16,8 +16,6 @@ export default class extends Controller {
         };
         if (this.requiredValue === false) {
             settings.allowEmptyOption = true;
-            settings.plugins.push('clear_button');
-            settings.placeholder = '---';
         }
         if (urlValue !== '') {
             settings.sortField = {
