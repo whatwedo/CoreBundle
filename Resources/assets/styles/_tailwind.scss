@@ -84,3 +84,17 @@ input[type="select-one"] {
     padding-right: 2rem;
     cursor: pointer;
 }
+
+// render empty tomcat '---'
+.ts-wrapper {
+    .ts-dropdown-content {
+        div[data-value=""].option:after {
+            content: '---';
+        }
+    }
+    .ts-control {
+        div[data-value=""].item:after {
+            content: '---';
+        }
+    }
+}
