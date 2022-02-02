@@ -11,8 +11,7 @@ export default class extends Controller {
     connect() {
         const urlValue = this.urlValue;
         const settings = {
-            plugins: [],
-            persist: false,
+            maxOptions: 10000
         };
         if (this.requiredValue === false) {
             settings.allowEmptyOption = true;
