@@ -8,6 +8,6 @@ class DefaultFormatter extends AbstractFormatter
 {
     public function getString($value): string
     {
-        return (string)$value;
+        return (string) $value;
     }
 }

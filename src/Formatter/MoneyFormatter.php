@@ -16,21 +16,21 @@ class MoneyFormatter extends AbstractFormatter
     {
         $value /= $this->options['divisor'];
         if ($this->options['round_five_centimes']) {
-            $value = bcdiv((string)bcmul((string)$value, '20', 2), '20', 2);
+            $value = bcdiv((string) bcmul((string) $value, '20', 2), '20', 2);
         }
 
         $str = number_format(
-            (float)$value,
+            (float) $value,
             $this->options['decimals'],
             $this->options['decimal_separator'],
             $this->options['thousands_separator']
         );
 
-        if ('start' === $this->options['currency_position']) {
-            return $this->options['currency'].' '.$str;
+        if ($this->options['currency_position'] === 'start') {
+            return $this->options['currency'] . ' ' . $str;
         }
 
-        return $str.' '.$this->options['currency'];
+        return $str . ' ' . $this->options['currency'];
     }
 
     protected function configureOptions(OptionsResolver $resolver): void
@@ -44,6 +44,6 @@ class MoneyFormatter extends AbstractFormatter
             'thousands_separator' => "'",
         ]);
         $resolver->setAllowedValues('currency_position', ['start', 'end']);
-        $resolver->setDefault('round_five_centimes', fn (Options $options) => 'CHF' === $options['currency']);
+        $resolver->setDefault('round_five_centimes', fn (Options $options) => $options['currency'] === 'CHF');
     }
 }

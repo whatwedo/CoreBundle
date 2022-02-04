@@ -1,4 +1,6 @@
 <?php
+
+declare(strict_types=1);
 /*
  * Copyright (c) 2022, whatwedo GmbH
  * All rights reserved
@@ -34,7 +36,6 @@ use Symfony\Component\Form\FormView;
 
 class ChoiceTypeExtension extends AbstractTypeExtension
 {
-
     public function finishView(FormView $view, FormInterface $form, array $options)
     {
         $view->vars['attr']['data-controller'] = 'whatwedo--core-bundle--select';
@@ -47,5 +48,4 @@ class ChoiceTypeExtension extends AbstractTypeExtension
             ChoiceType::class,
         ];
     }
-
 }

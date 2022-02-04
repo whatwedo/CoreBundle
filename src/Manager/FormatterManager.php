@@ -29,6 +29,7 @@ declare(strict_types=1);
 
 namespace whatwedo\CoreBundle\Manager;
 
+use Symfony\Component\DependencyInjection\Attribute\TaggedIterator;
 use whatwedo\CoreBundle\Formatter\FormatterInterface;
 
 class FormatterManager
@@ -38,8 +39,9 @@ class FormatterManager
      */
     protected array $formatters = [];
 
-    public function __construct(iterable $formatters)
-    {
+    public function __construct(
+        #[TaggedIterator('whatwedo_core.formatter')] iterable $formatters
+    ) {
         foreach ($formatters as $formatter) {
             $this->formatters[$formatter::class] = $formatter;
         }

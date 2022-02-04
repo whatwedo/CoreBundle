@@ -23,11 +23,22 @@
         "symfony/http-kernel":       "~5.3|~6.0",
         "symfony/intl" :             "~5.3|~6.0",
         "symfony/options-resolver" : "~5.3|~6.0",
-        "whatwedo/twig-bootstrap-icons": "^1.0.0"
+        "whatwedo/twig-bootstrap-icons": "^1.0.0",
+        "symfony/translation": "6.1.x-dev"
+    },
+    "require-dev": {
+        "symfony/phpunit-bridge": "^v6.0",
+        "symfony/config": "^v6.0",
+        "symfony/dependency-injection": "^v6.0",
+        "symfony/yaml": "^v6.0",
+        "doctrine/doctrine-bundle": "^2.5.5",
+        "whatwedo/php-coding-standard": "dev-develop",
+        "symfony/twig-bundle": "^6.0"
     },
     "autoload": {
         "psr-4": {
-            "whatwedo\\CoreBundle\\": ""
+            "whatwedo\\CoreBundle\\": "src/",
+            "whatwedo\\CoreBundle\\Tests\\": "tests/"
         }
     },
     "repositories": [

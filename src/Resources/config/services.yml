@@ -7,6 +7,3 @@ services:
     whatwedo\CoreBundle\:
         resource: '../../*'
 
-    whatwedo\CoreBundle\Manager\FormatterManager:
-        arguments:
-            - !tagged_iterator 'whatwedo_core.formatter'

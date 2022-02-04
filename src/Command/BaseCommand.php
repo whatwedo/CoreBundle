@@ -14,7 +14,7 @@ use Symfony\Component\Stopwatch\Stopwatch;
 use whatwedo\CoreBundle\Command\Traits\ConsoleOutput;
 
 /**
- * TODO: Refactor
+ * TODO: Refactor.
  */
 abstract class BaseCommand extends Command implements ContainerAwareInterface
 {
@@ -34,7 +34,7 @@ abstract class BaseCommand extends Command implements ContainerAwareInterface
 
     public function getDoctrine(): ?object
     {
-        if (null === $this->registry) {
+        if ($this->registry === null) {
             $this->registry = $this->get('doctrine');
         }
 
@@ -66,8 +66,8 @@ abstract class BaseCommand extends Command implements ContainerAwareInterface
         }
 
         // Dump settings
-        $this->debug('Arguments: '.var_export($input->getArguments(), true));
-        $this->debug('Options: '.var_export($input->getOptions(), true));
+        $this->debug('Arguments: ' . var_export($input->getArguments(), true));
+        $this->debug('Options: ' . var_export($input->getOptions(), true));
 
         return Command::SUCCESS;
     }
@@ -97,7 +97,7 @@ abstract class BaseCommand extends Command implements ContainerAwareInterface
     private function stopStopwatch()
     {
         $event = $this->stopwatch->stop('command');
-        $this->debug('Finished in '.$event->getDuration().'ms');
+        $this->debug('Finished in ' . $event->getDuration() . 'ms');
     }
 
     protected function tearDown()

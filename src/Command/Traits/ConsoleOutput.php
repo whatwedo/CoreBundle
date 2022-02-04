@@ -33,7 +33,7 @@ trait ConsoleOutput
     public function log(string $message)
     {
         if ($this->isVerbose()) {
-            $message = date('[H:i:s] ').$message;
+            $message = date('[H:i:s] ') . $message;
         }
         $this->getOutput()->writeln($message);
     }

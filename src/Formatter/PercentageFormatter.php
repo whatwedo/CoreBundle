@@ -1,4 +1,6 @@
 <?php
+
+declare(strict_types=1);
 /*
  * Copyright (c) 2022, whatwedo GmbH
  * All rights reserved
@@ -29,10 +31,8 @@ namespace whatwedo\CoreBundle\Formatter;
 
 class PercentageFormatter extends AbstractFormatter
 {
-
     public function getString($value): string
     {
         return sprintf('%s%%', number_format($value * 100, 2));
     }
-
 }

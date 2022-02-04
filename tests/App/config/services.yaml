@@ -1,0 +1,10 @@
+
+parameters:
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    whatwedo\CoreBundle\Manager\FormatterManager:
+        public: true
