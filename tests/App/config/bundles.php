@@ -15,4 +15,7 @@ return [
     whatwedo\CoreBundle\whatwedoCoreBundle::class => [
         'all' => true,
     ],
+    whatwedo\TwigBootstrapIcons\whatwedoTwigBootstrapIconsBundle::class => [
+        'all' => true,
+    ],
 ];
