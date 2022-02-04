@@ -13,4 +13,13 @@ class CountryAlpha3FormatterTest extends AbstractFormatterTest
         $formatter = $this->getFormatter(CountryAlpha3Formatter::class);
         $this->assertSame('Schweiz', $formatter->getHtml('CHE'));
     }
+
+    public function testFormatterEnglish()
+    {
+        $formatter = $this->getFormatter(CountryAlpha3Formatter::class);
+        $formatter->processOptions([
+            'locale' => 'US',
+        ]);
+        $this->assertSame('Switzerland', $formatter->getHtml('CHE'));
+    }
 }
