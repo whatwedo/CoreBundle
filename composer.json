@@ -4,7 +4,6 @@
     "description": "Reusable components used by other bundles of whatwedo",
     "license": "MIT",
     "homepage": "https://doc.whatwedo.ch/whatwedo/corebundle",
-    "minimum-stability": "dev",
     "keywords": [
         "symfony-ux"
     ],
@@ -24,7 +23,7 @@
         "symfony/intl" :             "~5.3|~6.0",
         "symfony/options-resolver" : "~5.3|~6.0",
         "whatwedo/twig-bootstrap-icons": "^1.0.0",
-        "symfony/translation": "6.1.x-dev"
+        "symfony/translation": "~5.3|~6.0"
     },
     "require-dev": {
         "symfony/phpunit-bridge": "^v6.0",
