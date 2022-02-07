@@ -11,7 +11,8 @@ export default class extends Controller {
     connect() {
         const urlValue = this.urlValue;
         const settings = {
-            maxOptions: 10000
+            maxOptions: 10000,
+            preload: true
         };
         if (this.requiredValue === false) {
             settings.allowEmptyOption = true;
