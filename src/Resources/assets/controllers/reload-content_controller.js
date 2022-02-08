@@ -5,6 +5,7 @@ export default class extends Controller {
     static targets = ['content'];
     static values = {
         url: String,
+        replace: { type: Boolean, default: false }
     }
 
     connect() {
@@ -25,7 +26,12 @@ export default class extends Controller {
         }
 
         const response = await fetch(url);
-        target.innerHTML = await response.text();
+        const text = await response.text();
+        if (this.replaceValue) {
+            target.outerHTML = text;
+        } else {
+            target.innerHTML = text;
+        }
         target.style.opacity = 1;
     }
 }
