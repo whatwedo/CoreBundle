@@ -33,6 +33,9 @@ class PercentageFormatter extends AbstractFormatter
 {
     public function getString($value): string
     {
+        if ($value === null) {
+            return '';
+        }
         return sprintf('%s%%', number_format($value * 100, 2));
     }
 }

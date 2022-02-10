@@ -14,6 +14,9 @@ class MoneyFormatter extends AbstractFormatter
 {
     public function getString($value): string
     {
+        if ($value === null) {
+            return '';
+        }
         $value /= $this->options['divisor'];
         if ($this->options['round_five_centimes']) {
             $value = bcdiv((string) bcmul((string) $value, '20', 2), '20', 2);
