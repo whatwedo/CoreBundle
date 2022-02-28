@@ -1,6 +1,0 @@
-whatwedo_core:
-    actions:
-        post:
-            confirm: Sind Sie sicher?
-            yes: Ja
-            no: Nein
