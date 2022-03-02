@@ -5,6 +5,9 @@ require("flatpickr/dist/flatpickr.css");
 
 export default class extends Controller {
     connect() {
+        if (this.element.tagName !== 'INPUT') {
+            return;
+        }
         const type = this.element.getAttribute('type');
 
         flatpickr(this.element, {

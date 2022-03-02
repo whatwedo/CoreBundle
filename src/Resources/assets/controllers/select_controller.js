@@ -14,7 +14,10 @@ export default class extends Controller {
 
     setUrlValue(value) {
         this._url = value;
-        this.tomSelect.destroy();
+        if (this.tomSelect !== null) {
+            this.tomSelect.destroy();
+            this.tomSelect = null;
+        }
         this.innerConnect();
     }
 
@@ -24,6 +27,9 @@ export default class extends Controller {
     }
 
     innerConnect() {
+        if (this.element.tagName !== 'SELECT') {
+            return;
+        }
         const settings = {
             maxOptions: 10000,
             preload: true
