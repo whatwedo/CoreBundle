@@ -35,9 +35,13 @@ class PostAction extends Action
         protected string $acronym,
         array $options
     ) {
-        $this->defaultOptions['confirm_label'] = 'whatwedo_core.actions.post.confirm';
-        $this->defaultOptions['yes_label'] = 'whatwedo_core.actions.post.yes';
-        $this->defaultOptions['no_label'] = 'whatwedo_core.actions.post.no';
+        if (!array_key_exists('confirmation', $options)) {
+            $options['confirmation'] = [
+                'label' => 'whatwedo_core.actions.post.confirm',
+                'yes' => 'whatwedo_core.actions.post.yes',
+                'no' => 'whatwedo_core.actions.post.no',
+            ];
+        }
         parent::__construct($this->acronym, $options);
     }
 }

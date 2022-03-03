@@ -17,9 +17,7 @@ class Action
         'route_parameters' => [],
         'voter_attribute' => null,
         'priority' => 0,
-        'confirm_label' => null,
-        'yes_label' => null,
-        'no_label' => null,
+        'confirmation' => null,
     ];
 
     /**
@@ -34,7 +32,6 @@ class Action
         $resolver->setDefaults(array_merge([
             'block_prefix' => StringUtil::fqcnToBlockPrefix(static::class),
         ], $this->defaultOptions));
-
         $this->options = $resolver->resolve($this->options);
     }
 
@@ -59,11 +56,13 @@ class Action
 
     public function hasConfirmation(): bool
     {
-        return count(array_filter([
-            $this->getOption('confirm_label'),
-            $this->getOption('yes_label'),
-            $this->getOption('no_label'),
-        ])) === 3;
+        return $this->getOption('confirmation') !== null;
+    }
+
+    public function getConfirmation(string $key): string
+    {
+        $confirmation = $this->getOption('confirmation');
+        return $confirmation[$key] ?? '';
     }
 
     public function hasOption(string $name): bool
