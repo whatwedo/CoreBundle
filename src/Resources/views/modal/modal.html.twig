@@ -1,4 +1,4 @@
-<div {% block attr %}{% endblock %} {{ stimulus_controller('whatwedo/core-bundle/modal') }} id="{% block modal_id %}defaultModal{% endblock %}" aria-hidden="true" class="hidden bg-black bg-opacity-50 overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50 justify-center items-center h-modal md:h-full md:inset-0">
+<div {% block attr %}{{ stimulus_controller('whatwedo/core-bundle/modal') }}{% endblock %} id="{% block modal_id %}defaultModal{% endblock %}" aria-hidden="true" class="hidden bg-black bg-opacity-50 overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50 justify-center items-center h-modal md:h-full md:inset-0">
     {% block modal_outer %}
     <div class="relative px-4 w-full max-w-2xl h-full md:h-auto mx-auto">
         <!-- Modal content -->
