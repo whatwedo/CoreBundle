@@ -40,6 +40,7 @@ class Action
         if (! $this->hasOption($name)) {
             throw new \InvalidArgumentException(sprintf('Option "%s" for %s does not exist.', $name, static::class));
         }
+
         return $this->options[$name];
     }
 
@@ -62,6 +63,7 @@ class Action
     public function getConfirmation(string $key): string
     {
         $confirmation = $this->getOption('confirmation');
+
         return $confirmation[$key] ?? '';
     }
 
@@ -103,8 +105,4 @@ class Action
     {
         return $this->getOption('voter_attribute');
     }
-
-
-
-
 }

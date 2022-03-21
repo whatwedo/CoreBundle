@@ -35,7 +35,7 @@ class PostAction extends Action
         protected string $acronym,
         array $options
     ) {
-        if (!array_key_exists('confirmation', $options)) {
+        if (! array_key_exists('confirmation', $options)) {
             $options['confirmation'] = [
                 'label' => 'whatwedo_core.actions.post.confirm',
                 'yes' => 'whatwedo_core.actions.post.yes',
