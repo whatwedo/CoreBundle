@@ -49,6 +49,8 @@
         "tailwindcss-stimulus-components": "^3.0.1"
     },
     "dependencies": {
-        "flatpickr": "^4.6.9"
+        "flatpickr": "^4.6.9",
+        "stimulus-dropdown": "^2.0.0",
+        "tom-select": "^2.0.0"
     }
 }
