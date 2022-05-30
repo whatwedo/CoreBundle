@@ -1,5 +1,5 @@
 [![Latest Stable Version](https://poser.pugx.org/whatwedo/core-bundle/v/stable)](https://packagist.org/packages/whatwedo/core-bundle)
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/f4e32125-7f5b-4071-9a6e-9296c1f6acf7/mini.png)](https://insight.sensiolabs.com/projects/f4e32125-7f5b-4071-9a6e-9296c1f6acf7)
+[![SymfonyInsight](https://insight.symfony.com/projects/6fad4e21-6a58-4f3f-ac3b-2108f54261ea/mini.svg)](https://insight.symfony.com/projects/6fad4e21-6a58-4f3f-ac3b-2108f54261ea)
 
 # whatwedoCoreBundle
 
