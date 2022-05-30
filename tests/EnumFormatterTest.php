@@ -12,6 +12,7 @@ class EnumFormatterTest extends AbstractFormatterTest
     public function testFormatter()
     {
         $formatter = $this->getFormatter(EnumFormatter::class);
+        $formatter->processOptions();
         $this->assertSame('archived', $formatter->getHtml(TestEnum::ARCHIVED));
     }
 }
