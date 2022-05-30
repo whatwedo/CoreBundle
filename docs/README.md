@@ -5,15 +5,5 @@
 
 Reusable components used by other bundles of whatwedo.
 
-**Note:** this bundle is currently under heavy development
-
-
-## Documentation
-
-The source of the documentation is stored in the `Resources/doc` folder. [Jump to the master documentation](Resources/doc/index.md)
-
-
-## License
-
-This bundle is under the MIT license. See the complete license in the bundle: [LICENSE](LICENSE)
-
+This bundle should not be used standalone.
+You will find documentation for the reusable components located here. 

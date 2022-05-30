@@ -1,1 +1,1 @@
-* [Home](/)
+* [Getting Started](/)

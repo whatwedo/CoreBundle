@@ -5,13 +5,15 @@
 
 Reusable components used by other bundles of whatwedo.
 
-**Note:** this bundle is currently under heavy development
+Main users:
 
+- https://github.com/whatwedo/CrudBundle
+- https://github.com/whatwedo/TableBundle
+- https://github.com/whatwedo/SearchBundle
 
 ## Documentation
 
-The source of the documentation is stored in the `Resources/doc` folder. [Jump to the master documentation](Resources/doc/index.md)
-
+https://whatwedo.github.io/CoreBundle/#/
 
 ## License
 

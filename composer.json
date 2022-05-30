@@ -3,7 +3,7 @@
     "type": "symfony-bundle",
     "description": "Reusable components used by other bundles of whatwedo",
     "license": "MIT",
-    "homepage": "https://doc.whatwedo.ch/whatwedo/corebundle",
+    "homepage": "https://whatwedo.github.io/CoreBundle/#/",
     "keywords": [
         "symfony-ux"
     ],
@@ -45,11 +45,11 @@
             "type": "package",
             "package": {
                 "name": "twbs/icons",
-                "version": "1.8.0",
+                "version": "1.8.1",
                 "source": {
                     "url": "https://github.com/twbs/icons",
                     "type": "git",
-                    "reference": "tags/v1.8.0"
+                    "reference": "tags/v1.8.1"
                 }
             }
         }
