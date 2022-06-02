@@ -22,7 +22,6 @@ class Action
 
     /**
      * it's possible to pass functions as option value to create dynamic labels, routes and more.
-     * TODO: create docs.
      */
     public function __construct(
         protected string $acronym,

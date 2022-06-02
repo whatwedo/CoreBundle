@@ -13,9 +13,6 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Stopwatch\Stopwatch;
 use whatwedo\CoreBundle\Command\Traits\ConsoleOutput;
 
-/**
- * TODO: Refactor.
- */
 abstract class BaseCommand extends Command implements ContainerAwareInterface
 {
     use ConsoleOutput;

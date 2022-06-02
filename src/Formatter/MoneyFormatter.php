@@ -7,9 +7,6 @@ namespace whatwedo\CoreBundle\Formatter;
 use Symfony\Component\OptionsResolver\Options;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-/**
- * @TODO check MoneyType
- */
 class MoneyFormatter extends AbstractFormatter
 {
     public function getString($value): string
