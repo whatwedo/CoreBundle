@@ -12,6 +12,6 @@ class MoneyFormatterTest extends AbstractFormatterTest
     {
         $formatter = $this->getFormatter(MoneyFormatter::class);
         $formatter->processOptions();
-        $this->assertSame('CHF 12.33', $formatter->getHtml(12.33445));
+        self::assertSame('CHF 12.33', $formatter->getHtml(12.33445));
     }
 }

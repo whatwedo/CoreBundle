@@ -11,7 +11,7 @@ class BooleanFormatterTest extends AbstractFormatterTest
     public function testFormatter()
     {
         $formatter = $this->getFormatter(BooleanFormatter::class);
-        $this->assertSame('Ja', $formatter->getHtml(true));
-        $this->assertSame('Nein', $formatter->getHtml(false));
+        self::assertSame('Ja', $formatter->getHtml(true));
+        self::assertSame('Nein', $formatter->getHtml(false));
     }
 }

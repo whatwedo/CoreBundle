@@ -15,6 +15,6 @@ class TwigFormatterTest extends AbstractFormatterTest
         $formatter->processOptions([
             'template' => 'test.html.twig',
         ]);
-        $this->assertSame('<blockquote>hallo Welt</blockquote>', $formatter->getHtml('hallo Welt'));
+        self::assertSame('<blockquote>hallo Welt</blockquote>', $formatter->getHtml('hallo Welt'));
     }
 }

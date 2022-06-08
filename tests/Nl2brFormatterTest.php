@@ -12,7 +12,7 @@ class Nl2brFormatterTest extends AbstractFormatterTest
     {
         $formatter = $this->getFormatter(Nl2brFormatter::class);
         $formatter->processOptions();
-        $this->assertSame('1<br />
+        self::assertSame('1<br />
         23<br />
         3', $formatter->getHtml('1
         23

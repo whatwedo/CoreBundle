@@ -12,6 +12,6 @@ class WysiwygFormatterTest extends AbstractFormatterTest
     {
         $formatter = $this->getFormatter(WysiwygFormatter::class);
         $formatter->processOptions();
-        $this->assertSame('<blockquote>hallo Welt</blockquote>', $formatter->getHtml('hallo Welt'));
+        self::assertSame('<blockquote>hallo Welt</blockquote>', $formatter->getHtml('hallo Welt'));
     }
 }

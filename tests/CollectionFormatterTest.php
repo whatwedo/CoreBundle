@@ -11,6 +11,6 @@ class CollectionFormatterTest extends AbstractFormatterTest
     public function testFormatter()
     {
         $formatter = $this->getFormatter(CollectionFormatter::class);
-        $this->assertSame('<ul><li>eins</li><li>zwei</li></ul>', $formatter->getHtml(['eins', 'zwei']));
+        self::assertSame('<ul><li>eins</li><li>zwei</li></ul>', $formatter->getHtml(['eins', 'zwei']));
     }
 }

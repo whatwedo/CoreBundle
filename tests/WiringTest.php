@@ -14,7 +14,7 @@ class WiringTest extends KernelTestCase
         foreach ([
             FormatterManager::class,
         ] as $serviceClass) {
-            $this->assertInstanceOf(
+            self::assertInstanceOf(
                 $serviceClass,
                 self::getContainer()->get($serviceClass)
             );

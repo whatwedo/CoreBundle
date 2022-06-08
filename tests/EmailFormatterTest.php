@@ -11,6 +11,6 @@ class EmailFormatterTest extends AbstractFormatterTest
     public function testFormatter()
     {
         $formatter = $this->getFormatter(EmailFormatter::class);
-        $this->assertSame('<a href="mailto:test@whatwedo.ch" title="E-Mail senden">test@whatwedo.ch</a>', $formatter->getHtml('test@whatwedo.ch'));
+        self::assertSame('<a href="mailto:test@whatwedo.ch" title="E-Mail senden">test@whatwedo.ch</a>', $formatter->getHtml('test@whatwedo.ch'));
     }
 }

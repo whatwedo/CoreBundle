@@ -12,6 +12,6 @@ class PercentageFormatterTest extends AbstractFormatterTest
     {
         $formatter = $this->getFormatter(PercentageFormatter::class);
         $formatter->processOptions();
-        $this->assertSame('25.00%', $formatter->getHtml(0.25));
+        self::assertSame('25.00%', $formatter->getHtml(0.25));
     }
 }

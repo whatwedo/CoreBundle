@@ -29,6 +29,10 @@ install:
 ecs:
 	vendor/bin/ecs --fix
 
+## check code with phpstan
+phpstan:
+	vendor/bin/phpstan
+
 phpunit: ## PHP Unit
 	vendor/bin/simple-phpunit
 

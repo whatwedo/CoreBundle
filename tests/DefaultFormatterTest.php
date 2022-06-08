@@ -11,6 +11,6 @@ class DefaultFormatterTest extends AbstractFormatterTest
     public function testFormatter()
     {
         $formatter = $this->getFormatter(DefaultFormatter::class);
-        $this->assertSame('test', $formatter->getHtml('test'));
+        self::assertSame('test', $formatter->getHtml('test'));
     }
 }
