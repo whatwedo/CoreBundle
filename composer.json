@@ -33,7 +33,7 @@
         "symfony/dependency-injection": "^v6.0",
         "symfony/yaml": "^v6.0",
         "doctrine/doctrine-bundle": "^2.5.5",
-        "whatwedo/php-coding-standard": "dev-develop",
+        "whatwedo/php-coding-standard": "^1.0",
         "symfony/twig-bundle": "^6.0",
         "phpstan/phpstan": "^1.7"
     },
