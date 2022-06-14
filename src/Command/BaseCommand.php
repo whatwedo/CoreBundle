@@ -71,8 +71,6 @@ abstract class BaseCommand extends Command implements ContainerAwareInterface
 
     /**
      * Get service by name.
-     *
-     * @param $name
      */
     protected function get($name): ?object
     {

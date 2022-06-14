@@ -38,9 +38,6 @@ trait ConsoleOutput
         $this->getOutput()->writeln($message);
     }
 
-    /**
-     * @param $message
-     */
     public function debug($message)
     {
         if ($this->isVerbose()) {
