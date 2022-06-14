@@ -20,6 +20,18 @@ class Action
         'confirmation' => null,
     ];
 
+    protected array $allowedTypes = [
+        'label' => ['string', 'null'],
+        'attr' => 'array',
+        'icon' => ['string', 'null'],
+        'route' => ['string', 'null'],
+        'route_parameters' => ['array', 'callable'],
+        'voter_attribute' => ['string', 'null', 'object'],
+        'priority' => 'int',
+        'confirmation' => ['array', 'null'],
+        'block_prefix' => 'string',
+    ];
+
     /**
      * it's possible to pass functions as option value to create dynamic labels, routes and more.
      */
@@ -31,6 +43,11 @@ class Action
         $resolver->setDefaults(array_merge([
             'block_prefix' => StringUtil::fqcnToBlockPrefix(static::class),
         ], $this->defaultOptions));
+
+        foreach($this->allowedTypes as $key => $types) {
+            $resolver->setAllowedTypes($key, $types);
+        }
+
         $this->options = $resolver->resolve($this->options);
     }
 
