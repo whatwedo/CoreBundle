@@ -44,7 +44,7 @@ class Action
             'block_prefix' => StringUtil::fqcnToBlockPrefix(static::class),
         ], $this->defaultOptions));
 
-        foreach($this->allowedTypes as $key => $types) {
+        foreach ($this->allowedTypes as $key => $types) {
             $resolver->setAllowedTypes($key, $types);
         }
 
