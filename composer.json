@@ -25,7 +25,7 @@
         "whatwedo/twig-bootstrap-icons": "^1.0.0",
         "symfony/translation": "~5.3|~6.0",
         "symfony/form": "~5.3|~6.0",
-        "symfony/stopwatch": "^6.1"
+        "symfony/stopwatch": "~5.3|~6.0"
     },
     "require-dev": {
         "symfony/phpunit-bridge": "^v6.0",
