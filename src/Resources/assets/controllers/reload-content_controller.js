@@ -25,7 +25,11 @@ export default class extends Controller {
             url = event.currentTarget.dataset.reloadContentUrlParam;
         }
 
-        const response = await fetch(url);
+        const response = await fetch(url, {
+            headers: {
+                'X-Requested-With': 'XMLHttpRequest',
+            }
+        });
         const text = await response.text();
         if (this.replaceValue) {
             target.outerHTML = text;
