@@ -95,9 +95,7 @@
     }
 }
 
-// wwd-block-block
-.wwd-block-block {
-    .wwd-block-block-content {
-        display: flex;
-    }
+// Turbo
+.turbo-progress-bar {
+    @apply bg-primary;
 }
