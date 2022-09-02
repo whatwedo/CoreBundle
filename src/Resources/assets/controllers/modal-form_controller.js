@@ -1,5 +1,6 @@
 import Dropdown from "stimulus-dropdown"
 import {useDispatch} from 'stimulus-use';
+import 'regenerator-runtime/runtime'
 
 export default class extends Dropdown {
     static targets = ['modalBody'];
