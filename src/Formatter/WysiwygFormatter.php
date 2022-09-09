@@ -31,12 +31,12 @@ namespace whatwedo\CoreBundle\Formatter;
 
 class WysiwygFormatter extends AbstractFormatter
 {
-    public function getString($value): string
+    public function getString(mixed $value): string
     {
         return trim(strip_tags($value));
     }
 
-    public function getHtml($value): string
+    public function getHtml(mixed $value): string
     {
         $value = trim(strip_tags($value, '<p><b><strong><ul><li><i><u><a><br><small>'));
 

@@ -6,3 +6,4 @@ framework:
     default_path: '%kernel.project_dir%/translations'
   router:
     utf8: true
+  http_method_override: false

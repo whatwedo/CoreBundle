@@ -8,7 +8,7 @@ use whatwedo\CoreBundle\Formatter\MoneyFormatter;
 
 class MoneyFormatterTest extends AbstractFormatterTest
 {
-    public function testFormatter()
+    public function testFormatter(): void
     {
         $formatter = $this->getFormatter(MoneyFormatter::class);
         $formatter->processOptions();

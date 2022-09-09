@@ -12,25 +12,19 @@ trait ConsoleOutput
 
     protected OutputInterface $output;
 
-    /**
-     * @return $this
-     */
-    public function setOutput(\Symfony\Component\Console\Output\OutputInterface $output)
+    public function setOutput(\Symfony\Component\Console\Output\OutputInterface $output): self
     {
         $this->output = $output;
 
         return $this;
     }
 
-    /**
-     * @return OutputInterface
-     */
-    public function getOutput()
+    public function getOutput(): OutputInterface
     {
         return $this->output;
     }
 
-    public function log(string $message)
+    public function log(string $message): void
     {
         if ($this->isVerbose()) {
             $message = date('[H:i:s] ') . $message;
@@ -38,25 +32,19 @@ trait ConsoleOutput
         $this->getOutput()->writeln($message);
     }
 
-    public function debug($message)
+    public function debug(string $message): void
     {
         if ($this->isVerbose()) {
             $this->log($message);
         }
     }
 
-    /**
-     * @return bool
-     */
-    public function isVerbose()
+    public function isVerbose(): bool
     {
         return $this->verbose;
     }
 
-    /**
-     * @return $this
-     */
-    public function setVerbose(bool $verbose)
+    public function setVerbose(bool $verbose): self
     {
         $this->verbose = $verbose;
 

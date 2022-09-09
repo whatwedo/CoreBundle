@@ -20,7 +20,7 @@ class TranslationFormatter extends AbstractFormatter
     ) {
     }
 
-    public function getString($value): string
+    public function getString(mixed $value): string
     {
         return $this->translator->trans(
             (string) $value,

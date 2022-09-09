@@ -9,7 +9,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class CountryAlpha3Formatter extends AbstractFormatter
 {
-    public function getString($value): string
+    public function getString(mixed $value): string
     {
         if (Countries::alpha3CodeExists(mb_strtoupper($value))) {
             return Countries::getAlpha3Name(mb_strtoupper($value), $this->options['locale']);

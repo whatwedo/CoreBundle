@@ -31,7 +31,7 @@ namespace whatwedo\CoreBundle\Formatter;
 
 class PercentageFormatter extends AbstractFormatter
 {
-    public function getString($value): string
+    public function getString(mixed $value): string
     {
         if ($value === null) {
             return '';

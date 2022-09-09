@@ -39,12 +39,12 @@ class TwigFormatter extends AbstractFormatter
     ) {
     }
 
-    public function getString($value): string
+    public function getString(mixed $value): string
     {
         return $value;
     }
 
-    public function getHtml($value): string
+    public function getHtml(mixed $value): string
     {
         return $this->twig->render($this->options['template'], [
             'value' => $value,

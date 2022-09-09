@@ -9,7 +9,7 @@ use whatwedo\CoreBundle\Manager\FormatterManager;
 
 class WiringTest extends KernelTestCase
 {
-    public function testServiceWiring()
+    public function testServiceWiring(): void
     {
         foreach ([
             FormatterManager::class,

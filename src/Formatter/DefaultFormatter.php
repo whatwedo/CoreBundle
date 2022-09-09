@@ -6,7 +6,7 @@ namespace whatwedo\CoreBundle\Formatter;
 
 class DefaultFormatter extends AbstractFormatter
 {
-    public function getString($value): string
+    public function getString(mixed $value): string
     {
         return (string) $value;
     }

@@ -43,9 +43,6 @@ abstract class BaseCommand extends Command implements ContainerAwareInterface
         return $this->container;
     }
 
-    /**
-     * @return int|void|null
-     */
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         // Initialize input/output
@@ -72,7 +69,7 @@ abstract class BaseCommand extends Command implements ContainerAwareInterface
     /**
      * Get service by name.
      */
-    protected function get($name): ?object
+    protected function get(string $name): ?object
     {
         return $this->getContainer()->get($name);
     }
@@ -80,7 +77,7 @@ abstract class BaseCommand extends Command implements ContainerAwareInterface
     /**
      * Initialize and start stopwatch.
      */
-    private function startStopwatch()
+    private function startStopwatch(): void
     {
         $this->stopwatch = new Stopwatch();
         $this->stopwatch->start('command');
@@ -89,13 +86,13 @@ abstract class BaseCommand extends Command implements ContainerAwareInterface
     /**
      * Initialize and start stopwatch.
      */
-    private function stopStopwatch()
+    private function stopStopwatch(): void
     {
         $event = $this->stopwatch->stop('command');
         $this->debug('Finished in ' . $event->getDuration() . 'ms');
     }
 
-    protected function tearDown()
+    protected function tearDown(): void
     {
         $this->stopStopwatch();
     }

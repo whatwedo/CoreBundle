@@ -14,7 +14,7 @@ class EnumFormatter extends AbstractFormatter
     ) {
     }
 
-    public function getString($enum): string
+    public function getString(mixed $enum): string
     {
         if (! $enum) {
             return '';

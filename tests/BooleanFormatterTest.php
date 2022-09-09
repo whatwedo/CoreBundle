@@ -8,7 +8,7 @@ use whatwedo\CoreBundle\Formatter\BooleanFormatter;
 
 class BooleanFormatterTest extends AbstractFormatterTest
 {
-    public function testFormatter()
+    public function testFormatter(): void
     {
         $formatter = $this->getFormatter(BooleanFormatter::class);
         self::assertSame('Ja', $formatter->getHtml(true));

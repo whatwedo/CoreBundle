@@ -31,6 +31,9 @@ namespace whatwedo\CoreBundle\Action;
 
 class PostAction extends Action
 {
+    /**
+     * @param array<string, mixed> $options
+     */
     public function __construct(
         protected string $acronym,
         array $options

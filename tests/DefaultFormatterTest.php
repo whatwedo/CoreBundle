@@ -8,7 +8,7 @@ use whatwedo\CoreBundle\Formatter\DefaultFormatter;
 
 class DefaultFormatterTest extends AbstractFormatterTest
 {
-    public function testFormatter()
+    public function testFormatter(): void
     {
         $formatter = $this->getFormatter(DefaultFormatter::class);
         self::assertSame('test', $formatter->getHtml('test'));
