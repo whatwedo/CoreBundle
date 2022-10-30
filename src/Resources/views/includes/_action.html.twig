@@ -14,7 +14,7 @@
         >
             <button
                 {{ attr|map((value, attr) => "#{attr}=\"#{value}\"")|join(' ')|raw }}
-                {{ stimulus_action({'whatwedo/core-bundle/dropdown': ['toggle', {'click@window': 'hide'}]}) }}
+                {{ stimulus_action('whatwedo/core-bundle/dropdown', 'toggle') | stimulus_action('whatwedo/core-bundle/dropdown', 'click@window', 'hide') }}
             >
                 {% if action.option('icon') %}
                     {{ bootstrap_icon(action.option('icon'), {
@@ -85,7 +85,7 @@
         >
             <button
                 {{ attr|map((value, attr) => "#{attr}=\"#{value}\"")|join(' ')|raw }}
-                {{ stimulus_action({'whatwedo/core-bundle/dropdown': ['toggle', {'click@window': 'hide'}]}) }}
+                {{ stimulus_action('whatwedo/core-bundle/dropdown', 'toggle') | stimulus_action('whatwedo/core-bundle/dropdown', 'click@window', 'hide') }}
             >
                 {% if action.option('icon') %}
                     {{ bootstrap_icon(action.option('icon'), {
