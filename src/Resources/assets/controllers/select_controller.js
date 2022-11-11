@@ -6,11 +6,13 @@ import 'tom-select/dist/css/tom-select.css';
 export default class extends Controller {
     static values = {
         url: String,
-        required: Boolean
+        required: Boolean,
+        min: 2
     }
 
     _url = null;
     tomSelect = null;
+    _min = null;
 
     setUrlValue(value) {
         this._url = value;
@@ -23,6 +25,7 @@ export default class extends Controller {
 
     connect() {
         this._url = this.urlValue;
+        this._min = this.minValue;
         this.innerConnect();
     }
 
@@ -31,8 +34,7 @@ export default class extends Controller {
             return;
         }
         const settings = {
-            maxOptions: 10000,
-            preload: true
+            maxOptions: 50
         };
         if (this.requiredValue === false) {
             settings.allowEmptyOption = true;
@@ -46,6 +48,7 @@ export default class extends Controller {
             settings.searchField = 'label';
             settings.labelField = 'label';
             const that = this;
+
             settings.load = function (query, callback) {
                 const url = that._url + (that._url.includes('?') ? '&' : '?') + 'q=' + encodeURIComponent(query);
                 fetch(url)
@@ -55,6 +58,10 @@ export default class extends Controller {
                     }).catch(()=>{
                     callback();
                 });
+            }
+
+            settings.shouldLoad = function (query) {
+                return query.length >= that._min;
             }
         }
         this.tomSelect = new TomSelect(this.element, settings);
