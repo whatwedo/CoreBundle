@@ -48,7 +48,7 @@
                         </button>
                         <button
                             {{ stimulus_action('whatwedo/core-bundle/dropdown', 'close') }}
-                            class="ml-3 inline-flex items-center px-3 py-2 border border-gray-300 shadow-sm text-sm leading-4 font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+                            class="ml-3 inline-flex items-center px-3 py-2 border border-gray-300 shadow-sm text-sm leading-4 font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-primary"
                             type="button"
                         >
                             {{ action.confirmation('no') | trans }}
@@ -119,7 +119,7 @@
                         </button>
                         <button
                             {{ stimulus_action('whatwedo/core-bundle/dropdown', 'close') }}
-                            class="ml-3 inline-flex items-center px-3 py-2 border border-gray-300 shadow-sm text-sm leading-4 font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+                            class="ml-3 inline-flex items-center px-3 py-2 border border-gray-300 shadow-sm text-sm leading-4 font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-primary"
                             type="button"
                         >
                             {{ action.confirmation('no') | trans }}
@@ -179,7 +179,7 @@
                 <div class="flex text-base text-left transform transition w-full md:inline-block md:px-4 md:my-8 md:align-middle bg-white shadow-2xl">
                     <div class="w-full relative flex items-center px-4 pt-14 pb-8 overflow-hidden sm:px-6 sm:pt-8 md:p-6 lg:p-8">
                         <button type="button"
-                                class="absolute top-4 right-4 text-gray-400 hover:text-gray-500 sm:top-8 sm:right-6 md:top-6 md:right-6 lg:top-8 lg:right-8 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary rounded transition-colors" {{ stimulus_action('whatwedo/core-bundle/modal-form', 'close') }}>
+                                class="absolute top-4 right-4 text-gray-400 hover:text-gray-500 sm:top-8 sm:right-6 md:top-6 md:right-6 lg:top-8 lg:right-8 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-primary rounded transition-colors" {{ stimulus_action('whatwedo/core-bundle/modal-form', 'close') }}>
                             <span class="sr-only">Close</span>
                             {{ bootstrap_icon('x', { class: 'inline w-8 h-8' }) }}
                         </button>
