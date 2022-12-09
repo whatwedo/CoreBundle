@@ -37,11 +37,11 @@
 }
 
 .whatwedo-utility-button {
-    @apply px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-primary hover:bg-primary-dark focus:ring-primary transition-colors;
+    @apply px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-primary-500 hover:bg-primary-700 focus:ring-primary-500 transition-colors;
 }
 
 .whatwedo-utility-input {
-    @apply bg-white focus:ring-primary focus:border-primary rounded-md text-sm border-neutral-300;
+    @apply bg-white focus:ring-primary-500 focus:border-primary-500 rounded-md text-sm border-neutral-300;
 }
 
 .whatwedo-utility-input--error {
@@ -67,7 +67,7 @@
 
 .whatwedo-crud-button--action {
     @extend .whatwedo-utility-button;
-    @apply inline-flex items-center bg-primary hover:bg-primary-dark ml-3;
+    @apply inline-flex items-center bg-primary-500 hover:bg-primary-700 ml-3;
 }
 
 .whatwedo-crud-button--action-danger {
@@ -82,7 +82,7 @@
 
 .whatwedo-crud-button--action-neutral {
     @extend .whatwedo-utility-button;
-    @apply inline-flex items-center bg-neutral-200 hover:bg-neutral-50 ml-3;
+    @apply inline-flex items-center bg-neutral-200 hover:bg-neutral-100 ml-3;
 }
 
 .whatwedo-crud-button--action-delete {
@@ -97,7 +97,7 @@
 
 /* TomSelect */
 .ts-control {
-    @apply border-neutral-300 focus-within:outline-none outline-none focus-within:ring-primary focus-within:border-primary focus-within:ring-1 rounded-lg gap-2;
+    @apply border-neutral-300 focus-within:outline-none outline-none focus-within:ring-primary-500 focus-within:border-primary-500 focus-within:ring-1 rounded-lg gap-2;
     min-height: 2.2rem;
 }
 
@@ -110,7 +110,7 @@
     @apply rounded-md;
 }
 .ts-wrapper.multi .ts-control > div {
-    @apply inline-flex items-center px-1.5 py-0 m-0 rounded text-xs font-medium bg-primary text-white;
+    @apply inline-flex items-center px-1.5 py-0 m-0 rounded text-xs font-medium bg-primary-500 text-white;
 }
 
 .ts-wrapper.plugin-remove_button .item .remove {
@@ -157,5 +157,5 @@
 
 // Turbo
 .turbo-progress-bar {
-    @apply bg-primary h-1;
+    @apply bg-primary-500 h-1;
 }
