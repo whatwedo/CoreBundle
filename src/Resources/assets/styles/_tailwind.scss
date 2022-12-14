@@ -102,8 +102,8 @@
     .whatwedo-crud-button--action-delete,
     .whatwedo-crud-button--action-no-bg,
     .whatwedo-crud-button--action {
-        @apply h-auto shadow-none border-none p-0 m-0;
-        @apply bg-transparent hover:bg-transparent text-neutral-500;
+        @apply h-auto shadow-none border-none rounded-none px-3 m-0 w-full;
+        @apply text-neutral-500 bg-transparent hover:bg-neutral-200;
     }
 }
 
