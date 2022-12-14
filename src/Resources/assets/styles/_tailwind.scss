@@ -82,7 +82,7 @@
 
 .whatwedo-crud-button--action-neutral {
     @extend .whatwedo-utility-button;
-    @apply inline-flex items-center bg-neutral-200 hover:bg-neutral-100 ml-3;
+    @apply inline-flex items-center bg-neutral-500 hover:bg-neutral-700 ml-3;
 }
 
 .whatwedo-crud-button--action-delete {
@@ -93,6 +93,18 @@
 .whatwedo-crud-button--action-no-bg {
     @extend .whatwedo-utility-button;
     @apply inline-flex items-center bg-transparent ml-3;
+}
+
+
+.whatwedo-crud-topbar-actions__submenu {
+    .whatwedo-crud-button--action-neutral,
+    .whatwedo-crud-button--action-warning,
+    .whatwedo-crud-button--action-delete,
+    .whatwedo-crud-button--action-no-bg,
+    .whatwedo-crud-button--action {
+        @apply h-auto shadow-none border-none p-0 m-0;
+        @apply bg-transparent hover:bg-transparent text-neutral-500;
+    }
 }
 
 /* TomSelect */

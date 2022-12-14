@@ -10,7 +10,7 @@
     {% if action.hasConfirmation() %}
         <div
             {{ stimulus_controller('whatwedo/core-bundle/dropdown') }}
-            class="relative inline-block"
+            class="relative flex"
         >
             <button
                 {{ attr|map((value, attr) => "#{attr}=\"#{value}\"")|join(' ')|raw }}
@@ -18,10 +18,10 @@
             >
                 {% if action.option('icon') %}
                     {{ bootstrap_icon(action.option('icon'), {
-                        class: 'inline mr-1 h-4 w-4'
+                        class: 'inline mr-2 h-4 w-4'
                     }) }}
                 {% endif %}
-                <span class="2xl:block hidden">{{ action.option('label')|trans }}</span>
+                <span class="2xl:block">{{ action.option('label')|trans }}</span>
             </button>
 
             <div
@@ -61,10 +61,10 @@
         <a {{ attr|map((value, attr) => "#{attr}=\"#{value}\"")|join(' ')|raw }}>
             {% if action.option('icon') %}
                 {{ bootstrap_icon(action.option('icon'), {
-                    class: 'inline mr-1 h-4 w-4'
+                    class: 'inline mr-2 h-4 w-4'
                 }) }}
             {% endif %}
-            <span class="2xl:block hidden">{{ action.option('label')|trans }}</span>
+            <span class="2xl:block">{{ action.option('label')|trans }}</span>
         </a>
     {% endif %}
 {% endblock %}
@@ -81,7 +81,7 @@
     {% if action.hasConfirmation() %}
         <div
             {{ stimulus_controller('whatwedo/core-bundle/dropdown') }}
-            class="relative inline-block"
+            class="relative flex"
         >
             <button
                 {{ attr|map((value, attr) => "#{attr}=\"#{value}\"")|join(' ')|raw }}
@@ -89,10 +89,10 @@
             >
                 {% if action.option('icon') %}
                     {{ bootstrap_icon(action.option('icon'), {
-                        class: 'inline mr-1 h-4 w-4'
+                        class: 'inline mr-2 h-4 w-4'
                     }) }}
                 {% endif %}
-                <span class="2xl:block hidden">{{ action.option('label')|trans }}</span>
+                <span class="2xl:block">{{ action.option('label')|trans }}</span>
             </button>
 
             <div
@@ -129,7 +129,7 @@
             </div>
         </div>
     {% else %}
-        <div class="relative inline-block">
+        <div class="relative flex">
             <form
                 class="flex items-center justify-between px-4 py-3"
                 method="post"
@@ -140,10 +140,10 @@
                 >
                     {% if action.option('icon') %}
                         {{ bootstrap_icon(action.option('icon'), {
-                            class: 'inline mr-1 h-4 w-4'
+                            class: 'inline mr-2 h-4 w-4'
                         }) }}
                     {% endif %}
-                    <span class="2xl:block hidden">{{ action.option('label')|trans }}</span>
+                    <span class="2xl:block">{{ action.option('label')|trans }}</span>
                 </button>
             </form>
         </div>
