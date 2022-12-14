@@ -9,6 +9,9 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class Action
 {
+    /**
+     * @var array<string, mixed>
+     */
     protected array $defaultOptions = [
         'label' => null,
         'attr' => [],
@@ -20,6 +23,9 @@ class Action
         'confirmation' => null,
     ];
 
+    /**
+     * @var array<string, mixed>
+     */
     protected array $allowedTypes = [
         'label' => ['string', 'null'],
         'attr' => 'array',
@@ -33,7 +39,8 @@ class Action
     ];
 
     /**
-     * it's possible to pass functions as option value to create dynamic labels, routes and more.
+     * @param array<string, mixed> $options
+     *                                      it's possible to pass functions as option value to create dynamic labels, routes and more
      */
     public function __construct(
         protected string $acronym,
@@ -51,7 +58,7 @@ class Action
         $this->options = $resolver->resolve($this->options);
     }
 
-    public function getOption(string $name)
+    public function getOption(string $name): mixed
     {
         if (! $this->hasOption($name)) {
             throw new \InvalidArgumentException(sprintf('Option "%s" for %s does not exist.', $name, static::class));
@@ -60,7 +67,7 @@ class Action
         return $this->options[$name];
     }
 
-    public function setOption($name, $value): static
+    public function setOption(string $name, mixed $value): static
     {
         if (! $this->hasOption($name)) {
             throw new \InvalidArgumentException(sprintf('Option "%s" for %s does not exist.', $name, static::class));
@@ -98,7 +105,10 @@ class Action
         return $this->getOption('route');
     }
 
-    public function getRouteParameters($entity = null)
+    /**
+     * @return string[]
+     */
+    public function getRouteParameters(?object $entity = null): array
     {
         if (is_callable($this->getOption('route_parameters'))) {
             return $this->getOption('route_parameters')($entity);

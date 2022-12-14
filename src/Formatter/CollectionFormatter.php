@@ -6,7 +6,7 @@ namespace whatwedo\CoreBundle\Formatter;
 
 class CollectionFormatter extends AbstractFormatter
 {
-    public function getString($value): string
+    public function getString(mixed $value): string
     {
         if (! is_iterable($value)) {
             return '';
@@ -15,7 +15,7 @@ class CollectionFormatter extends AbstractFormatter
         return implode(', ', (array) $value);
     }
 
-    public function getHtml($value): string
+    public function getHtml(mixed $value): string
     {
         if (! is_iterable($value)) {
             return '';

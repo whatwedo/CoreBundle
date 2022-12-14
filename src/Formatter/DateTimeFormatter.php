@@ -8,7 +8,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class DateTimeFormatter extends AbstractFormatter
 {
-    public function getString($value): string
+    public function getString(mixed $value): string
     {
         if ($value instanceof \DateTimeInterface) {
             return $value->format($this->options['format']);

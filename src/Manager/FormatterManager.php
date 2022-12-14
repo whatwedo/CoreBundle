@@ -39,6 +39,9 @@ class FormatterManager
      */
     protected array $formatters = [];
 
+    /**
+     * @param FormatterInterface[] $formatters
+     */
     public function __construct(
         #[TaggedIterator('whatwedo_core.formatter')] iterable $formatters
     ) {
@@ -47,7 +50,7 @@ class FormatterManager
         }
     }
 
-    public function getFormatter($class): FormatterInterface
+    public function getFormatter(string $class): FormatterInterface
     {
         return $this->formatters[$class];
     }

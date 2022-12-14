@@ -8,14 +8,14 @@ use whatwedo\CoreBundle\Formatter\CountryAlpha2Formatter;
 
 class CountryAlpha2FormatterTest extends AbstractFormatterTest
 {
-    public function testFormatter()
+    public function testFormatter(): void
     {
         $formatter = $this->getFormatter(CountryAlpha2Formatter::class);
         $formatter->processOptions();
         self::assertSame('Schweiz', $formatter->getHtml('CH'));
     }
 
-    public function testFormatterEnglish()
+    public function testFormatterEnglish(): void
     {
         $formatter = $this->getFormatter(CountryAlpha2Formatter::class);
         $formatter->processOptions([

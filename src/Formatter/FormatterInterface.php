@@ -9,9 +9,12 @@ use Symfony\Component\DependencyInjection\Attribute\Autoconfigure;
 #[Autoconfigure(tags: ['whatwedo_core.formatter'])]
 interface FormatterInterface
 {
-    public function getString($value): string;
+    public function getString(mixed $value): string;
 
-    public function getHtml($value): string;
+    public function getHtml(mixed $value): string;
 
-    public function processOptions(array $options = []);
+    /**
+     * @param array<string, mixed> $options
+     */
+    public function processOptions(array $options = []): void;
 }

@@ -8,14 +8,14 @@ use whatwedo\CoreBundle\Formatter\TranslationFormatter;
 
 class TranslationFormatterTest extends AbstractFormatterTest
 {
-    public function testFormatter()
+    public function testFormatter(): void
     {
         $formatter = $this->getFormatter(TranslationFormatter::class);
         $formatter->processOptions([]);
         self::assertSame('The Test', $formatter->getHtml('label.test'));
     }
 
-    public function testFormatterLocale()
+    public function testFormatterLocale(): void
     {
         $formatter = $this->getFormatter(TranslationFormatter::class);
         $formatter->processOptions([
@@ -24,7 +24,7 @@ class TranslationFormatterTest extends AbstractFormatterTest
         self::assertSame('Der Test', $formatter->getHtml('label.test'));
     }
 
-    public function testFormatterDomain()
+    public function testFormatterDomain(): void
     {
         $formatter = $this->getFormatter(TranslationFormatter::class);
         $formatter->processOptions([

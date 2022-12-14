@@ -8,7 +8,7 @@ use whatwedo\CoreBundle\Formatter\Nl2brFormatter;
 
 class Nl2brFormatterTest extends AbstractFormatterTest
 {
-    public function testFormatter()
+    public function testFormatter(): void
     {
         $formatter = $this->getFormatter(Nl2brFormatter::class);
         $formatter->processOptions();

@@ -36,7 +36,10 @@ use Symfony\Component\Form\FormView;
 
 class ChoiceTypeExtension extends AbstractTypeExtension
 {
-    public function finishView(FormView $view, FormInterface $form, array $options)
+    /**
+     * @param array<string, mixed> $options
+     */
+    public function finishView(FormView $view, FormInterface $form, array $options): void
     {
         $view->vars['attr']['data-controller'] = 'whatwedo--core-bundle--select';
         $view->vars['attr']['data-whatwedo--core-bundle--select-required-value'] = $options['required'];

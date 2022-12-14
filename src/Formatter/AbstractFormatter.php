@@ -8,6 +8,9 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 abstract class AbstractFormatter implements FormatterInterface
 {
+    /**
+     * @var array<string, mixed>
+     */
     protected array $options = [];
 
     public function __construct()
@@ -15,11 +18,14 @@ abstract class AbstractFormatter implements FormatterInterface
         $this->processOptions();
     }
 
-    public function getHtml($value): string
+    public function getHtml(mixed $value): string
     {
         return $this->getString($value);
     }
 
+    /**
+     * @param array<string, mixed> $options
+     */
     public function processOptions(array $options = []): void
     {
         $resolver = new OptionsResolver();

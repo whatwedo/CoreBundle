@@ -9,7 +9,7 @@ use whatwedo\CoreBundle\Tests\App\Enum\TestEnum;
 
 class EnumFormatterTest extends AbstractFormatterTest
 {
-    public function testFormatter()
+    public function testFormatter(): void
     {
         $formatter = $this->getFormatter(EnumFormatter::class);
         $formatter->processOptions();

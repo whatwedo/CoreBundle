@@ -8,13 +8,13 @@ use whatwedo\CoreBundle\Formatter\CountryAlpha3Formatter;
 
 class CountryAlpha3FormatterTest extends AbstractFormatterTest
 {
-    public function testFormatter()
+    public function testFormatter(): void
     {
         $formatter = $this->getFormatter(CountryAlpha3Formatter::class);
         self::assertSame('Schweiz', $formatter->getHtml('CHE'));
     }
 
-    public function testFormatterEnglish()
+    public function testFormatterEnglish(): void
     {
         $formatter = $this->getFormatter(CountryAlpha3Formatter::class);
         $formatter->processOptions([

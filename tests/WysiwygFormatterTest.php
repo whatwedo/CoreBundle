@@ -8,7 +8,7 @@ use whatwedo\CoreBundle\Formatter\WysiwygFormatter;
 
 class WysiwygFormatterTest extends AbstractFormatterTest
 {
-    public function testFormatter()
+    public function testFormatter(): void
     {
         $formatter = $this->getFormatter(WysiwygFormatter::class);
         $formatter->processOptions();

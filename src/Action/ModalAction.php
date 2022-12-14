@@ -31,6 +31,9 @@ namespace whatwedo\CoreBundle\Action;
 
 class ModalAction extends Action
 {
+    /**
+     * @param array<string, mixed> $options
+     */
     public function __construct(string $acronym, array $options)
     {
         unset($this->defaultOptions['confirmation']);

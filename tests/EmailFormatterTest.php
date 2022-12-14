@@ -8,7 +8,7 @@ use whatwedo\CoreBundle\Formatter\EmailFormatter;
 
 class EmailFormatterTest extends AbstractFormatterTest
 {
-    public function testFormatter()
+    public function testFormatter(): void
     {
         $formatter = $this->getFormatter(EmailFormatter::class);
         self::assertSame('<a href="mailto:test@whatwedo.ch" title="E-Mail senden">test@whatwedo.ch</a>', $formatter->getHtml('test@whatwedo.ch'));

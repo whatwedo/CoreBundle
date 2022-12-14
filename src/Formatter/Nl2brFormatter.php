@@ -6,12 +6,12 @@ namespace whatwedo\CoreBundle\Formatter;
 
 class Nl2brFormatter extends AbstractFormatter
 {
-    public function getString($value): string
+    public function getString(mixed $value): string
     {
         return $value;
     }
 
-    public function getHtml($value): string
+    public function getHtml(mixed $value): string
     {
         return nl2br($value);
     }

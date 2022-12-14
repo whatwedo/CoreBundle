@@ -6,12 +6,12 @@ namespace whatwedo\CoreBundle\Formatter;
 
 class EmailFormatter extends AbstractFormatter
 {
-    public function getString($value): string
+    public function getString(mixed $value): string
     {
         return filter_var($value, FILTER_VALIDATE_EMAIL) ? $value : '';
     }
 
-    public function getHtml($value): string
+    public function getHtml(mixed $value): string
     {
         $value = $this->getString($value);
 
