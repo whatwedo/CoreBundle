@@ -38,7 +38,7 @@
                     method="get"
                     action="{{ path(action.route, action.routeParameters) }}"
                 >
-                    <p class="text-sm text-gray-500 mr-4">
+                    <p class="text-base text-gray-500 mr-4">
                         {{ action.confirmation('label') | trans }}
                     </p>
 
@@ -48,7 +48,7 @@
                         </button>
                         <button
                             {{ stimulus_action('whatwedo/core-bundle/dropdown', 'close') }}
-                            class="ml-3 inline-flex items-center px-3 py-2 border border-gray-300 shadow-sm text-sm leading-4 font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-primary-500"
+                            class="ml-3 inline-flex items-center px-3 py-2 border border-gray-300 shadow-sm text-base leading-4 font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-primary-500"
                             type="button"
                         >
                             {{ action.confirmation('no') | trans }}

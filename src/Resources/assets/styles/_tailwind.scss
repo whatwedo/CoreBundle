@@ -8,40 +8,40 @@
 }
 
 .whatwedo-utility-heading-3 {
-    @apply text-lg leading-6 font-medium text-neutral-500 font-bold;
+    @apply text-lg leading-6 font-medium text-neutral-700 font-bold;
 }
 
 .whatwedo-utility-heading-4 {
-    @apply text-base leading-6 font-medium text-neutral-500 font-bold;
+    @apply text-lg leading-6 font-medium text-neutral-500 font-bold;
 }
 
 .whatwedo-utility-paragraph {
-    @apply text-sm text-neutral-900;
+    @apply text-base text-neutral-900;
 }
 
 .whatwedo-utility-paragraph--error {
-    @apply text-sm text-error-500;
+    @apply text-base text-error-500;
 }
 
 .whatwedo-utility-paragraph--warning {
-    @apply text-sm text-warning-500;
+    @apply text-base text-warning-500;
 }
 
 .whatwedo-utility-paragraph--success {
-    @apply text-sm text-success-500;
+    @apply text-base text-success-500;
 }
 
 .whatwedo-utility-bold {
     @extend .whatwedo-utility-paragraph;
-    @apply text-sm font-bold text-neutral-500;
+    @apply text-base font-bold text-neutral-500;
 }
 
 .whatwedo-utility-button {
-    @apply px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-primary-500 hover:bg-primary-700 focus:ring-primary-500 transition-colors;
+    @apply px-4 py-2 border border-transparent shadow-sm text-base font-bold rounded-md text-white bg-primary-500 hover:bg-primary-700 focus:ring-primary-500 transition-colors;
 }
 
 .whatwedo-utility-input {
-    @apply bg-white focus:ring-primary-500 focus:border-primary-500 rounded-md text-sm border-neutral-300;
+    @apply bg-white focus:ring-primary-500 focus:border-primary-500 rounded-md text-base border-neutral-300;
 }
 
 .whatwedo-utility-input--error {
