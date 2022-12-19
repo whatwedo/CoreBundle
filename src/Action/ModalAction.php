@@ -36,7 +36,6 @@ class ModalAction extends Action
      */
     public function __construct(string $acronym, array $options)
     {
-        unset($this->defaultOptions['confirmation']);
         parent::__construct($acronym, $options);
     }
 }
