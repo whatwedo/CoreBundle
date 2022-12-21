@@ -7,17 +7,19 @@
   resolved "https://registry.yarnpkg.com/@hotwired/stimulus/-/stimulus-3.1.0.tgz#20215251e5afe6e0a3787285181ba1bfc9097df0"
   integrity sha512-iDMHUhiEJ1xFeicyHcZQQgBzhtk5mPR0QZO3L6wtqzMsJEk2TKECuCQTGKjm+KJTHVY0dKq1dOOAWvODjpd2Mg==
 
-"@orchidjs/sifter@^0.9.2":
-  version "0.9.3"
-  resolved "https://registry.yarnpkg.com/@orchidjs/sifter/-/sifter-0.9.3.tgz#6eec2c9649721205130a87f137cc1ab80cdf0c5c"
-  integrity sha512-9XGiAJcWvEektxjR9X+dYeG+kg8GdojM6ZCmrnuDaWoVew+GAKxiesvYxyY+RLUgWTv8B1qpLIVYlswxKcW5XQ==
+"@orchidjs/sifter@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@orchidjs/sifter/-/sifter-1.0.3.tgz#43f42519472282eb632d0a1589184f044d64129b"
+  integrity sha512-zCZbwKegHytfsPm8Amcfh7v/4vHqTAaOu6xFswBYcn8nznBOuseu6COB2ON7ez0tFV0mKL0nRNnCiZZA+lU9/g==
+  dependencies:
+    "@orchidjs/unicode-variants" "^1.0.4"
 
-core-js@^3.24.1:
-  version "3.25.0"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.25.0.tgz#be71d9e0dd648ffd70c44a7ec2319d039357eceb"
-  integrity sha512-CVU1xvJEfJGhyCpBrzzzU1kjCfgsGUxhEvwUV2e/cOedYWHdmluamx+knDnmhqALddMG16fZvIqvs9aijsHHaA==
+"@orchidjs/unicode-variants@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@orchidjs/unicode-variants/-/unicode-variants-1.0.4.tgz#6d2f812e3b19545bba2d81caffff1204de9a6a58"
+  integrity sha512-NvVBRnZNE+dugiXERFsET1JlKZfM5lJDEpSMilKW4bToYJ7pxf0Zne78xyXB2ny2c2aHfJ6WLnz1AaTNHAmQeQ==
 
-flatpickr@^4.6.13:
+flatpickr@^4.6.9:
   version "4.6.13"
   resolved "https://registry.yarnpkg.com/flatpickr/-/flatpickr-4.6.13.tgz#8a029548187fd6e0d670908471e43abe9ad18d94"
   integrity sha512-97PMG/aywoYpB4IvbvUJi0RQi8vearvU0oov1WW3k0WZPBMrTQVqekSX5CjSG/M4Q3i6A/0FKXC7RyAoAUUSPw==
@@ -27,11 +29,6 @@ hotkeys-js@>=3:
   resolved "https://registry.yarnpkg.com/hotkeys-js/-/hotkeys-js-3.9.5.tgz#8314d0522bf2601e36003213047e9dc7d56d19fe"
   integrity sha512-T0G8CUZ6Q1IOgPnLK1hDXR8DqgKF/VWEsHvZgi6CM7Ub9oOAzvWuJ3Qhc/9nFQaR26MfFOZSwULHrtCnsUX7zA==
 
-regenerator-runtime@^0.13.9:
-  version "0.13.9"
-  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.13.9.tgz#8925742a98ffd90814988d7566ad30ca3b263b52"
-  integrity sha512-p3VT+cOEgxFsRRA9X4lkI1E+k2/CtnKtU4gcxyaCUreilL/vqI6CdZ3wxVUx3UOUg+gnUOQQcRI7BmSI656MYA==
-
 stimulus-dropdown@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/stimulus-dropdown/-/stimulus-dropdown-2.0.0.tgz#3d401e418be21787f182c0de4bf0d2fd91cfbf8e"
@@ -39,10 +36,17 @@ stimulus-dropdown@^2.0.0:
   dependencies:
     stimulus-use "^0.50.0-2"
 
-stimulus-use@^0.50.0, stimulus-use@^0.50.0-2:
+stimulus-use@^0.50.0-2:
   version "0.50.0"
   resolved "https://registry.yarnpkg.com/stimulus-use/-/stimulus-use-0.50.0.tgz#0bae92fbb1fd961cbb23569f9edd12ae642ce4a6"
   integrity sha512-9NScZQiOycQdzh8VZ15pxk6ep/a22fgha2halOvZFpJITC4nsTbWlO7D1hm+9LspFxa5b28tQhm3XkbH/qAlGw==
+  dependencies:
+    hotkeys-js ">=3"
+
+stimulus-use@^0.51.1:
+  version "0.51.1"
+  resolved "https://registry.yarnpkg.com/stimulus-use/-/stimulus-use-0.51.1.tgz#55e775eee26d583ee4bdb4427d58979885408ebe"
+  integrity sha512-e7yEDHWz1GrDWwTc1y1Nnz62HPjELRAfn5q1JSCpTj1wHCCs4NNRUR14oZ08xxlp/4bjrgApMOKRkMPKA2TmVg==
   dependencies:
     hotkeys-js ">=3"
 
@@ -53,9 +57,10 @@ tailwindcss-stimulus-components@^3.0.1:
   dependencies:
     "@hotwired/stimulus" ">=3.0.0"
 
-tom-select@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/tom-select/-/tom-select-2.1.0.tgz#93316cf042a69d9462027b8d6380f18f2a002e9d"
-  integrity sha512-NtE8kACBlMv4QaDakYfnXtEAgM/AVmM7Hw5FNQmij0uwgRgyXC/2kpNJPD1AdT5q/l6mUNkTnInQpTmrwX/tWQ==
+tom-select@^2.0.0:
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/tom-select/-/tom-select-2.2.2.tgz#8e5f9296e6d80254feccb57f0986bd6c44d126e2"
+  integrity sha512-igGah1yY6yhrnN2h/Ky8I5muw/nE/YQxIsEZoYu5qaA4bsRibvKto3s8QZZosKpOd0uO8fNYhRfAwgHB4IAYew==
   dependencies:
-    "@orchidjs/sifter" "^0.9.2"
+    "@orchidjs/sifter" "^1.0.3"
+    "@orchidjs/unicode-variants" "^1.0.4"

@@ -1,8 +1,14 @@
 import {Controller} from "@hotwired/stimulus";
+import { useClickOutside } from 'stimulus-use'
 
 export default class extends Controller {
     connect() {
-        super.connect()
+        super.connect();
+        useClickOutside(this);
+    }
+
+    clickOutside (event) {
+        console.log('test');
     }
 
     toggle (event) {
