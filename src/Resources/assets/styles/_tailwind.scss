@@ -1,56 +1,62 @@
 /* Utilities */
-.whatwedo-utility-heading-1 {
-    @apply text-xl leading-6 font-medium text-neutral-900 font-bold;
-}
+@layer components {
+    .whatwedo-utility-heading-1 {
+        @apply text-2xl font-bold text-neutral-800;
+    }
 
-.whatwedo-utility-heading-2 {
-    @apply text-xl leading-6 font-medium text-neutral-500 font-bold;
-}
+    .whatwedo-utility-heading-2 {
+        @apply text-xl font-bold text-neutral-700;
+    }
 
-.whatwedo-utility-heading-3 {
-    @apply text-lg leading-6 font-medium text-neutral-700 font-bold;
-}
+    .whatwedo-utility-heading-3 {
+        @apply text-lg font-bold text-neutral-600;
+    }
 
-.whatwedo-utility-heading-4 {
-    @apply text-lg leading-6 font-medium text-neutral-500 font-bold;
-}
+    .whatwedo-utility-heading-4 {
+        @apply text-base font-bold text-neutral-500;
+    }
 
-.whatwedo-utility-paragraph {
-    @apply text-base text-neutral-900;
-}
+    .whatwedo-utility-paragraph {
+        @apply text-base font-normal text-neutral-800;
+    }
 
-.whatwedo-utility-paragraph--error {
-    @apply text-base text-error-500;
-}
+    .whatwedo-utility-paragraph--error {
+        @apply text-base font-normal text-error-500;
+    }
 
-.whatwedo-utility-paragraph--warning {
-    @apply text-base text-warning-500;
-}
+    .whatwedo-utility-paragraph--warning {
+        @apply text-base font-normal text-warning-500;
+    }
 
-.whatwedo-utility-paragraph--success {
-    @apply text-base text-success-500;
-}
+    .whatwedo-utility-paragraph--success {
+        @apply text-base font-normal text-success-500;
+    }
 
-.whatwedo-utility-bold {
-    @extend .whatwedo-utility-paragraph;
-    @apply text-base font-bold text-neutral-500;
-}
+    .whatwedo-utility-bold {
+        @extend .whatwedo-utility-heading-4;
+    }
 
-.whatwedo-utility-button {
-    @apply px-4 py-2 border border-transparent shadow-sm text-base font-bold rounded-md text-white bg-primary-500 hover:bg-primary-700 focus:ring-primary-500 transition-colors;
-}
+    .whatwedo-utility-link {
+        @extend .whatwedo-utility-heading-4;
+        @apply text-neutral-800;
+    }
 
-.whatwedo-utility-input {
-    @apply bg-white focus:ring-primary-500 focus:border-primary-500 rounded-md text-base border-neutral-300;
-}
+    .whatwedo-utility-button {
+        @apply px-4 py-2 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-primary-500 hover:bg-primary-700 focus:ring-primary-500 transition-colors;
+    }
 
-.whatwedo-utility-input--error {
-    @apply focus:ring-error-300 focus:border-error-300 border-error-500;
-}
+    .whatwedo-utility-input {
+        @apply bg-white focus:ring-primary-500 focus:border-primary-500 rounded-md text-base border-neutral-300;
+    }
 
-.whatwedo-utility-label {
-    @extend .whatwedo-utility-bold;
-    @apply text-neutral-500;
+    .whatwedo-utility-input--error {
+        @apply focus:ring-error-300 focus:border-error-300 border-error-500;
+    }
+
+    .whatwedo-utility-label {
+        @extend .whatwedo-utility-bold;
+        @apply text-neutral-500;
+    }
 }
 
 /* Style Hooks */
