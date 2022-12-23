@@ -28,4 +28,21 @@ export default class extends Controller {
             dropdownDiv.classList.add('hidden');
         }
     }
+
+    layoutCalculate () {
+        const dropdownDiv = this.menuTarget;
+
+        // Reset
+        dropdownDiv.style.position = '';
+        dropdownDiv.style.top = '';
+        dropdownDiv.style.left = '';
+
+        // Calculate
+        const {top, left} = dropdownDiv.getBoundingClientRect();
+
+        // Set fixed position
+        dropdownDiv.style.position = 'fixed';
+        dropdownDiv.style.top = top + 'px';
+        dropdownDiv.style.left = left + 'px';
+    }
 }
