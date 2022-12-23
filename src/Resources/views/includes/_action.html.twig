@@ -152,7 +152,7 @@
 
 {% block modal_action %}
     {# @var action \whatwedo\CrudBundle\Action\Action #}
-    <span {{ stimulus_controller('whatwedo/core-bundle/modal-form', { formUrl: path(action.option('route'), action.option('route_parameters')) }) }} class="float-end mb-3">
+    <span {{ stimulus_controller('whatwedo/core-bundle/modal-form', { formUrl: path(action.option('route'), action.option('route_parameters')) }) }}>
         <button type="button"
                 class="whatwedo-crud-button--action" {{ stimulus_action('whatwedo/core-bundle/modal-form', 'openModal') }}>
             {% if action.option('icon') %}
