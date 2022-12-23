@@ -78,22 +78,17 @@
 
 .whatwedo-crud-button--action-danger {
     @extend .whatwedo-utility-button;
-    @apply inline-flex items-center bg-error-600 hover:bg-red-400 ml-3;
+    @apply inline-flex items-center bg-error-500 hover:bg-red-700 ml-3;
 }
 
 .whatwedo-crud-button--action-warning {
     @extend .whatwedo-utility-button;
-    @apply inline-flex items-center bg-warning-600 hover:bg-yellow-400 ml-3;
+    @apply inline-flex items-center bg-warning-500 hover:bg-yellow-700 ml-3;
 }
 
 .whatwedo-crud-button--action-neutral {
     @extend .whatwedo-utility-button;
     @apply inline-flex items-center bg-neutral-500 hover:bg-neutral-700 ml-3;
-}
-
-.whatwedo-crud-button--action-delete {
-    @extend .whatwedo-utility-button;
-    @apply inline-flex items-center bg-error-600 hover:bg-error-700;
 }
 
 .whatwedo-crud-button--action-no-bg {
@@ -105,7 +100,7 @@
 .whatwedo-crud-topbar-actions__submenu {
     .whatwedo-crud-button--action-neutral,
     .whatwedo-crud-button--action-warning,
-    .whatwedo-crud-button--action-delete,
+    .whatwedo-crud-button--action-danger,
     .whatwedo-crud-button--action-no-bg,
     .whatwedo-crud-button--action {
         @apply h-auto shadow-none border-none rounded-none px-3 m-0 w-full;
