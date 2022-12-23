@@ -73,27 +73,27 @@
 
 .whatwedo-crud-button--action {
     @extend .whatwedo-utility-button;
-    @apply inline-flex items-center bg-primary-500 hover:bg-primary-700 ml-3;
+    @apply inline-flex items-center bg-primary-500 hover:bg-primary-700;
 }
 
 .whatwedo-crud-button--action-danger {
     @extend .whatwedo-utility-button;
-    @apply inline-flex items-center bg-error-500 hover:bg-red-700 ml-3;
+    @apply inline-flex items-center bg-error-500 hover:bg-red-700;
 }
 
 .whatwedo-crud-button--action-warning {
     @extend .whatwedo-utility-button;
-    @apply inline-flex items-center bg-warning-500 hover:bg-yellow-700 ml-3;
+    @apply inline-flex items-center bg-warning-500 hover:bg-yellow-700;
 }
 
 .whatwedo-crud-button--action-neutral {
     @extend .whatwedo-utility-button;
-    @apply inline-flex items-center bg-neutral-500 hover:bg-neutral-700 ml-3;
+    @apply inline-flex items-center bg-neutral-500 hover:bg-neutral-700;
 }
 
 .whatwedo-crud-button--action-no-bg {
     @extend .whatwedo-utility-button;
-    @apply inline-flex items-center bg-transparent ml-3;
+    @apply inline-flex items-center bg-transparent;
 }
 
 
