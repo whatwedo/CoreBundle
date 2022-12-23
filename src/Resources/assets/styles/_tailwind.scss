@@ -93,11 +93,12 @@
 
 .whatwedo-crud-button--action-no-bg {
     @extend .whatwedo-utility-button;
-    @apply inline-flex items-center bg-transparent;
+    @apply inline-flex items-center bg-transparent border-neutral-300 text-neutral-700 hover:bg-neutral-100;
 }
 
 
-.whatwedo-crud-topbar-actions__submenu {
+.whatwedo-crud-topbar-actions__submenu >,
+.whatwedo-core-action__confirmation > {
     .whatwedo-crud-button--action-neutral,
     .whatwedo-crud-button--action-warning,
     .whatwedo-crud-button--action-danger,
