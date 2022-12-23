@@ -2,38 +2,30 @@ import {Controller} from "@hotwired/stimulus";
 import { useClickOutside } from 'stimulus-use'
 
 export default class extends Controller {
+    static targets = ['menu']
+
     connect() {
         super.connect();
         useClickOutside(this);
     }
 
     clickOutside (event) {
-        console.log('test');
+        this.close();
     }
 
-    toggle (event) {
-        let dropdownButton = this.element.querySelector("button");
-        let dropdownDiv = this.element.querySelector('[data-whatwedo--core-bundle--dropdown-target="menu"]');
-
-        if (dropdownDiv && dropdownDiv.classList.contains('hidden')) {
-            // Hide all other dropdowns
-            document
-                .querySelectorAll('.whatwedo_table-actions[data-action^="whatwedo--core-bundle--dropdown#toggle"]')
-                .forEach((element) => {
-                    let eventDropdownDiv = element.parentNode.querySelector('[data-whatwedo--core-bundle--dropdown-target="menu"]');
-
-                    if (element !== dropdownButton && eventDropdownDiv && !eventDropdownDiv.classList.contains("hidden"))
-                        eventDropdownDiv.classList.add("hidden");
-                })
-
-            // Show currently focussed dropdown
+    toggle () {
+        const dropdownDiv = this.menuTarget;
+        if (this.hasMenuTarget && dropdownDiv.classList.contains('hidden')) {
             dropdownDiv.classList.remove('hidden');
         } else {
             dropdownDiv.classList.add('hidden');
         }
     }
 
-    close (event) {
-        super.toggle(event)
+    close () {
+        const dropdownDiv = this.menuTarget;
+        if (this.hasMenuTarget && !dropdownDiv.classList.contains('hidden')) {
+            dropdownDiv.classList.add('hidden');
+        }
     }
 }
