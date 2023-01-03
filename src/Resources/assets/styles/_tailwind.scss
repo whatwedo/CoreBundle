@@ -97,15 +97,17 @@
 }
 
 
-.whatwedo-crud-topbar-actions__submenu >,
-.whatwedo-core-action__confirmation > {
-    .whatwedo-crud-button--action-neutral,
-    .whatwedo-crud-button--action-warning,
-    .whatwedo-crud-button--action-danger,
-    .whatwedo-crud-button--action-no-bg,
-    .whatwedo-crud-button--action {
-        @apply h-auto shadow-none border-none rounded-none px-3 m-0 w-full;
-        @apply text-neutral-700 bg-transparent hover:bg-neutral-200 font-bold;
+.whatwedo-crud-topbar-actions__submenu {
+    & >,
+    .whatwedo-core-action__confirmation > {
+        .whatwedo-crud-button--action-neutral,
+        .whatwedo-crud-button--action-warning,
+        .whatwedo-crud-button--action-danger,
+        .whatwedo-crud-button--action-no-bg,
+        .whatwedo-crud-button--action {
+            @apply h-auto shadow-none border-none rounded-none px-3 m-0 w-full;
+            @apply text-neutral-700 bg-transparent hover:bg-neutral-200 font-bold;
+        }
     }
 }
 
