@@ -1,4 +1,7 @@
 whatwedo_core:
+    yes: Ja
+    no: Nein
+    send_email: E-Mail senden
     actions:
         post:
             confirm: Sind Sie sicher?
