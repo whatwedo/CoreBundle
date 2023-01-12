@@ -8,9 +8,9 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 
 class EmailFormatter extends AbstractFormatter
 {
-
-    public function __construct(private TranslatorInterface $translator)
-    {
+    public function __construct(
+        private TranslatorInterface $translator
+    ) {
         parent::__construct();
     }
 
@@ -24,6 +24,7 @@ class EmailFormatter extends AbstractFormatter
         $value = $this->getString($value);
 
         $title = $this->translator->trans('whatwedo_core.send_email');
+
         return $value ? sprintf(
             '<a href="mailto:%s" title="%s">%s</a>',
             $value,
