@@ -26,8 +26,8 @@ class EmailFormatter extends AbstractFormatter
         $title = $this->translator->trans('whatwedo_core.send_email');
         return $value ? sprintf(
             '<a href="mailto:%s" title="%s">%s</a>',
-            $title,
             $value,
+            $title,
             $value
         ) : '';
     }

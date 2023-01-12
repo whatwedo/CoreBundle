@@ -12,16 +12,16 @@ class TranslationFormatterTest extends AbstractFormatterTest
     {
         $formatter = $this->getFormatter(TranslationFormatter::class);
         $formatter->processOptions([]);
-        self::assertSame('The Test', $formatter->getHtml('label.test'));
+        self::assertSame('Der Test', $formatter->getHtml('label.test'));
     }
 
     public function testFormatterLocale(): void
     {
         $formatter = $this->getFormatter(TranslationFormatter::class);
         $formatter->processOptions([
-            TranslationFormatter::OPTION_LOCALE => 'de',
+            TranslationFormatter::OPTION_LOCALE => 'en',
         ]);
-        self::assertSame('Der Test', $formatter->getHtml('label.test'));
+        self::assertSame('The Test', $formatter->getHtml('label.test'));
     }
 
     public function testFormatterDomain(): void

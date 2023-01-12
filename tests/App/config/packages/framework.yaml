@@ -1,7 +1,7 @@
 framework:
   secret: 'S3CRET'
   test: true
-  default_locale: 'en'
+  default_locale: 'de'
   translator:
     default_path: '%kernel.project_dir%/translations'
   router:
