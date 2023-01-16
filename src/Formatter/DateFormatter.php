@@ -8,9 +8,11 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class DateFormatter extends DateTimeFormatter
 {
+    public const OPT_FORMAT = 'format';
+
     protected function configureOptions(OptionsResolver $resolver): void
     {
         $resolver
-            ->setDefault('format', 'd.m.Y');
+            ->setDefault(self::OPT_FORMAT, 'd.m.Y');
     }
 }

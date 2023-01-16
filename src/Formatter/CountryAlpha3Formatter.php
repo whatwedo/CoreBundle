@@ -9,10 +9,12 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class CountryAlpha3Formatter extends AbstractFormatter
 {
+    public const OPT_LOCALE = 'locale';
+
     public function getString(mixed $value): string
     {
         if (Countries::alpha3CodeExists(mb_strtoupper($value))) {
-            return Countries::getAlpha3Name(mb_strtoupper($value), $this->options['locale']);
+            return Countries::getAlpha3Name(mb_strtoupper($value), $this->options[self::OPT_LOCALE]);
         }
 
         return $value;
@@ -20,6 +22,6 @@ class CountryAlpha3Formatter extends AbstractFormatter
 
     protected function configureOptions(OptionsResolver $resolver): void
     {
-        $resolver->setDefault('locale', 'de');
+        $resolver->setDefault(self::OPT_LOCALE, 'de');
     }
 }

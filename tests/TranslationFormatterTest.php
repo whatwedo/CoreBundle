@@ -19,7 +19,7 @@ class TranslationFormatterTest extends AbstractFormatterTest
     {
         $formatter = $this->getFormatter(TranslationFormatter::class);
         $formatter->processOptions([
-            TranslationFormatter::OPTION_LOCALE => 'en',
+            TranslationFormatter::OPT_LOCALE => 'en',
         ]);
         self::assertSame('The Test', $formatter->getHtml('label.test'));
     }
@@ -28,9 +28,9 @@ class TranslationFormatterTest extends AbstractFormatterTest
     {
         $formatter = $this->getFormatter(TranslationFormatter::class);
         $formatter->processOptions([
-            TranslationFormatter::OPTION_LOCALE => 'de',
-            TranslationFormatter::OPTION_DOMAIN => 'domain',
-            TranslationFormatter::OPTION_PARAMETERS => [
+            TranslationFormatter::OPT_LOCALE => 'de',
+            TranslationFormatter::OPT_DOMAIN => 'domain',
+            TranslationFormatter::OPT_PARAMETERS => [
                 '%param%' => 'beste',
             ],
         ]);

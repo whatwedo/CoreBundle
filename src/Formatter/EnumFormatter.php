@@ -9,6 +9,8 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 
 class EnumFormatter extends AbstractFormatter
 {
+    public const OPT_TRANSLATION_KEY_PREFIX = 'translation_key_prefix';
+
     public function __construct(
         private TranslatorInterface $translator
     ) {
@@ -25,6 +27,6 @@ class EnumFormatter extends AbstractFormatter
 
     protected function configureOptions(OptionsResolver $resolver): void
     {
-        $resolver->setDefault('translation_key_prefix', '');
+        $resolver->setDefault(self::OPT_TRANSLATION_KEY_PREFIX, '');
     }
 }

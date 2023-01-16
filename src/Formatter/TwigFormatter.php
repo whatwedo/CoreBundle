@@ -34,6 +34,8 @@ use Twig\Environment;
 
 class TwigFormatter extends AbstractFormatter
 {
+    public const OPT_TEMPLATE = 'template';
+
     public function __construct(
         protected Environment $twig
     ) {
@@ -46,14 +48,14 @@ class TwigFormatter extends AbstractFormatter
 
     public function getHtml(mixed $value): string
     {
-        return $this->twig->render($this->options['template'], [
+        return $this->twig->render($this->options[self::OPT_TEMPLATE], [
             'value' => $value,
         ]);
     }
 
     protected function configureOptions(OptionsResolver $resolver): void
     {
-        $resolver->setRequired('template');
-        $resolver->setAllowedTypes('template', 'string');
+        $resolver->setRequired(self::OPT_TEMPLATE);
+        $resolver->setAllowedTypes(self::OPT_TEMPLATE, 'string');
     }
 }
