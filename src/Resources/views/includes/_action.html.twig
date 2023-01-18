@@ -43,7 +43,7 @@
                     </p>
 
                     <div class="flex space-x-2">
-                        <button {{ attr|map((value, attr) => "#{attr}=\"#{value}\"")|join(' ')|raw }}>
+                        <button class="whatwedo-crud-button--action-danger">
                             {{ action.confirmation('yes') | trans }}
                         </button>
                         <button
@@ -114,7 +114,7 @@
                     </p>
 
                     <div class="flex space-x-2">
-                        <button {{ attr|map((value, attr) => "#{attr}=\"#{value}\"")|join(' ')|raw }}>
+                        <button class="whatwedo-crud-button--action-danger">
                             {{ action.confirmation('yes') | trans }}
                         </button>
                         <button
