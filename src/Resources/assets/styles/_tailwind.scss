@@ -33,7 +33,7 @@
     }
 
     .whatwedo-utility-bold {
-        @extend .whatwedo-utility-heading-4;
+        @apply text-base font-semibold text-neutral-500;
     }
 
     .whatwedo-utility-link {
