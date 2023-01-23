@@ -42,7 +42,7 @@
     }
 
     .whatwedo-utility-button {
-        @apply px-4 py-2 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-primary-500 hover:bg-primary-700 focus:ring-primary-500 transition-colors;
+        @apply px-4 py-2 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-white hover:bg-neutral-200 focus:ring-primary-500 transition-colors;
     }
 
     .whatwedo-utility-input {
@@ -121,6 +121,16 @@
     @apply inline-flex items-center bg-transparent border-neutral-300 text-neutral-700 hover:bg-neutral-100;
 }
 
+.whatwedo-crud-button--action-white {
+    @extend .whatwedo-utility-button;
+    @apply inline-flex items-center bg-white border-neutral-300 text-neutral-700 hover:bg-neutral-100;
+}
+
+.whatwedo-table-filter-amount {
+    input, select {
+        @extend .whatwedo-utility-input;
+    }
+}
 
 .whatwedo-crud-topbar-actions__submenu {
     & >,
