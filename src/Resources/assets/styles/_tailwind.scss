@@ -33,7 +33,7 @@
     }
 
     .whatwedo-utility-bold {
-        @extend .whatwedo-utility-heading-4;
+        @apply text-base font-semibold text-neutral-500;
     }
 
     .whatwedo-utility-link {
@@ -42,7 +42,7 @@
     }
 
     .whatwedo-utility-button {
-        @apply px-4 py-2 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-primary-500 hover:bg-primary-700 focus:ring-primary-500 transition-colors;
+        @apply px-4 py-2 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-white hover:bg-neutral-200 focus:ring-primary-500 transition-colors;
     }
 
     .whatwedo-utility-input {
@@ -56,6 +56,31 @@
     .whatwedo-utility-label {
         @extend .whatwedo-utility-bold;
         @apply text-neutral-500;
+    }
+
+    // Modal
+    .whatwedo-utility-modal {
+        @apply fixed z-50 duration-300 ease-in-out transform inset-0 overflow-y-auto;
+
+        &__overlay {
+            @apply relative flex min-h-screen text-center md:block md:px-4 lg:px-8 text-[0];
+        }
+
+        &__backdrop {
+            @apply hidden md:block absolute inset-0 bg-neutral-500 bg-opacity-75 transition-opacity;
+        }
+
+        &__wrapper {
+            @apply flex text-base text-left transform transition md:py-4 lg:py-8 min-w-[650px] md:inline-block md:align-middle;
+        }
+
+        &__wrapper-inner {
+            @apply w-full relative flex items-center bg-white p-8 sm:p-6 overflow-hidden shadow-2xl;
+        }
+
+        &__close {
+            @apply absolute top-5 right-5 text-neutral-400 hover:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 rounded transition-colors;
+        }
     }
 }
 
@@ -96,6 +121,16 @@
     @apply inline-flex items-center bg-transparent border-neutral-300 text-neutral-700 hover:bg-neutral-100;
 }
 
+.whatwedo-crud-button--action-white {
+    @extend .whatwedo-utility-button;
+    @apply inline-flex items-center bg-white border-neutral-300 text-neutral-700 hover:bg-neutral-100;
+}
+
+.whatwedo-table-filter-amount {
+    input, select {
+        @extend .whatwedo-utility-input;
+    }
+}
 
 .whatwedo-crud-topbar-actions__submenu {
     & >,
