@@ -18,13 +18,13 @@ abstract class BaseCommand extends Command implements ContainerAwareInterface
     use ConsoleOutput;
     use ContainerAwareTrait;
 
-    protected ?\Symfony\Component\Console\Input\InputInterface $input = null;
+    protected ?InputInterface $input = null;
 
     protected ?object $registry = null;
 
-    protected ?\Symfony\Component\Stopwatch\Stopwatch $stopwatch = null;
+    protected ?Stopwatch $stopwatch = null;
 
-    public function getInput(): ?\Symfony\Component\Console\Input\InputInterface
+    public function getInput(): ?InputInterface
     {
         return $this->input;
     }
