@@ -53,7 +53,7 @@ trait TwigFilterTrait
         return $this->camel_to_snake($filterName);
     }
 
-    private function applyFormatter($data, array $options = []): \Twig\Markup
+    private function applyFormatter($data, array $options = []): Markup
     {
         $this->processOptions($options);
 

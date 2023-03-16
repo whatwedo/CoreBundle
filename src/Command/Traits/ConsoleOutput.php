@@ -12,7 +12,7 @@ trait ConsoleOutput
 
     protected OutputInterface $output;
 
-    public function setOutput(\Symfony\Component\Console\Output\OutputInterface $output): self
+    public function setOutput(OutputInterface $output): self
     {
         $this->output = $output;
 
