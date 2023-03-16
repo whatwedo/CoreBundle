@@ -52,6 +52,10 @@ export default class extends Dropdown {
     }
 
     close(event) {
+        const tagName = event.target.tagName.toLowerCase();
+        if (tagName === 'input' || tagName === 'select' || tagName === 'textarea') {
+            return;
+        }
         super.toggle(event);
         this.modalBodyTarget.innerHTML = '';
     }
