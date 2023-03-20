@@ -192,6 +192,12 @@
     cursor: pointer;
 }
 
+/* Datepicker - easepick */
+.easepick-wrapper {
+    --color-fg-primary: theme('colors.primary.500');
+    @apply z-10;
+}
+
 // render empty tomcat '---'
 .ts-wrapper {
     .ts-dropdown-content {
