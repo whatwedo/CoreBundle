@@ -71,7 +71,7 @@
         }
 
         &__wrapper {
-            @apply flex text-base text-left transform transition md:py-4 lg:py-8 min-w-[650px] md:inline-block md:align-middle;
+            @apply flex text-base text-left transform transition md:py-4 lg:py-8 w-full md:min-w-[650px] md:inline-block md:align-middle;
         }
 
         &__wrapper-inner {
