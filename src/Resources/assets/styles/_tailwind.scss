@@ -198,6 +198,83 @@
     @apply z-10;
 }
 
+/* Calendar */
+.fc {
+    .fc-toolbar-title {
+        @extend .whatwedo-utility-heading-1;
+        @apply my-4 #{!important};
+    }
+
+    .fc-toolbar.fc-header-toolbar {
+        @media (max-width: theme('screens.lg')) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+}
+
+.fc-media-screen {
+    @apply font-sans;
+
+    --fc-neutral-text-color: theme('colors.neutral.500');
+    --fc-border-color: theme('colors.neutral.300');
+    --fc-button-bg-color: theme('colors.primary.500');
+    --fc-button-border-color: theme('colors.primary.500');
+    --fc-button-text-color: theme('colors.neutral.700');
+    --fc-button-hover-bg-color: theme('colors.primary.700');
+    --fc-button-hover-border-color: theme('colors.primary.700');
+    --fc-button-active-bg-color: theme('colors.primary.500');
+    --fc-button-active-border-color: theme('colors.primary.500');
+    --fc-event-bg-color: theme('colors.primary.500');
+    --fc-event-border-color: theme('colors.primary.500');
+    --fc-event-text-color: theme('colors.neutral.100');
+    --fc-more-link-bg-color: theme('colors.neutral.300');
+    --fc-today-bg-color: theme('colors.primary.100');
+
+    .fc-button.fc-button-primary {
+        @extend .whatwedo-crud-button--action-neutral;
+        @apply mx-2;
+
+        border-bottom-right-radius: initial !important;
+        border-top-right-radius: initial !important;
+        @apply rounded-md border-none hover:bg-primary-500 #{!important};
+        // @apply px-4 py-2 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-white hover:bg-neutral-200 focus:ring-primary-500 transition-colors #{!important};
+
+        // @apply text-neutral-100 #{!important};
+
+        &.fc-today-button,
+        &.fc-button-active {
+            @extend .whatwedo-crud-button--action;
+            @apply text-neutral-100 #{!important};
+        }
+    }
+
+    .fc-button-group .fc-button {
+        &:first-child {
+            @apply ml-0;
+        }
+
+        &:last-child {
+            @apply mr-0;
+        }
+    }
+
+    .fc-col-header-cell {
+        @apply bg-neutral-200 text-neutral-500;
+    }
+
+    .fc-daygrid-day,
+    .fc-day-past {
+        @apply bg-white text-neutral-700;
+    }
+
+    .fc-daygrid-event {
+        @apply font-sans font-medium;
+        border-radius: 12px;
+        padding: 1px 7px;
+    }
+}
+
 // render empty tomcat '---'
 .ts-wrapper {
     .ts-dropdown-content {
