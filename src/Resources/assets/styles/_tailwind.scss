@@ -238,9 +238,6 @@
         border-bottom-right-radius: initial !important;
         border-top-right-radius: initial !important;
         @apply rounded-md border-none hover:bg-primary-500 #{!important};
-        // @apply px-4 py-2 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-white hover:bg-neutral-200 focus:ring-primary-500 transition-colors #{!important};
-
-        // @apply text-neutral-100 #{!important};
 
         &.fc-today-button,
         &.fc-button-active {
