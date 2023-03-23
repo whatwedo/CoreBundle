@@ -1,19 +1,30 @@
 import { Controller } from '@hotwired/stimulus';
-import flatpickr from "flatpickr";
-import { German } from "flatpickr/dist/l10n/de.js"
-require("flatpickr/dist/flatpickr.css");
+import {easepick, KbdPlugin, TimePlugin} from '@easepick/bundle';
+import easepickStyle from '!!raw-loader!@easepick/core/dist/index.css'
 
 export default class extends Controller {
+    static values = {
+        lang: String
+    }
     connect() {
         if (this.element.tagName !== 'INPUT') {
             return;
         }
         const type = this.element.getAttribute('type');
+        const enableTime = type === 'time' || type === 'datetime-local';
+        let plugins = [KbdPlugin];
 
-        flatpickr(this.element, {
-            'enableTime': type === 'time' || type === 'datetime-local',
-            'noCalendar': type === 'time',
-            'locale': German
+        if(enableTime) {
+            plugins.push(TimePlugin);
+        }
+
+        const picker = new easepick.create({
+            element: this.element,
+            css: easepickStyle,
+            lang: this.langValue || 'de-DE',
+            readonly: false,
+            plugins: plugins,
+            calendars: type === 'time' ? 0 : 1,
         });
     }
 }
