@@ -1,5 +1,6 @@
 import { Controller } from '@hotwired/stimulus';
 import {easepick, KbdPlugin, TimePlugin} from '@easepick/bundle';
+import easepickStyle from '!!raw-loader!@easepick/core/dist/index.css'
 
 export default class extends Controller {
     connect() {
@@ -16,9 +17,7 @@ export default class extends Controller {
 
         const picker = new easepick.create({
             element: this.element,
-            css: [
-                'https://cdn.jsdelivr.net/npm/@easepick/bundle@1.2.1/dist/index.css',
-            ],
+            css: easepickStyle,
             lang: 'de-DE',
             readonly: false,
             plugins: plugins,
