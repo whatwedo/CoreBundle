@@ -50,6 +50,7 @@
     },
     "dependencies": {
         "flatpickr": "^4.6.9",
+        "raw-loader": "^4.0.2",
         "stimulus-dropdown": "^2.0.0",
         "stimulus-use": "^0.51.1",
         "tom-select": "^2.0.0"
