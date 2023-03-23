@@ -3,6 +3,9 @@ import {easepick, KbdPlugin, TimePlugin} from '@easepick/bundle';
 import easepickStyle from '!!raw-loader!@easepick/core/dist/index.css'
 
 export default class extends Controller {
+    static values = {
+        lang: String
+    }
     connect() {
         if (this.element.tagName !== 'INPUT') {
             return;
@@ -18,7 +21,7 @@ export default class extends Controller {
         const picker = new easepick.create({
             element: this.element,
             css: easepickStyle,
-            lang: 'de-DE',
+            lang: this.langValue || 'de-DE',
             readonly: false,
             plugins: plugins,
             calendars: type === 'time' ? 0 : 1,
