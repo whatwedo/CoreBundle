@@ -58,6 +58,11 @@
         @apply text-neutral-500;
     }
 
+    // Topbar
+    .whatwedo-utility-topbar {
+        @apply flex flex-grow-0 flex-auto px-4 py-4 min-h-[71px] justify-end lg:justify-between bg-white;
+    }
+
     // Modal
     .whatwedo-utility-modal {
         @apply fixed z-50 duration-300 ease-in-out transform inset-0 overflow-y-auto;
