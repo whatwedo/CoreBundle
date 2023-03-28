@@ -1,6 +1,6 @@
 import { Controller } from '@hotwired/stimulus';
 import {easepick, KbdPlugin, TimePlugin} from '@easepick/bundle';
-import easepickStyle from '!!raw-loader!@easepick/core/dist/index.css'
+import easepickStyle from '!!raw-loader!@easepick/bundle/dist/index.css'
 
 export default class extends Controller {
     static values = {
