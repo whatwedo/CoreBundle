@@ -80,7 +80,7 @@
         }
 
         &__wrapper-inner {
-            @apply w-full relative flex items-center bg-white p-8 sm:p-6 overflow-hidden shadow-2xl overflow-visible;
+            @apply w-full relative flex items-center bg-neutral-100 p-8 sm:p-6 overflow-hidden shadow-2xl overflow-visible;
         }
 
         &__close {
