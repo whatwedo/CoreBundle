@@ -203,6 +203,21 @@
     @apply z-10;
 }
 
+input::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+input[type="datetime-local"],
+input[type="date"] {
+    &::-webkit-input-placeholder {
+        visibility: hidden !important;
+    }
+
+    + span {
+        @apply hidden; // default icon by easepick - can't be customized
+    }
+}
+
 /* Calendar */
 .fc {
     .fc-toolbar-title {
