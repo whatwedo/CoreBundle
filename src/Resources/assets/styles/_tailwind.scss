@@ -80,7 +80,7 @@
         }
 
         &__wrapper-inner {
-            @apply w-full relative flex items-center bg-white p-8 sm:p-6 overflow-hidden shadow-2xl overflow-visible;
+            @apply w-full relative flex items-center bg-neutral-100 p-8 sm:p-6 overflow-hidden shadow-2xl overflow-visible;
         }
 
         &__close {
@@ -201,6 +201,21 @@
 .easepick-wrapper {
     --color-fg-primary: theme('colors.primary.500');
     @apply z-10;
+}
+
+input::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+input[type="datetime-local"],
+input[type="date"] {
+    &::-webkit-input-placeholder {
+        visibility: hidden !important;
+    }
+
+    + span {
+        @apply hidden; // default icon by easepick - can't be customized
+    }
 }
 
 /* Calendar */
