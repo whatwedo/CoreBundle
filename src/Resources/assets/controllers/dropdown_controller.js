@@ -13,7 +13,9 @@ export default class extends Controller {
         this.close();
     }
 
-    toggle () {
+    toggle (event) {
+        event.stopPropagation();
+
         const dropdownDiv = this.menuTarget;
         if (this.hasMenuTarget && dropdownDiv.classList.contains('hidden')) {
             dropdownDiv.classList.remove('hidden');
