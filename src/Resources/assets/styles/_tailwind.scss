@@ -42,7 +42,7 @@
     }
 
     .whatwedo-utility-button {
-        @apply px-4 py-2 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-white hover:bg-neutral-200 focus:ring-primary-500 transition-colors;
+        @apply px-3 py-1.5 md:px-4 md:py-2 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-white hover:bg-neutral-200 focus:ring-primary-500 transition-colors;
     }
 
     .whatwedo-utility-input {
@@ -60,7 +60,7 @@
 
     // Topbar
     .whatwedo-utility-topbar {
-        @apply flex flex-grow-0 flex-auto px-4 py-4 min-h-[71px] justify-end lg:justify-between bg-white;
+        @apply flex flex-grow-0 flex-auto px-4 pb-4 md:py-4 md:min-h-[71px] justify-end items-center lg:justify-between;
     }
 
     // Modal
