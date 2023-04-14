@@ -60,7 +60,7 @@
 
     // Topbar
     .whatwedo-utility-topbar {
-        @apply flex flex-grow-0 flex-auto px-4 pb-4 md:py-4 md:min-h-[71px] justify-end items-center lg:justify-between;
+        @apply flex flex-grow-0 flex-auto px-4 py-2 md:py-4 md:min-h-[71px] justify-end items-center lg:justify-between;
     }
 
     // Modal
