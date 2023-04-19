@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace whatwedo\CoreBundle\Formatter;
 
+use Doctrine\Common\Collections\Collection;
+
 class CollectionFormatter extends AbstractFormatter
 {
     public function getString(mixed $value): string
@@ -11,7 +13,9 @@ class CollectionFormatter extends AbstractFormatter
         if (! is_iterable($value)) {
             return '';
         }
-
+        if ($value instanceof Collection) {
+            $value = $value->toArray();
+        }
         return implode(', ', (array) $value);
     }
 
@@ -20,7 +24,9 @@ class CollectionFormatter extends AbstractFormatter
         if (! is_iterable($value)) {
             return '';
         }
-
+        if ($value instanceof Collection) {
+            $value = $value->toArray();
+        }
         $str = '<ul>';
         foreach ($value as $singleValue) {
             $str .= '<li>' . $singleValue . '</li>';
