@@ -3,17 +3,11 @@
 
 # whatwedoCoreBundle
 
-Reusable components used by other bundles of whatwedo.
-
-Main users:
-
-- https://github.com/whatwedo/CrudBundle
-- https://github.com/whatwedo/TableBundle
-- https://github.com/whatwedo/SearchBundle
+This bundle is part of the [araise.dev](https://araise.dev) framework.
 
 ## Documentation
 
-https://whatwedo.github.io/CoreBundle/#/
+[whatwedo.github.io/CoreBundle](https://whatwedo.github.io/CoreBundle/#/)
 
 ## License
 
