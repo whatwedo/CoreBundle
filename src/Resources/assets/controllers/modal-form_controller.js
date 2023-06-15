@@ -15,14 +15,15 @@ export default class extends Dropdown {
 
     async openModal() {
         super.toggle()
-        this.modalBodyTarget.innerHTML = 'Loading...';
+        this.modalBodyTarget.innerHTML = 'Loading ...';
         await fetch(this.formUrlValue)
             .then(response => response.text())
-            .then(data => this.modalBodyTarget.innerHTML = data);
+            .then(data => this.setInnerHTML(this.modalBodyTarget, data));
     }
 
     async submitForm(event) {
         event.preventDefault();
+        this.updateForms();
         let form = this.modalBodyTarget.getElementsByTagName("form")[0];
         var formData = new FormData(form);
         try {
@@ -41,7 +42,7 @@ export default class extends Dropdown {
                         this.dispatch('submitted:validation', {
                             result: response,
                         });
-                        this.modalBodyTarget.innerHTML = await response.text()
+                        this.setInnerHTML(this.modalBodyTarget, await response.text());
                     }
                 })
             ;
@@ -58,5 +59,28 @@ export default class extends Dropdown {
         }
         super.toggle(event);
         this.modalBodyTarget.innerHTML = '';
+    }
+
+    updateForms() {
+        if (typeof CKEDITOR !== 'undefined') {
+            for (const key in CKEDITOR.instances) {
+                CKEDITOR.instances[key].updateElement();
+            }
+        }
+    }
+
+    setInnerHTML(elm, html) {
+        elm.innerHTML = html;
+        Array.from(elm.querySelectorAll("script"))
+            .forEach( oldScriptEl => {
+                    const newScriptEl = document.createElement("script");
+                    Array.from(oldScriptEl.attributes).forEach( attr => {
+                        newScriptEl.setAttribute(attr.name, attr.value)
+                    });
+                    const scriptText = document.createTextNode(oldScriptEl.innerHTML);
+                    newScriptEl.appendChild(scriptText);
+                    oldScriptEl.parentNode.replaceChild(newScriptEl, oldScriptEl);
+                }
+            );
     }
 }
