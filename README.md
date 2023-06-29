@@ -1,3 +1,7 @@
+**ATTENTION**: This bundle is abandoned. It is now part of araise: https://github.com/araise-dev/CoreBundle
+
+---
+
 [![Latest Stable Version](https://poser.pugx.org/whatwedo/core-bundle/v/stable)](https://packagist.org/packages/whatwedo/core-bundle)
 [![SymfonyInsight](https://insight.symfony.com/projects/6fad4e21-6a58-4f3f-ac3b-2108f54261ea/mini.svg)](https://insight.symfony.com/projects/6fad4e21-6a58-4f3f-ac3b-2108f54261ea)
 
