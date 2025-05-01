@@ -32,12 +32,12 @@ namespace whatwedo\CoreBundle\Formatter;
  */
 class DefaultFormatter extends AbstractFormatter
 {
-    public function getString($value)
+    public function getString($value): string
     {
-        return $value;
+        return sprintf('%s', $value);
     }
 
-    public function getHtml($value)
+    public function getHtml($value): string
     {
         return htmlspecialchars($value);
     }

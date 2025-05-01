@@ -49,7 +49,7 @@ trait ConsoleOutput
      *
      * @return ConsoleOutput
      */
-    public function setOutput($output)
+    public function setOutput($output): static
     {
         $this->output = $output;
 
@@ -59,7 +59,7 @@ trait ConsoleOutput
     /**
      * @return OutputInterface
      */
-    public function getOutput()
+    public function getOutput(): OutputInterface
     {
         return $this->output;
     }
@@ -67,7 +67,7 @@ trait ConsoleOutput
     /**
      * @param string $message
      */
-    public function log($message)
+    public function log(string $message): void
     {
         if ($this->isVerbose()) {
             $message = date('[H:i:s] ').$message;
@@ -78,7 +78,7 @@ trait ConsoleOutput
     /**
      * @param $message
      */
-    public function debug($message)
+    public function debug($message): void
     {
         if ($this->isVerbose()) {
             $this->log($message);
@@ -88,7 +88,7 @@ trait ConsoleOutput
     /**
      * @return bool
      */
-    public function isVerbose()
+    public function isVerbose(): bool
     {
         return $this->verbose;
     }
@@ -98,7 +98,7 @@ trait ConsoleOutput
      *
      * @return ConsoleOutput
      */
-    public function setVerbose($verbose)
+    public function setVerbose(bool $verbose): static
     {
         $this->verbose = $verbose;
 

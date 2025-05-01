@@ -40,7 +40,7 @@ trait DryRun
     /**
      * @return bool
      */
-    public function isDryRun()
+    public function isDryRun(): bool
     {
         return $this->dryRun;
     }
@@ -50,7 +50,7 @@ trait DryRun
      *
      * @return DryRun
      */
-    public function setDryRun($dryRun = true)
+    public function setDryRun(bool $dryRun = true): static
     {
         $this->dryRun = $dryRun;
 

@@ -36,7 +36,7 @@ class ChfFormatter extends AbstractFormatter
      *
      * @return string
      */
-    public function getString($value)
+    public function getString($value): string
     {
         $number = (float) $value;
         $number = round(($number + 0.000001) * 20) / 20;
@@ -54,7 +54,7 @@ class ChfFormatter extends AbstractFormatter
      *
      * @return string
      */
-    public function getStringWithoutChf($value)
+    public function getStringWithoutChf($value): string
     {
         $number = (float) $value;
         $number = round(($number + 0.000001) * 20) / 20;
@@ -65,7 +65,7 @@ class ChfFormatter extends AbstractFormatter
         );
     }
 
-    public function getHtml($value)
+    public function getHtml($value): string
     {
         if ($value < 0) {
             return '<nobr><span class="text-danger">'.$this->getString($value).'</span></nobr>';

@@ -8,9 +8,9 @@ namespace whatwedo\CoreBundle\Formatter;
 class RemoveAccentFormatter extends AbstractFormatter
 {
     /**
-     * Remove acceents from string.
+     * Remove acccents from string.
      */
-    public function getString($value)
+    public function getString($value): string
     {
         if (!preg_match('/[\x80-\xff]/', $value)) {
             return $value;
@@ -113,8 +113,6 @@ class RemoveAccentFormatter extends AbstractFormatter
             \chr(197).\chr(190) => 'z', \chr(197).\chr(191) => 's',
         ];
 
-        $value = strtr($value, $chars);
-
-        return $value;
+        return strtr($value, $chars);
     }
 }

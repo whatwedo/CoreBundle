@@ -29,7 +29,7 @@ namespace whatwedo\CoreBundle\Formatter;
 
 class WysiwygFormatter extends AbstractFormatter
 {
-    public function getString($value)
+    public function getString($value): string
     {
         return self::format($value);
     }
@@ -39,7 +39,7 @@ class WysiwygFormatter extends AbstractFormatter
      *
      * @return string
      */
-    public static function format($html)
+    public static function format($html): string
     {
         $html = trim(strip_tags($html, '<p><b><strong><ul><li><i><u><a><br><small>'));
 

@@ -38,7 +38,7 @@ class DateTimeFormatter extends AbstractFormatter
      *
      * @return string
      */
-    public function getString($value)
+    public function getString($value): string
     {
         if ($value instanceof \DateTimeInterface) {
             return $value->format($this->options['format']);
@@ -47,7 +47,7 @@ class DateTimeFormatter extends AbstractFormatter
         return '';
     }
 
-    protected function configureOptions(OptionsResolver $resolver)
+    protected function configureOptions(OptionsResolver $resolver): void
     {
         $resolver
             ->setDefault('format', 'd.m.Y H:i');

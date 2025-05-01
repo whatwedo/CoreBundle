@@ -36,7 +36,7 @@ class BooleanFormatter extends AbstractFormatter
      *
      * @return string
      */
-    public function getString($value)
+    public function getString($value): string
     {
         return $value ? 'Ja' : 'Nein';
     }

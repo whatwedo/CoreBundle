@@ -29,7 +29,7 @@ namespace whatwedo\CoreBundle\Formatter;
 
 class EmailFormatter extends AbstractFormatter
 {
-    public function getString($value)
+    public function getString($value): string
     {
         if (!filter_var($value, FILTER_VALIDATE_EMAIL)) {
             return '';
@@ -38,7 +38,7 @@ class EmailFormatter extends AbstractFormatter
         return $value;
     }
 
-    public function getHtml($value)
+    public function getHtml($value): string
     {
         if (!filter_var($value, FILTER_VALIDATE_EMAIL)) {
             return '';

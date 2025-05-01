@@ -36,7 +36,7 @@ class CountryAlpha3Formatter extends AbstractFormatter
      *
      * @return string
      */
-    public function getString($value)
+    public function getString($value): string
     {
         if (\Symfony\Component\Intl\Countries::alpha3CodeExists(mb_strtoupper($value))) {
             return \Symfony\Component\Intl\Countries::getAlpha3Name(mb_strtoupper($value));

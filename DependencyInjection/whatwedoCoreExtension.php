@@ -15,7 +15,7 @@ use whatwedo\CoreBundle\Formatter\FormatterInterface;
  */
 class whatwedoCoreExtension extends Extension
 {
-    public function load(array $configs, ContainerBuilder $container)
+    public function load(array $configs, ContainerBuilder $container): void
     {
         $configuration = new Configuration();
         $this->processConfiguration($configuration, $configs);

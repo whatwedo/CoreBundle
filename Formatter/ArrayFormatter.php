@@ -36,7 +36,7 @@ class ArrayFormatter extends AbstractFormatter
      *
      * @return string
      */
-    public function getString($value)
+    public function getString($value): string
     {
         if (!\is_array($value)) {
             return '';

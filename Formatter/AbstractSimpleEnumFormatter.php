@@ -39,7 +39,7 @@ abstract class AbstractSimpleEnumFormatter extends AbstractFormatter
      *
      * @return string
      */
-    public static function getEnum()
+    public static function getEnum(): string
     {
         return AbstractSimpleEnum::class;
     }
@@ -51,7 +51,7 @@ abstract class AbstractSimpleEnumFormatter extends AbstractFormatter
      *
      * @return string
      */
-    public function getString($value)
+    public function getString($value): string
     {
         return forward_static_call([static::getEnum(), 'getRepresentation'], $value);
     }

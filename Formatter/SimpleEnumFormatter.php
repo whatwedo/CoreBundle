@@ -16,12 +16,12 @@ class SimpleEnumFormatter extends AbstractFormatter
      *
      * @return string
      */
-    public function getString($value)
+    public function getString($value): string
     {
         return forward_static_call([$this->options['enum'], 'getRepresentation'], $value);
     }
 
-    protected function configureOptions(OptionsResolver $resolver)
+    protected function configureOptions(OptionsResolver $resolver): void
     {
         $resolver
             ->setRequired('enum')

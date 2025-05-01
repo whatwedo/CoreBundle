@@ -31,8 +31,6 @@ use Doctrine\Bundle\DoctrineBundle\Registry;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\DependencyInjection\ContainerAwareInterface;
-use Symfony\Component\DependencyInjection\ContainerAwareTrait;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Stopwatch\Stopwatch;
 use whatwedo\CoreBundle\Command\Traits\ConsoleOutput;
@@ -40,25 +38,15 @@ use whatwedo\CoreBundle\Command\Traits\ConsoleOutput;
 /**
  * Class BaseCommand.
  */
-abstract class BaseCommand extends Command implements ContainerAwareInterface
+abstract class BaseCommand extends Command
 {
     use ConsoleOutput;
-    use ContainerAwareTrait;
 
-    /**
-     * @var InputInterface
-     */
-    protected $input;
+    protected ?InputInterface $input = null;
 
-    /**
-     * @var Registry
-     */
-    protected $registry = null;
+    protected ?object $registry = null;
 
-    /**
-     * @var Stopwatch
-     */
-    protected $stopwatch;
+    protected ?Stopwatch $stopwatch = null;
 
     /**
      * @return InputInterface
@@ -71,7 +59,7 @@ abstract class BaseCommand extends Command implements ContainerAwareInterface
     /**
      * @return Registry
      */
-    public function getDoctrine()
+    public function getDoctrine(): Registry
     {
         if (null === $this->registry) {
             $this->registry = $this->get('doctrine');
@@ -88,7 +76,7 @@ abstract class BaseCommand extends Command implements ContainerAwareInterface
     /**
      * @return int|void|null
      */
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         // Initialize input/output
         $this->input = $input;
@@ -106,6 +94,8 @@ abstract class BaseCommand extends Command implements ContainerAwareInterface
         // Dump settings
         $this->debug('Arguments: '.var_export($input->getArguments(), true));
         $this->debug('Options: '.var_export($input->getOptions(), true));
+
+        return Command::SUCCESS;
     }
 
     /**
@@ -115,7 +105,7 @@ abstract class BaseCommand extends Command implements ContainerAwareInterface
      *
      * @return object
      */
-    protected function get($name)
+    protected function get($name): object
     {
         return $this->getContainer()->get($name);
     }
@@ -123,7 +113,7 @@ abstract class BaseCommand extends Command implements ContainerAwareInterface
     /**
      * Initialize and start stopwatch.
      */
-    private function startStopwatch()
+    private function startStopwatch(): void
     {
         $this->stopwatch = new Stopwatch();
         $this->stopwatch->start('command');
@@ -132,13 +122,13 @@ abstract class BaseCommand extends Command implements ContainerAwareInterface
     /**
      * Initialize and start stopwatch.
      */
-    private function stopStopwatch()
+    private function stopStopwatch(): void
     {
         $event = $this->stopwatch->stop('command');
         $this->debug('Finished in '.$event->getDuration().'ms');
     }
 
-    protected function tearDown()
+    protected function tearDown(): void
     {
         $this->stopStopwatch();
     }
