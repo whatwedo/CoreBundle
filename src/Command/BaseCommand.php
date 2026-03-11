@@ -4,43 +4,35 @@ declare(strict_types=1);
 
 namespace whatwedo\CoreBundle\Command;
 
+use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\DependencyInjection\ContainerAwareInterface;
-use Symfony\Component\DependencyInjection\ContainerAwareTrait;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Stopwatch\Stopwatch;
 use whatwedo\CoreBundle\Command\Traits\ConsoleOutput;
 
-abstract class BaseCommand extends Command implements ContainerAwareInterface
+abstract class BaseCommand extends Command
 {
     use ConsoleOutput;
-    use ContainerAwareTrait;
 
     protected ?InputInterface $input = null;
 
-    protected ?object $registry = null;
-
     protected ?Stopwatch $stopwatch = null;
+
+    public function __construct(
+        protected ?ManagerRegistry $registry = null
+    ) {
+        parent::__construct();
+    }
 
     public function getInput(): ?InputInterface
     {
         return $this->input;
     }
 
-    public function getDoctrine(): ?object
+    public function getDoctrine(): ?ManagerRegistry
     {
-        if ($this->registry === null) {
-            $this->registry = $this->get('doctrine');
-        }
-
         return $this->registry;
-    }
-
-    public function getContainer(): ContainerInterface
-    {
-        return $this->container;
     }
 
     protected function execute(InputInterface $input, OutputInterface $output): int
@@ -64,14 +56,6 @@ abstract class BaseCommand extends Command implements ContainerAwareInterface
         $this->debug('Options: ' . var_export($input->getOptions(), true));
 
         return Command::SUCCESS;
-    }
-
-    /**
-     * Get service by name.
-     */
-    protected function get(string $name): ?object
-    {
-        return $this->getContainer()->get($name);
     }
 
     /**
