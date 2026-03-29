@@ -82,10 +82,7 @@ abstract class BaseCommand extends Command
         return $this->container;
     }
 
-    /**
-     * @return int|void|null
-     */
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         // Initialize input/output
         $this->input = $input;

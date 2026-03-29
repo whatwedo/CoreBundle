@@ -11,7 +11,7 @@ use whatwedo\CoreBundle\DependencyInjection\Compiler\FormatterPass;
  */
 class whatwedoCoreBundle extends Bundle
 {
-    public function build(ContainerBuilder $container)
+    public function build(ContainerBuilder $container): void
     {
         $container->addCompilerPass(new FormatterPass());
     }

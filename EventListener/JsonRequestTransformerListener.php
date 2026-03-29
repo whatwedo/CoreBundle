@@ -33,7 +33,7 @@ use Symfony\Component\HttpKernel\Event\RequestEvent;
 
 class JsonRequestTransformerListener
 {
-    public function onKernelRequest(RequestEvent $event)
+    public function onKernelRequest(RequestEvent $event): void
     {
         $request = $event->getRequest();
         if (!$this->isJsonRequest($request)) {
@@ -46,17 +46,17 @@ class JsonRequestTransformerListener
         }
 
         if (!$this->transformJsonBody($request)) {
-            $response = Response::create('Unable to parse request.', 400);
+            $response = new Response('Unable to parse request.', 400);
             $event->setResponse($response);
         }
     }
 
-    private function isJsonRequest(Request $request)
+    private function isJsonRequest(Request $request): bool
     {
-        return 'json' === $request->getContentType();
+        return 'json' === $request->getContentTypeFormat();
     }
 
-    private function transformJsonBody(Request $request)
+    private function transformJsonBody(Request $request): bool
     {
         $data = json_decode($request->getContent(), true);
 
