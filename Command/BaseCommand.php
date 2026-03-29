@@ -100,6 +100,8 @@ abstract class BaseCommand extends Command
         // Dump settings
         $this->debug('Arguments: '.var_export($input->getArguments(), true));
         $this->debug('Options: '.var_export($input->getOptions(), true));
+
+        return self::SUCCESS;
     }
 
     /**
