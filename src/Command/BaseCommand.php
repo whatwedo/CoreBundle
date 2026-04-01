@@ -60,8 +60,8 @@ abstract class BaseCommand extends Command implements ContainerAwareInterface
         }
 
         // Dump settings
-        $this->debug('Arguments: ' . var_export($input->getArguments(), true));
-        $this->debug('Options: ' . var_export($input->getOptions(), true));
+        $this->debug('Arguments: '.var_export($input->getArguments(), true));
+        $this->debug('Options: '.var_export($input->getOptions(), true));
 
         return Command::SUCCESS;
     }
@@ -89,7 +89,7 @@ abstract class BaseCommand extends Command implements ContainerAwareInterface
     private function stopStopwatch(): void
     {
         $event = $this->stopwatch->stop('command');
-        $this->debug('Finished in ' . $event->getDuration() . 'ms');
+        $this->debug('Finished in '.$event->getDuration().'ms');
     }
 
     protected function tearDown(): void
