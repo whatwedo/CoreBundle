@@ -15,7 +15,6 @@ abstract class AbstractFormatter implements FormatterInterface
 
     public function __construct()
     {
-        $this->processOptions();
     }
 
     public function getHtml(mixed $value): string
