@@ -1,8 +1,7 @@
 <?php
 
-declare(strict_types=1);
 /*
- * Copyright (c) 2015, whatwedo GmbH
+ * Copyright (c) 2025, whatwedo GmbH
  * All rights reserved
  *
  * Redistribution and use in source and binary forms, with or without
@@ -27,27 +26,43 @@ declare(strict_types=1);
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace whatwedo\CoreBundle\Formatter;
+namespace whatwedo\CoreBundle\Twig;
 
-use Symfony\Component\OptionsResolver\OptionsResolver;
+use Twig\Extension\AbstractExtension;
+use Twig\TwigFunction;
+use whatwedo\CoreBundle\Manager\FormatterManager;
 
-class WysiwygFormatter extends AbstractFormatter
+class CoreExtension extends AbstractExtension
 {
-    public function getString(mixed $value): string
-    {
-        return trim(strip_tags($value));
+    public function __construct(
+        private FormatterManager $formatterManager
+    ) {
     }
 
-    public function getHtml(mixed $value): string
+    public function getFunctions(): array
     {
-        $value = trim(strip_tags($value, '<p><b><strong><ul><li><i><u><a><br><small>'));
-
-        return $value ? sprintf('<blockquote>%s</blockquote>', $value) : '';
+        return [
+            new TwigFunction(
+                'wwd_is_html_safe',
+                $this->isHtmlSafe(...)
+            ),
+        ];
     }
 
-    protected function configureOptions(OptionsResolver $resolver): void
+    public function isHtmlSafe(mixed $object): bool
     {
-        parent::configureOptions($resolver);
-        $resolver->setDefault(self::OPT_HTML_SAFE, true);
+        if (!method_exists($object, 'getOption')) {
+            return false;
+        }
+        $formatter = $object->getOption('formatter');
+        $formatterOptions = $object->getOption('formatter_options');
+
+        if (is_string($formatter)) {
+            $formatterObj = $this->formatterManager->getFormatter($formatter);
+            $formatterObj->processOptions($formatterOptions);
+            return $formatterObj->isHtmlSafe();
+        }
+
+        return false;
     }
 }

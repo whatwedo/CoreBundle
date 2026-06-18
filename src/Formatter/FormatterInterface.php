@@ -17,4 +17,6 @@ interface FormatterInterface
      * @param array<string, mixed> $options
      */
     public function processOptions(array $options = []): void;
+
+    public function isHtmlSafe(): bool;
 }
