@@ -8,6 +8,8 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 abstract class AbstractFormatter implements FormatterInterface
 {
+    public const OPT_HTML_SAFE = 'html_safe';
+
     /**
      * @var array<string, mixed>
      */
@@ -33,7 +35,18 @@ abstract class AbstractFormatter implements FormatterInterface
         $this->options = $resolver->resolve($options);
     }
 
+    public function isHtmlSafe(): bool
+    {
+        return (bool) ($this->options[self::OPT_HTML_SAFE] ?? false);
+    }
+
+    protected function escapeHTML(string $value): string
+    {
+        return htmlspecialchars($value, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
+    }
+
     protected function configureOptions(OptionsResolver $resolver): void
     {
+        $resolver->setDefault(self::OPT_HTML_SAFE, false);
     }
 }

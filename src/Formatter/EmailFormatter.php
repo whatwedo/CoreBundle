@@ -27,9 +27,9 @@ class EmailFormatter extends AbstractFormatter
 
         return $value ? sprintf(
             '<a href="mailto:%s" title="%s">%s</a>',
-            $value,
-            $title,
-            $value
+            $this->escapeHTML($value),
+            $this->escapeHTML($title),
+            $this->escapeHTML($value)
         ) : '';
     }
 }

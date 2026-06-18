@@ -39,6 +39,7 @@ class TwigFormatter extends AbstractFormatter
     public function __construct(
         protected Environment $twig
     ) {
+        parent::__construct();
     }
 
     public function getString(mixed $value): string
@@ -57,5 +58,6 @@ class TwigFormatter extends AbstractFormatter
     {
         $resolver->setRequired(self::OPT_TEMPLATE);
         $resolver->setAllowedTypes(self::OPT_TEMPLATE, 'string');
+        $resolver->setDefault(self::OPT_HTML_SAFE, true);
     }
 }
