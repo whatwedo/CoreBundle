@@ -12,6 +12,7 @@ abstract class AbstractFormatterTest extends KernelTestCase
 {
     protected function getFormatter(string $formatterClass): FormatterInterface
     {
+        /** @var FormatterManager $formatterManager */
         $formatterManager = self::getContainer()->get(FormatterManager::class);
 
         return $formatterManager->getFormatter($formatterClass);

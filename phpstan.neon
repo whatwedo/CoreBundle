@@ -1,7 +1,10 @@
+includes:
+    - vendor/phpstan/phpstan-phpunit/extension.neon
+
 parameters:
     level: 6
     paths:
         - src
         - tests
     bootstrapFiles:
-        - vendor/bin/.phpunit/phpunit-9.5-0/vendor/autoload.php
+        - vendor/autoload.php

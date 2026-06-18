@@ -41,10 +41,10 @@ class MoneyFormatter extends AbstractFormatter
         );
 
         if ($this->options[self::OPT_CURRENCY_POSITION] === 'start') {
-            return $this->options[self::OPT_CURRENCY] . ' ' . $str;
+            return $this->options[self::OPT_CURRENCY].' '.$str;
         }
 
-        return $str . ' ' . $this->options[self::OPT_CURRENCY];
+        return $str.' '.$this->options[self::OPT_CURRENCY];
     }
 
     protected function configureOptions(OptionsResolver $resolver): void

@@ -11,6 +11,7 @@ class CountryAlpha3FormatterTest extends AbstractFormatterTest
     public function testFormatter(): void
     {
         $formatter = $this->getFormatter(CountryAlpha3Formatter::class);
+        $formatter->processOptions();
         self::assertSame('Schweiz', $formatter->getHtml('CHE'));
     }
 

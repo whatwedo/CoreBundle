@@ -43,7 +43,8 @@ class FormatterManager
      * @param FormatterInterface[] $formatters
      */
     public function __construct(
-        #[TaggedIterator('whatwedo_core.formatter')] iterable $formatters
+        #[TaggedIterator('whatwedo_core.formatter')]
+        iterable $formatters
     ) {
         foreach ($formatters as $formatter) {
             $this->formatters[$formatter::class] = $formatter;

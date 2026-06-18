@@ -29,9 +29,9 @@ class CollectionFormatter extends AbstractFormatter
         }
         $str = '<ul>';
         foreach ($value as $singleValue) {
-            $str .= '<li>' . $singleValue . '</li>';
+            $str .= '<li>'.$singleValue.'</li>';
         }
 
-        return $str . '</ul>';
+        return $str.'</ul>';
     }
 }

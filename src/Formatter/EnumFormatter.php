@@ -22,7 +22,7 @@ class EnumFormatter extends AbstractFormatter
             return '';
         }
 
-        return $this->translator->trans($this->options['translation_key_prefix'] . $enum->value);
+        return $this->translator->trans($this->options['translation_key_prefix'].$enum->value);
     }
 
     protected function configureOptions(OptionsResolver $resolver): void

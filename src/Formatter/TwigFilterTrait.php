@@ -67,6 +67,6 @@ trait TwigFilterTrait
         }
         $pattern = '/([a-z])([A-Z])/';
 
-        return strtolower(preg_replace_callback($pattern, fn ($a) => $a[1] . '_' . strtolower($a[2]), $input));
+        return strtolower(preg_replace_callback($pattern, fn ($a) => $a[1].'_'.strtolower($a[2]), $input));
     }
 }
