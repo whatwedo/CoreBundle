@@ -18,6 +18,7 @@ class TranslationFormatter extends AbstractFormatter
     public function __construct(
         protected TranslatorInterface $translator
     ) {
+        parent::__construct();
     }
 
     public function getString(mixed $value): string

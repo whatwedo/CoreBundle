@@ -14,6 +14,7 @@ class EnumFormatter extends AbstractFormatter
     public function __construct(
         private TranslatorInterface $translator
     ) {
+        parent::__construct();
     }
 
     public function getString(mixed $enum): string
