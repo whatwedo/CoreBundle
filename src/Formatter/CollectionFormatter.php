@@ -17,7 +17,7 @@ class CollectionFormatter extends AbstractFormatter
         if ($value instanceof Collection) {
             $value = $value->toArray();
         }
-        return implode(', ', (array) $value);
+        return implode(', ', array_map('strval', (array) $value));
     }
 
     public function getHtml(mixed $value): string
@@ -30,7 +30,7 @@ class CollectionFormatter extends AbstractFormatter
         }
         $str = '<ul>';
         foreach ($value as $singleValue) {
-            $str .= '<li>'.$this->escapeHTML($singleValue).'</li>';
+            $str .= '<li>'.$this->escapeHTML((string) $singleValue).'</li>';
         }
 
         return $str.'</ul>';
